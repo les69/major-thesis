@@ -36,7 +36,9 @@ a system capable of interconnecting with other existing components in the house.
 There are currently 4 billion of connected devices [2] as 2016, and the forecasts
 says they will be 13.5b in 2020. This means a growth in the heterogenity of companies
 and products, which makes a must the interopability between devices from different
-producers.
+producers.\\
+Most of the common Smart devices are built to work appositely with their own application,
+without any external support which leads to a loose coupling between devices.
 
 %%[TODO] add stuff here, lacking of inspiration now
 
@@ -46,32 +48,44 @@ During this document we will refer to a use case scenario related
 to house security. In this scenario we will have a small house with different
 floors, each floor having a leap motion sensor to detect any movement and a camera
 recording.
-\subsection{Post Multiply Normalization}
+\subsection{M2M: Machine to Machine}
 
-When more than two multiplications are performed in a row, the intermediate
-normalization of the results between multiplications can be eliminated.
-This is because with each multiplication, the mantissa can become
-denormalized by at most one bit.  If there are guard bits on the mantissas
-to prevent bits from ``falling off'' the end during multiplications, the
-normalization can be postponed until after a sequence of several
-multiplies\footnote{Using unnormalized numbers for math is not a new idea; a
-good example of it is the Control Data CDC 6600, designed by Seymour Cray.
-\cite{thornton:cdc6600} The CDC 6600 had all of its instructions performing
-unnormalized arithmetic, with a separate {\tt NORMALIZE} instruction.}.
+Most of common smart sensors, in order to be \textit{smart} they need
+to provide a form of connectivity: let it be BLE (Bluetooth Low Energy),
+Wi-Fi or R-FID. \textit{M2M} is treanding with the raising of IoT,
+requiring a higher number of devices to be interconnected without
+any human interaction. Different devices means different protocols,
+which introduces difficulties in the communications between each other.
+The typical approach is to define a set of translators which
+are able to deal with both sides, also called \textit{Gateways}.
+Gateways are high-level objects that knows the various protocols
+needed to communicate and provide these knowledge as a service to
+whom has the necessity to access the functionalities provided by the
+device. \\
+In our architecture each gateway is a device exposing a service using
+a \textbf{RESTful} architecture, for a better simplicity of use.
 
-% This is an example of how you would use tgrind to include an example
-% of source code; it is commented out in this template since the code
-% example file does not exist.  To use it, you need to remove the '%' on the
-% beginning of the line, and insert your own information in the call.
-%
-%\tagrind[htbp]{code/pmn.s.tex}{Post Multiply Normalization}{opt:pmn}
+\subsection{Microservices and IoT}
+\label{sub:microservicesiot}
 
-As you can see, the intermediate results can be multiplied together, with no
-need for intermediate normalizations due to the guard bit.  It is only at
-the end of the operation that the normalization must be performed, in order
-to get it into a format suitable for storing in memory\footnote{Note that
-for purposed of clarity, the pipeline delays were considered to be 0, and
-the branches were not delayed.}.
+The Microservice architecture is an innovative modelling pattern that aims
+to solve a well defined class of problems: scaling.
+The idea behind microservices is to split the architecture on different machines
+usually communicating through a RESTful interface.
+This pattern is similar to the \textit{microkernel} architecture for Operative Systems,
+where the kernel containes the most vital functions and each functionality is a Plug-In
+(or Driver Module) that can be added externally.
+Each service holds a functionality isolated in it's context, which can be deployed
+at runtime without any interruption of the service. In microservices the
+equivalent of the kernel is the API interface that exposes all the functionalities
+to the external world.
+With the raising of the need of interopability, \textit{microservices}
+seems to hold the key for this problem.
+Vendors have published their protocols, and have exposed API’s to their various hubs.
+A MicroService can serve as an adapter between various protocols. It can be lightweight and disposable,
+both desirable traits in a rapidly evolving environment.[3]
+
+
 
 \subsection{Block Exponent}
 
