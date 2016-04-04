@@ -28,31 +28,72 @@ analysis of the scenario.
 
 \section{Motivations}
 
+In this document we try to illustrate the common problems that arises
+when introducing a new IoT system in an existing environment, let's define it as
+an average person house, we'll define the scenario details later.
+The first motivating problem taken in consideration is the \textbf{integration} of a new
+system in a house where there's already a different coexisting ecosystem.
 The idea behind our research in this field is to improve the existing solutions
-with an innovative and different approach. Nowdays there are many standalone
+with an innovative and different approach. Nowadays there are many standalone
 solutions for IoT surveillance, which acts separately from all the other
 components in the house. We address this isolation, trying to create
 a system capable of interconnecting with other existing components in the house.
 There are currently 4 billion of connected devices [2] as 2016, and the forecasts
-says they will be 13.5b in 2020. This means a growth in the heterogenity of companies
-and products, which makes a must the interopability between devices from different
+says they will be 13.5b in 2020. This means a growth in the heterogeneity of companies
+and products, which makes a must the interoperability between devices from different
 producers.\\
 Most of the common Smart devices are built to work specifically with their own application,
-without any external support which leads to a loose coupling between devices.
+without any external support which leads to a loose coupling between devices. This problem
+arises when introducing new \textit{systems} in a house where there are is already a different
+ecosystem. The inability of a user to switch or adopt a new technology is also called \textit{vendor lock-in},
+a common commercial practice to retain users. However research is moving forward
+this direction investigating in new innovative and efficient methods to solve this
+problem, and there are already some approaches which will be discussed in the next chapter.
+\textbf{False positives} is another key issue in our investigation on the improvement of a
+house monitoring scenario. The reason behind this choice lies in the connection with the "idea"
+of a house with an alarm connection to a third party security agency. We need to have a real
+alarm when something is happening, reducing the probability of false alarms and not wasting time
+calling the police or alerting some vigilance agent.
 
-%%[TODO] add stuff here, lacking of inspiration now
 
-\section{Description of scenario}\label{ch1:opts}
+\section{The Scenario}
 
-During this document we will refer to a use case scenario related
-to house security. In this scenario we will have a small house with different
-floors, each floor having a leap motion sensor to detect any movement and a camera
-recording.
+In our document we will often refer to an imaginary scenario of a typical house
+of an average person. It is important to denote this detail since most of our
+solutions are designed for such a peculiar situation, and they may not be as
+efficient or innovative in a different scenario.\\
+The main idea is to have a surveillance system in a typical \textit{American style}
+house, with different floors and rooms, each of them equipped with different
+and various smart devices. Having a clear idea of the scenario helps to focus more
+on the identification of issues while designing the systems rather than facing
+and solving problems at the last moment due to some unpredictable variables of a
+too varied scenario.
+
+
+\section{Microservices and IoT}
+
+The Microservice architecture is an innovative modeling pattern that aims
+to solve a well defined class of problems: scaling.
+The idea behind microservices is to split the architecture on different machines
+usually communicating through a RESTful interface.
+This pattern is similar to the \textit{microkernel} architecture for Operative Systems,
+where the kernel contains the most vital functions and each functionality is a Plug-In
+(or Driver Module) that can be added externally.
+Each service holds a functionality isolated in it's context, which can be deployed
+at runtime without any interruption of the service. In microservices the
+equivalent of the kernel is the API interface that exposes all the functionalities
+to the external world.
+With the raising of the need of interoperability, \textit{microservices}
+seems to hold the key for this problem.
+Vendors have published their protocols, and have exposed API’s to their various hubs.
+A MicroService can serve as an adapter between various protocols. It can be lightweight and disposable,
+both desirable traits in a rapidly evolving environment.[3]
+
 \subsection{M2M: Machine to Machine}
 
 Most of common smart sensors, in order to be \textit{smart} they need
-to provide a form of connectivity: let it be BLE (Bluetooth Low Energy),
-Wi-Fi or R-FID. \textit{M2M} is treanding with the raising of IoT,
+to provide a form of connectivity: let it be BLE (Blue-tooth Low Energy),
+Wi-Fi or RFID. \textit{M2M} is trending with the raising of IoT,
 requiring a higher number of devices to be interconnected without
 any human interaction. Different devices means different protocols,
 which introduces difficulties in the communications between each other.
@@ -63,33 +104,41 @@ needed to communicate and provide these knowledge as a service to
 whom has the necessity to access the functionalities provided by the
 device. \\
 In our architecture each gateway is a device exposing a service using
-a \textbf{RESTful} architecture, for a better simplicity of use.
+a \textbf{RESTful} architecture, for a higher simplicity of use.
 
-\section{Microservices and IoT}
-\label{sub:microservicesiot}
+\subsection{A RESTful interface}
+The communication between different devices is a common and dated
+problem in \textit{Computer Science}. Many approaches has been introduced
+during time, all of them with their relative pro and cons:
 
-The Microservice architecture is an innovative modelling pattern that aims
-to solve a well defined class of problems: scaling.
-The idea behind microservices is to split the architecture on different machines
-usually communicating through a RESTful interface.
-This pattern is similar to the \textit{microkernel} architecture for Operative Systems,
-where the kernel containes the most vital functions and each functionality is a Plug-In
-(or Driver Module) that can be added externally.
-Each service holds a functionality isolated in it's context, which can be deployed
-at runtime without any interruption of the service. In microservices the
-equivalent of the kernel is the API interface that exposes all the functionalities
-to the external world.
-With the raising of the need of interopability, \textit{microservices}
-seems to hold the key for this problem.
-Vendors have published their protocols, and have exposed API’s to their various hubs.
-A MicroService can serve as an adapter between various protocols. It can be lightweight and disposable,
-both desirable traits in a rapidly evolving environment.[3]
+\begin{itemize}
+  \item \textbf{Remote Procedure Calls} used to execute procedures on a remote machine,
+  with the advent of \textit{CORBA} it was also possible to do that on machine
+  with a different technology stack on it.
+  \item The \textbf{Message Oriented Middleware} used queues to exchange messages to
+  different platforms using different technologies. This subsequently led to
+  the development of the common \textit{ESB} technology.
+  \item \textbf{SOAP} a high-level protocol for communication between web services
+  over many popular application layer protocols such as HTTP or SMTP.
+\end{itemize}
+
+All of them are good candidates for the construction of a distributed system,
+but it's better to adopt a single protocol for communication instead of many to
+avoid over complicating the problem.
+We choose to use the \textbf{RESTful} architecture, which
+better suits our scenario. Our decision complies with the current trend in the
+implementation of microservices, where REST is the typical choice for exposing
+functionalities. Its simplicity made it very popular and widely adopted, making
+REST one of the "standards" for communication between services on the web, mainly
+due to its capability to work over \textit{HTTP} without any additional infrastructure.
+
+
 
 
 
 \section{The power of Social Networks}
 
-Social networks plays a fundamental role in people's life nowdays,
+Social networks plays a fundamental role in people's life nowadays,
 keeping in touch people from different countries or sharing their life
 moments with everyone. On average American's spend 4.7 hours browsing on their
 social profile, usually around 17 times per day [4].\\
@@ -101,12 +150,12 @@ daily/working life
     \item[Scams] Scam are very common on social networks, people using fake profiles to perpetrate
     illegal actions such as blackmailing or phishing.
     \item[Spying] This problem is the less recognized but most dangerous vulnerability introduced by social networks.
-    Basically, if you share you're entire life with your friends, there may be someone else intrested in your activity: thieves.
+    Basically, if you share you're entire life with your friends, there may be someone else interested in your activity: thieves.
     Burglars checks people's social activity with fake accounts or looking at who has checked in in airports to select the houses
     to break into. This is the case we will work in the following pages of the document.
 \end{description}
 
-Altough their vulnerabilities, social networks has the power to connect thousands or millions of people togheter,
+Although their vulnerabilities, social networks has the power to connect thousands or millions of people together,
 allowing users to spread news at unthinkable speed compared to traditional methods. Let's consider
 Belgium's police, who uses twitter to share the terrorists video hoping to reach someone who
 can recognize them.[5] \\
@@ -118,4 +167,36 @@ will apply this concept in our scenario.
 
 \section{False positives}
 
+One of the most common problems that occurs when an alarm
+is armed are false positives. In most of the cases it can be just a pet
+triggering the alarm, some other times may be just yourself when you forget to
+deactivate the alarm.\\
+Although this problem may look relatively unimportant, it assumes importance if the
+alarmed is linked to a surveillance company which is supposed to look after our house.
+That's why during this thesis we will take an effort to address this common issue with different
+approaches.\\
+The false positive detection is calculated as a probability of an event happening, influenced
+by many factors. Each factor is one of the approaches adopted below, which will have a positive or
+negative influence on this factor, determining if with a certain precision a detection can be classified
+as a \textit{false positive}.
+
 \subsection{Approaches}
+Here's a list of the proposed approaches taken in consideration during this document
+
+\begin{description}
+  \item[Face detection] Detecting a face when the alarm is triggered is a useful way of
+  discriminating between a false positive and a real intrusion. However this approach has some limitations
+  given by the position of the camera and the speed of the shutter which impacts the image quality.
+  Its importance differs if used in combination with other different \textit{false positives} reduction
+  systems.
+  \item[Face recognition] Face recognition is just an improvement of the above technique, which would allow
+  us to recognize a familiar face in the system and reduce significantly the probability of a false alarm.
+  This approach however is affected by the same problems from the former one.
+  \item[Speaker recognition] This approach involves machine learning to learn and recognize familiar voices
+  during an intrusion. Knowing with a certain precision that the voice belongs to someone familiar will
+  drastically drop the probability of a possible false detection. Furthermore this approach does not suffer
+  from the same problems as the former two approaches.
+  \item[Dictation recognition] People's biometric signature also includes the way they do talk. It is
+  actually possible to identify someone by the words they say. This is an abstraction or a limitation of
+  the approach described before. However it's a good idea to test it's performance on our use case.
+\end{description}

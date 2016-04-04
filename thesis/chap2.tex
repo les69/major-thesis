@@ -9,205 +9,132 @@
 In this chapter there will be an extensive explanation to the technologies used
 throughout the document.
 
-\section{Motivations}
+\section{Internet of Things}
 
-The idea behind our research in this field is to improve the existing solution
-with an innovative and different approach. Nowdays there are many standalone
-solutions for IoT surveillance, which acts separately from all the other
-components in the house. We address this isolation, trying to create
-a system capable of interconnecting with other existing components in the house.
-There are currently 4 billion of connected devices [2] as 2016, and the forecasts
-says they will be 13.5b in 2020. This means a growth in the heterogenity of companies
-and products, which makes a must the interopability between devices from different
-producers.\\
-Most of the common Smart devices are built to work appositely with their own application,
-without any external support which leads to a loose coupling between devices.
+What is the \textbf{\textit{Internet of Things}}?\\
+\textit{Internet of Things}, better known as IoT, is the world of interconnected devices
+connected to the real world and to the Internet. These devices has a very
+broad definition, from the smart sensors in a power plant to the smart fridge in
+a house. What connects these devices is their ability to be connected with the world,
+sharing, with the needed restrictions, their work. This opened the door to a new
+revolution in the IT sector, prompting new opportunities for developers, entrepreneurs
+and end users. Some of the most relevant endings of these technologies are \textit{Smart Houses},
+\textit{Smart Cities}, Cars etc. %[TODO] continue a little bit here
 
-%%[TODO] add stuff here, lacking of inspiration now
+\subsection{Ecosystems}
 
-\section{Calvin}\label{ch1:opts}
+What is an Ecosystem? An ecosystems is by definition \textit{a system, or a group of interconnected elements,
+formed by the interaction of a community of organisms with their environment.},
+in our case a set of smart devices connected between them. The IoT world is evolving
+from distinct single entities to more evolved clusters of devices which can communicate
+more easily between each other.These are usually are made by companies using specific protocols or standards
+to simplify the connection between their products, but at the same time closing it to the others.
+%[TODO] connect the two paragraphs
+The list of products related to the \textit{Internet of Things} is too broad for
+being even listed, due to the highly expanding sector related to smart devices.
+However we will consider the most common ecosystems which can be easily found in a common
+home, meaning services for: Smart Lights, Cameras, Thermostats etc. Luckily
+most of them are being bought and integrated in bigger environments run by
+famous companies such as \textit{Google} or \textit{Apple}.
+The reason for which we try to restrict the integration with these ecosystems is
+mainly practical, because they're the most common and they do offer simulators
+for testing, and because they suits perfectly our scenario.
 
-During this document we will refer to a use case scenario related
-to house security. In this scenario we will have a small house with different
-floors, each floor having a leap motion sensor to detect any movement and a camera
-recording.
-\subsection{M2M: Machine to Machine}
+%[TODO] describe the various ecosystems, what is an ecosystem etc
+\subsubsection{Google - Nest}
 
-Most of common smart sensors, in order to be \textit{smart} they need
-to provide a form of connectivity: let it be BLE (Bluetooth Low Energy),
-Wi-Fi or R-FID. \textit{M2M} is treanding with the raising of IoT,
-requiring a higher number of devices to be interconnected without
-any human interaction. Different devices means different protocols,
-which introduces difficulties in the communications between each other.
-The typical approach is to define a set of translators which
-are able to deal with both sides, also called \textit{Gateways}.
-Gateways are high-level objects that knows the various protocols
-needed to communicate and provide these knowledge as a service to
-whom has the necessity to access the functionalities provided by the
-device. \\
-In our architecture each gateway is a device exposing a service using
-a \textbf{RESTful} architecture, for a better simplicity of use.
+\textbf{Nest} is a home automation producer of smart devices, such
+as thermostats, cameras and alarms.
 
-\subsection{Microservices and IoT}
-\label{sub:microservicesiot}
+\subsubsection{Apple - HomeKit}
+\subsubsection{Samsung - SmartThings}
 
-The Microservice architecture is an innovative modelling pattern that aims
-to solve a well defined class of problems: scaling.
-The idea behind microservices is to split the architecture on different machines
-usually communicating through a RESTful interface.
-This pattern is similar to the \textit{microkernel} architecture for Operative Systems,
-where the kernel containes the most vital functions and each functionality is a Plug-In
-(or Driver Module) that can be added externally.
-Each service holds a functionality isolated in it's context, which can be deployed
-at runtime without any interruption of the service. In microservices the
-equivalent of the kernel is the API interface that exposes all the functionalities
-to the external world.
-With the raising of the need of interopability, \textit{microservices}
-seems to hold the key for this problem.
-Vendors have published their protocols, and have exposed API’s to their various hubs.
-A MicroService can serve as an adapter between various protocols. It can be lightweight and disposable,
-both desirable traits in a rapidly evolving environment.[3]
+
+\section{Calvin}
 
 
 
-\subsection{Block Exponent}
+\section{The Microservice Architectural Style}
 
-In a unoptimized sequence of additions, the sequence of operations is as
-follows for each pair of numbers ($m_1$,$e_1$) and ($m_2$,$e_2$).
+\subsubsection{SOA vs Microservices}
+In short, the \textit{microservice architectural style} is an approach to developing a single
+application as a suite of small services, each running in its own process and communicating with
+lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities
+and independently deployable by fully automated deployment machinery. There is
+a bare minimum of centralized management of these services,
+which may be written in different programming languages and use different data storage technologies.[7]\\
+There is a close link between the \textit{microservice architecture} and the \textit{service oriented architecture},
+thus due to their nature the community classified microservices as a subclass of the service oriented architecture.
+\textit{Don Box} of Microsoft described the Service-Oriented paradigm with the following four principles [8]
+
 \begin{enumerate}
-  \item Compare $e_1$ and $e_2$.
-  \item Shift the mantissa associated with the smaller exponent $|e_1-e_2|$
-        places to the right.
-  \item Add $m_1$ and $m_2$.
-  \item Find the first one in the resulting mantissa.
-  \item Shift the resulting mantissa so that normalized
-  \item Adjust the exponent accordingly.
+  \item Boundaries are explicit
+  \item Services are autonomous
+  \item Services share schema and contracts, not class
+  \item Service compatibility is based on policy
 \end{enumerate}
 
-Out of 6 steps, only one is the actual addition, and the rest are involved
-in aligning the mantissas prior to the add, and then normalizing the result
-afterward.  In the block exponent optimization, the largest mantissa is
-found to start with, and all the mantissa's shifted before any additions
-take place.  Once the mantissas have been shifted, the additions can take
-place one after another\footnote{This requires that for n consecutive
-additions, there are $\log_{2}n$ high guard bits to prevent overflow.  In
-the $\mu$FPU, there are 3 guard bits, making up to 8 consecutive additions
-possible.}.  An example of the Block Exponent optimization on the expression
-X = A + B + C is given in figure~\ref{opt:be}.
+Microservices fullfills the first two requirements, with a very strong focus on the second principle.
+However the functionalities are very frequently exposed using a \textit{RESTful} interface, which
+doesn't expose any contract nor schema. Furthermore microservices holds another subtle difference related to their
+scope, where a microservice serves as a service inside its application meanwhile typical SOA services
+serves a broader scope and \textit{can be} part of the same application.
+The difference between the two concepts is very subtle, and it wouldn't be impossible for them
+to be the same in certain situations. \textit{Bob Ruhbart} from Oracle described shortly the difference:
+\textit{Microservices are the kind of SOA we have been talking about for the last decade. Microservices must be independently deployable,
+whereas SOA services are often implemented in deployment monoliths.
+Classic SOA is more platform driven, so microservices offer more choices
+in all dimensions}.[10]
 
-% This is an example of how you would use tgrind to include an example
-% of source code; it is commented out in this template since the code
-% example file does not exist.  To use it, you need to remove the '%' on the
-% beginning of the line, and insert your own information in the call.
-%
-%\tgrind[htbp]{code/be.s.tex}{Block Exponent}{opt:be}
+\begin{figure}[h]
+\caption{Graphic illustration of microservices and SOA}
+\centering
+\includegraphics[scale=1]{soavsmicro.png}
+\end{figure}
 
-\section{Integer optimizations}
+\subsection{Internal integration}
+%[TODO] IMPROVE!!!!
+Typically when a new component has to be added to an existing
+project the approach consists in the development of a library which
+has the logic to deal with the new module. Subsequently the module will
+become part of the project itself, with its needs to be updated when needed.
+However when the number of components to integrate increases will affect the size
+of the project and its performances, introducing scalability problems.
+In our case the module to be integrated will be the ecosystem taken in consideration,
+having a set of libraries which are capable of interacting with the remote APIs or
+with the direct wired connections.
 
-As well as the floating point optimizations described above, there are
-also integer optimizations that can be used in the $\mu$FPU.  In concert
-with the floating point optimizations, these can provide a significant
-speedup.
+\subsection{Integration as a Service}
+Considering the \textit{Microservice} architectural pattern we can decompose
+the above situation creating dedicated services capable of handling the
+required business logic to interact with an external system. This approach
+is also called \textbf{Componentization via Services}[7], where a component is defined
+as a \textit{unit of software that is independently replaceable and upgradeable.}
+It is important to distinguish between \textit{libraries} and \textit{services}:
+the latter uses out-of-service components to communicate, mainly HTTP requests or
+remote procedure calls when libraries uses instead mechanisms like in-memory calls.
+The main advantage to build components as services instead of libraries is the
+possibility to deploy them individually without the need to redeploy the whole system.
+If a library is modified or removed the whole system will need to be redeployed,
+which in most of the cases it is converted in a loss of money and time. That's not
+the case if the system is composed by many independent systems, where only the changed
+service will need a new deployment. However this is not always true, there will be some
+circumstances where it will be necessary anyway to deploy again the whole system, but the
+aim of this approach is to reduce the number of these necessities.
 
-\subsection{Conversion to fixed point}
 
-Integer operations are much faster than floating point operations; if it is
-possible to replace floating point operations with fixed point operations,
-this would provide a significant increase in speed.
+\begin{description}
+  \item[Heterogeneity between technologies] Structuring the system as a set
+  of services frees us from the limitations of a singular technology allowing
+  us to adopt different frameworks for different tasks. This benefits on the
+  possible optimization that can be achieved using the right technology for the
+  right task. Furthermore this removes completely the problem of creating adapters
+  for different technologies to integrate in the system if they do not exist.
+  \item[Evolutionary Design] is a typical feature of microservice
+  architecture where components can be easily upgraded or redeployed.
+  Decomposing the system as a set of many independent components allows us
+  to upgrade a service without affecting the core components and redeploying
+  the whole project. This allows us to upgrade, use different technologies, modify
+  or remove our component without any consequence on the rest of the system.
 
-This conversion can either take place automatically or or based on a
-specific request from the programmer.  To do this automatically, the
-compiler must either be very smart, or play fast and loose with the accuracy
-and precision of the programmer's variables.  To be ``smart'', the computer
-must track the ranges of all the floating point variables through the
-program, and then see if there are any potential candidates for conversion
-to floating point.  This technique is discussed further in
-section~\ref{range-tracking}, where it was implemented.
-
-The other way to do this is to rely on specific hints from the programmer
-that a certain value will only assume a specific range, and that only a
-specific precision is desired.  This is somewhat more taxing on the
-programmer, in that he has to know the ranges that his values will take at
-declaration time (something normally abstracted away), but it does provide
-the opportunity for fine-tuning already working code.
-
-Potential applications of this would be simulation programs, where the
-variable represents some physical quantity; the constraints of the physical
-system may provide bounds on the range the variable can take.
-\subsection{Small Constant Multiplications}
-
-One other class of optimizations that can be done is to replace
-multiplications by small integer constants into some combination of
-additions and shifts.  Addition and shifting can be significantly faster
-than multiplication.  This is done by using some combination of
-\begin{eqnarray*}
-a_i & = & a_j + a_k \\
-a_i & = & 2a_j + a_k \\
-a_i & = & 4a_j + a_k \\
-a_i & = & 8a_j + a_k \\
-a_i & = & a_j - a_k \\
-a_i & = & a_j \ll m \mbox{shift}
-\end{eqnarray*}
-instead of the multiplication.  For example, to multiply $s$ by 10 and store
-the result in $r$, you could use:
-\begin{eqnarray*}
-r & = & 4s + s\\
-r & = & r + r
-\end{eqnarray*}
-Or by 59:
-\begin{eqnarray*}
-t & = & 2s + s \\
-r & = & 2t + s \\
-r & = & 8r + t
-\end{eqnarray*}
-Similar combinations can be found for almost all of the smaller
-integers\footnote{This optimization is only an ``optimization'', of course,
-when the amount of time spent on the shifts and adds is less than the time
-that would be spent doing the multiplication.  Since the time costs of these
-operations are known to the compiler in order for it to do scheduling, it is
-easy for the compiler to determine when this optimization is worth using.}.
-\cite{magenheimer:precision}
-
-\section{Other optimizations}
-
-\subsection{Low-level parallelism}
-
-The current trend is towards duplicating hardware at the lowest level to
-provide parallelism\footnote{This can been seen in the i860; floating point
-additions and multiplications can proceed at the same time, and the RISC
-core be moving data in and out of the floating point registers and providing
-flow control at the same time the floating point units are active. \cite{byte:i860}}
-
-Conceptually, it is easy to take advantage to low-level parallelism in the
-instruction stream by simply adding more functional units to the $\mu$FPU,
-widening the instruction word to control them, and then scheduling as many
-operations to take place at one time as possible.
-
-However, simply adding more functional units can only be done so many times;
-there is only a limited amount of parallelism directly available in the
-instruction stream, and without it, much of the extra resources will go to
-waste.  One process used to make more instructions potentially schedulable
-at any given time is ``trace scheduling''.  This technique originated in the
-Bulldog compiler for the original VLIW machine, the ELI-512.
-\cite{ellis:bulldog,colwell:vliw}  In trace scheduling, code can be
-scheduled through many basic blocks at one time, following a single
-potential ``trace'' of program execution.  In this way, instructions that
-{\em might\/} be executed depending on a conditional branch further down in
-the instruction stream are scheduled, allowing an increase in the potential
-parallelism.  To account for the cases where the expected branch wasn't
-taken, correction code is inserted after the branches to undo the effects of
-any prematurely executed instructions.
-
-\subsection{Pipeline optimizations}
-
-In addition to having operations going on in parallel across functional
-units, it is also typical to have several operations in various stages of
-completion in each unit.  This pipelining allows the throughput of the
-functional units to be increased, with no increase in latency.
-
-There are several ways pipelined operations can be optimized.  On the
-hardware side, support can be added to allow data to be recirculated back
-into the beginning of the pipeline from the end, saving a trip through the
-registers.  On the software side, the compiler can utilize several tricks to
-try to fill up as many of the pipeline delay slots as possible, as
-seendescribed by Gibbons. \cite{gib86}
+\end{description}
