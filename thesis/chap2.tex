@@ -43,8 +43,18 @@ for testing, and because they suits perfectly our scenario.
 %[TODO] describe the various ecosystems, what is an ecosystem etc
 \subsubsection{Google - Nest}
 
-\textbf{Nest} is a home automation producer of smart devices, such
-as thermostats, cameras and alarms.
+\textbf{Nest} is a home automation producer of smart devices
+which ranges from their famous Smart Thermostat to the locking system, from the
+washing machine to the light system, from the \textit{Dropcamera} to the Hi-Fi Sound system,and
+these are just some examples. The number of components supported by this company
+is wide, which makes it a good choice to support in our scenario, also because of
+the high cost of these devices. The main added value given by these accessories is related
+to two main points: saving money with a smart consumption of electricity using data analytics and being
+able to remotely control the house with an easy to use application.
+Besides the commercial value of \textit{Nest}, the platform offers many tools for developers
+to interact with their platform with their Cloud service. Third party developers
+are encouraged, with some limitations, to interact with their Cloud service which
+offers some \textit{RESTful} APIs to gather access to the remote devices.
 
 \subsubsection{Apple - HomeKit}
 \subsubsection{Samsung - SmartThings}
@@ -96,7 +106,8 @@ in all dimensions}.[10]
 %[TODO] IMPROVE!!!!
 Typically when a new component has to be added to an existing
 project the approach consists in the development of a library which
-has the logic to deal with the new module. Subsequently the module will
+has the logic to deal with the new module to be supported. Subsequently the component
+will
 become part of the project itself, with its needs to be updated when needed.
 However when the number of components to integrate increases will affect the size
 of the project and its performances, introducing scalability problems.
@@ -122,6 +133,7 @@ service will need a new deployment. However this is not always true, there will 
 circumstances where it will be necessary anyway to deploy again the whole system, but the
 aim of this approach is to reduce the number of these necessities.
 
+\subsection{Main benefits}
 
 \begin{description}
   \item[Heterogeneity between technologies] Structuring the system as a set
