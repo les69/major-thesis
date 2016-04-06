@@ -49,18 +49,38 @@ washing machine to the light system, from the \textit{Dropcamera} to the Hi-Fi S
 these are just some examples. The number of components supported by this company
 is wide, which makes it a good choice to support in our scenario, also because of
 the high cost of these devices. The main added value given by these accessories is related
-to two main points: saving money with a smart consumption of electricity using data analytics and being
-able to remotely control the house with an easy to use application.
+to two main points: saving money with a smart consumption of electricity and the ability
+to remotely control the house with an easy to use application.
 Besides the commercial value of \textit{Nest}, the platform offers many tools for developers
-to interact with their platform with their Cloud service. Third party developers
-are encouraged, with some limitations, to interact with their Cloud service which
+to interact with their platform using their Cloud service. Third party developers
+are encouraged, with some limitations, to use their Cloud service which
 offers some \textit{RESTful} APIs to gather access to the remote devices.
+The remote access through APIs unlinks developers from platform dependent libraries (see later HomeKit)
+that restricts the use or the integration with a specific technology.
+Furthermore it is possible to access directly \textit{Nest} devices with their \textit{Nest Wave}
+which allows direct communication with non-branded devices using two different communication protocols,
+mainly \textbf{802.11} standards.
+
 
 \subsubsection{Apple - HomeKit}
+
+\textbf{HomeKit} is a very similar ecosystem to the one described before, producing or supporting
+home automation devices. \textit{HomeKit} relies on the large network of Apple devices,
+making it an environment to be considered even if it is relatively new on the market. The key
+point of \textit{HomeKit} is the easy integration with Apple devices, fitting almost perfectly wherever
+there was an already existing Apple ecosystem. Developers are allowed to take control of the devices
+only through iOS applications, restricting the possibilities of integration with different ecosystems or
+technologies. Moreover it ties the developers to their technology making it really hard to be adopted in a different
+system. However as we'll see later it is possible to bypass the problem using the microservice architecture to
+make the system independent from specific technologies.
+
+
 \subsubsection{Samsung - SmartThings}
 
 
 \section{Calvin}
+
+\subsection{The Actor Model}
 
 
 
@@ -150,3 +170,7 @@ aim of this approach is to reduce the number of these necessities.
   or remove our component without any consequence on the rest of the system.
 
 \end{description}
+
+
+\subsection{Microservice Oriented Internet of Things}
+%[TODO] describe here the benefits of introducing the microservice pattern in the IoT

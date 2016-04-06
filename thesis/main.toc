@@ -17,6 +17,7 @@
 \contentsline {section}{\numberline {2.3}The Microservice Architectural Style}{18}
 \contentsline {subsubsection}{SOA vs Microservices}{18}
 \contentsline {subsection}{\numberline {2.3.1}Internal integration}{19}
-\contentsline {subsection}{\numberline {2.3.2}Integration as a Service}{19}
+\contentsline {subsection}{\numberline {2.3.2}Integration as a Service}{20}
+\contentsline {subsection}{\numberline {2.3.3}Main benefits}{21}
 \contentsline {chapter}{\numberline {A}Tables}{23}
 \contentsline {chapter}{\numberline {B}Figures}{25}
