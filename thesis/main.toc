@@ -12,12 +12,15 @@
 \contentsline {subsection}{\numberline {2.1.1}Ecosystems}{17}
 \contentsline {subsubsection}{Google - Nest}{18}
 \contentsline {subsubsection}{Apple - HomeKit}{18}
-\contentsline {subsubsection}{Samsung - SmartThings}{18}
-\contentsline {section}{\numberline {2.2}Calvin}{18}
-\contentsline {section}{\numberline {2.3}The Microservice Architectural Style}{18}
-\contentsline {subsubsection}{SOA vs Microservices}{18}
-\contentsline {subsection}{\numberline {2.3.1}Internal integration}{19}
-\contentsline {subsection}{\numberline {2.3.2}Integration as a Service}{20}
-\contentsline {subsection}{\numberline {2.3.3}Main benefits}{21}
-\contentsline {chapter}{\numberline {A}Tables}{23}
-\contentsline {chapter}{\numberline {B}Figures}{25}
+\contentsline {subsubsection}{Samsung - SmartThings}{19}
+\contentsline {section}{\numberline {2.2}The Microservice Architectural Style}{19}
+\contentsline {subsubsection}{SOA vs Microservices}{19}
+\contentsline {subsection}{\numberline {2.2.1}Internal integration}{21}
+\contentsline {subsection}{\numberline {2.2.2}Integration as a Service}{21}
+\contentsline {subsection}{\numberline {2.2.3}Other benefits}{21}
+\contentsline {subsection}{\numberline {2.2.4}Microservice Oriented Internet of Things}{22}
+\contentsline {section}{\numberline {2.3}Calvin}{22}
+\contentsline {subsection}{\numberline {2.3.1}Describe}{22}
+\contentsline {subsection}{\numberline {2.3.2}The relationship between the Actor Model and Microservices}{23}
+\contentsline {chapter}{\numberline {A}Tables}{25}
+\contentsline {chapter}{\numberline {B}Figures}{27}

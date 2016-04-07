@@ -77,11 +77,12 @@ make the system independent from specific technologies.
 
 \subsubsection{Samsung - SmartThings}
 
-
-\section{Calvin}
-
-\subsection{The Actor Model}
-
+\textbf{SmartThings} is another ecosystem from \textit{Samsungs} with many similarities
+with the former producers.\textit{SmartThings} focuses on four main Smart devices categories:
+\textit{Security},\textit{Monitoring}, \textit{Lighting and Energy} and \textit{Convenience and Entertainment}.
+\textit{SmartThings} as the previous ecosystem does not allow a direct interaction with the smart devices,
+but offers a developer-friendly interface to their Cloud Service. However, as \textit{HomeKit} it is tied to
+a technology, making it harder for different technology stacks to access.
 
 
 \section{The Microservice Architectural Style}
@@ -123,17 +124,17 @@ in all dimensions}.[10]
 \end{figure}
 
 \subsection{Internal integration}
-%[TODO] IMPROVE!!!!
 Typically when a new component has to be added to an existing
 project the approach consists in the development of a library which
 has the logic to deal with the new module to be supported. Subsequently the component
 will
-become part of the project itself, with its needs to be updated when needed.
-However when the number of components to integrate increases will affect the size
-of the project and its performances, introducing scalability problems.
-In our case the module to be integrated will be the ecosystem taken in consideration,
+become part of the project itself, with its needs to be updated throughout time.
+However when the number of components to integrate increases it will affect the size
+of the project and very likely its performances.
+In our case the component to be integrated will be the ecosystem driver,
 having a set of libraries which are capable of interacting with the remote APIs or
-with the direct wired connections.
+with the direct wired connections. As we'll see in the next paragraph this is a typical
+monolith approach, meanwhile for this situation would be better to use a microservice approach.
 
 \subsection{Integration as a Service}
 Considering the \textit{Microservice} architectural pattern we can decompose
@@ -153,7 +154,9 @@ service will need a new deployment. However this is not always true, there will 
 circumstances where it will be necessary anyway to deploy again the whole system, but the
 aim of this approach is to reduce the number of these necessities.
 
-\subsection{Main benefits}
+\subsection{Other benefits}
+Apart from the benefits already listed formerly, there are other benefits introduced by
+adopting the microservice architecture:
 
 \begin{description}
   \item[Heterogeneity between technologies] Structuring the system as a set
@@ -161,16 +164,64 @@ aim of this approach is to reduce the number of these necessities.
   us to adopt different frameworks for different tasks. This benefits on the
   possible optimization that can be achieved using the right technology for the
   right task. Furthermore this removes completely the problem of creating adapters
-  for different technologies to integrate in the system if they do not exist.
-  \item[Evolutionary Design] is a typical feature of microservice
-  architecture where components can be easily upgraded or redeployed.
-  Decomposing the system as a set of many independent components allows us
-  to upgrade a service without affecting the core components and redeploying
-  the whole project. This allows us to upgrade, use different technologies, modify
-  or remove our component without any consequence on the rest of the system.
+  for different technologies to integrate in the system if they do not exist. This is
+  also called \textbf{Decentralized Governance}.
+  \item[Evolutionary Design] is a concept popularized by the \textit{Extreme Programming},
+  where the system is continuously evolving during the phases of it's development.
+  This key feature makes possible to evolve adopting a microservice architecture while
+  keeping the old legacy monolith system, well tested and functional, without rewriting
+  the whole system.
+  \item[Designed for failure] Building a system made of services instead of components
+  leads the developers to take more effort in considering failures. Developers have
+  to take in consideration the possible failure while reaching the service, and
+  prevent the system to crash and handle the situation in the most gentle way. On the
+  other side, this approach introduces more overhead to handle the possible situations.
+
 
 \end{description}
 
 
 \subsection{Microservice Oriented Internet of Things}
 %[TODO] describe here the benefits of introducing the microservice pattern in the IoT
+
+
+\section{Calvin}
+\textit{Calvin} is an Open-Source distributed framework designed mainly, but not only,
+for IoT systems. The key point of \textit{Calvin} is the "Distributed cloud for IoT", meaning
+running the code where it best suits the performance needs, a crucial aspect since we are
+dealing with low-resource components.
+\textit{Calvin} is built upon the well-established actor model, using a methodology often referred to as dataflow programming[11], and
+its life cycle can be summarized in four, well-distinct, phases: \textit{Describe}, \textit{Connect}, \textit{Manage}
+and \textit{Deploy}.
+
+\subsection{Describe}
+  The smallest functional units in \textit{Calvin} is an Actor. Actors do not share
+  nor state or behavior, encapsulating all the logic. The key point of Actors in Calvin
+  is their reactivity: they react to external events or when receiving inputs. Actors
+  communicates only using data through ports, has to be defined before deploying the system.
+  This way is possible to describe the possible interactions that the actor may have when
+  connecting it to others.\\
+  Having a non-shared internal state allow the Actor to be serialized and moved to another
+  running machine or to be backed up if the machine crashes. However this is partly true because
+  it may be tricky to serialize Actors with a very complex internal state.
+
+  \begin{figure}[h]
+  \caption{Describe Phase}
+  \centering
+  \includegraphics[scale=0.75]{calvin1.png}
+  \end{figure}
+
+
+
+
+\subsection{The relationship between the Actor Model and Microservices}
+Actors are isolated, single-threaded components that encapsulates both state and behavior.
+Typically actors communicates using lightweight direct messaging systems, for example
+to receive or return inputs/parameters. Microservices are very similar to Actors in many
+of their key aspects, such as isolation, encapsulation and lightweight messaging, though
+usually microservices uses RESTful interfaces. There is some discussion
+in the community whether some argues that actors are actually microservices
+themselves [12] meanwhile others defines actors as a subset of microservices[13].
+This however heavily depends on the actors framework adopted for the situation, which in our
+case an Actor can not be compared to a microservice due to an insight limitation: \textbf{Calvin Actors can not
+use different technologies}, at the moment.
