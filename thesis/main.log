@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.30)  7 APR 2016 16:50
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.30)  8 APR 2016 16:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -491,22 +491,22 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 2.
-)
-\tf@toc=\write3
-\openout3 = `main.toc'.
-
  [5
 
 
 
-] [6
+])
+\tf@toc=\write3
+\openout3 = `main.toc'.
 
-] (./main.lof)
+ [6] (./main.lof)
 \tf@lof=\write4
 \openout4 = `main.lof'.
 
 
-[7] [8
+[7
+
+] [8
 
 ] (./main.lot)
 \tf@lot=\write5
@@ -556,57 +556,92 @@ Overfull \hbox (24.0889pt too wide) in paragraph at lines 123--124
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20 <./soavsmicro.png>] [21] [22] <calvin1.png, id=87, 256.96pt x 301.125pt>
-File: calvin1.png Graphic file (type png)
+ [20 <./soavsmicro.png>] [21] <calvin4.png, id=84, 256.96pt x 301.125pt>
+File: calvin4.png Graphic file (type png)
 
-<use calvin1.png>
-Package pdftex.def Info: calvin1.png used on input line 211.
+<use calvin4.png>
+Package pdftex.def Info: calvin4.png used on input line 204.
 (pdftex.def)             Requested size: 192.71951pt x 225.84319pt.
-) [23 <./calvin1.png>]
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[22] <calvin1.png, id=88, 256.96pt x 301.125pt>
+File: calvin1.png Graphic file (type png)
+ <use calvin1.png>
+Package pdftex.def Info: calvin1.png used on input line 230.
+(pdftex.def)             Requested size: 192.71951pt x 225.84319pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<calvin2.png, id=89, 301.125pt x 97.36375pt>
+File: calvin2.png Graphic file (type png)
+ <use calvin2.png>
+Package pdftex.def Info: calvin2.png used on input line 240.
+(pdftex.def)             Requested size: 225.84319pt x 73.02261pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[23 <./calvin4.png>] <calvin3.png, id=94, 262.9825pt x 301.125pt>
+File: calvin3.png Graphic file (type png)
+
+<use calvin3.png>
+Package pdftex.def Info: calvin3.png used on input line 261.
+(pdftex.def)             Requested size: 197.23637pt x 225.84319pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[24 <./calvin1.png> <./calvin2.png>]) [25 <./calvin3.png>] [26]
 \openout2 = `appa.aux'.
 
- (./appa.tex [24
-
-
-
-]
+ (./appa.tex
 Appendix A.
-[25])
+[27
+
+
+
+])
 \openout2 = `appb.aux'.
 
- (./appb.tex [26
+ (./appb.tex [28
 
 
 
 
 ]
 Appendix B.
-[27] [28])
+[29] [30])
 \openout2 = `biblio.aux'.
 
  (./biblio.tex
 No file main.bbl.
 ) (./main.aux (./cover.aux) (./contents.aux) (./chap1.aux) (./chap2.aux)
-(./appa.aux) (./appb.aux) (./biblio.aux)) ) 
+(./appa.aux) (./appb.aux) (./biblio.aux))
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 2374 strings out of 493304
- 31354 string characters out of 6139871
- 89808 words of memory out of 5000000
- 5682 multiletter control sequences out of 15000+600000
+ 2392 strings out of 493304
+ 31629 string characters out of 6139871
+ 89841 words of memory out of 5000000
+ 5697 multiletter control sequences out of 15000+600000
  57562 words of font info for 40 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  37i,7n,23p,243b,253s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm
-/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf
-/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx1
-2.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fon
-ts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb>
-</usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type
-1/public/lm/lmsy10.pfb>
-Output written on main.pdf (28 pages, 368430 bytes).
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
+ips/lm/lm-mathsy.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/publi
+c/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/
+texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/l
+mri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
+Output written on main.pdf (30 pages, 474350 bytes).
 PDF statistics:
- 134 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
+ 146 PDF objects out of 1000 (max. 8388607)
+ 91 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

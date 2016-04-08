@@ -20,7 +20,10 @@
 \contentsline {subsection}{\numberline {2.2.3}Other benefits}{21}
 \contentsline {subsection}{\numberline {2.2.4}Microservice Oriented Internet of Things}{22}
 \contentsline {section}{\numberline {2.3}Calvin}{22}
-\contentsline {subsection}{\numberline {2.3.1}Describe}{22}
-\contentsline {subsection}{\numberline {2.3.2}The relationship between the Actor Model and Microservices}{23}
-\contentsline {chapter}{\numberline {A}Tables}{25}
-\contentsline {chapter}{\numberline {B}Figures}{27}
+\contentsline {subsection}{\numberline {2.3.1}Describe}{23}
+\contentsline {subsection}{\numberline {2.3.2}Connect}{23}
+\contentsline {subsection}{\numberline {2.3.3}Deploy}{24}
+\contentsline {subsection}{\numberline {2.3.4}Manage}{25}
+\contentsline {subsection}{\numberline {2.3.5}The relationship between the Actor Model and Microservices}{25}
+\contentsline {chapter}{\numberline {A}Tables}{27}
+\contentsline {chapter}{\numberline {B}Figures}{29}

@@ -186,13 +186,32 @@ adopting the microservice architecture:
 
 
 \section{Calvin}
-\textit{Calvin} is an Open-Source distributed framework designed mainly, but not only,
-for IoT systems. The key point of \textit{Calvin} is the "Distributed cloud for IoT", meaning
-running the code where it best suits the performance needs, a crucial aspect since we are
-dealing with low-resource components.
-\textit{Calvin} is built upon the well-established actor model, using a methodology often referred to as dataflow programming[11], and
-its life cycle can be summarized in four, well-distinct, phases: \textit{Describe}, \textit{Connect}, \textit{Manage}
-and \textit{Deploy}.
+  \textit{Calvin} is an Open-Source distributed framework designed mainly, but not only,
+  for IoT systems. The key point of \textit{Calvin} is the "Distributed cloud for IoT", meaning
+  running the code where it best suits the performance needs, a crucial aspect since we are
+  dealing with low-resource components. We will use \textit{Calvin} for the whole course of the document,
+  referring to it as the main "system", also used to integrate with the others. \\
+  \textit{Calvin} has the ability to integrate new components without replacing them by writing
+  proxies for the specific hardware to support. Proxies are actors written to handle
+  communication with the legacy system. Such a proxy actor handles the task of converting data
+  from the application into messages or requests the old system can handle, and converting the
+  response back into tokens the Calvin application understands.[14]
+
+        \begin{figure}[h]
+        \caption{Proxies interaction}
+        \label{fig:calvinproxy}
+        \centering
+        \includegraphics[scale=0.75]{calvin4.png}
+        \end{figure}
+  Figure \ref{fig:calvinproxy} shows the interaction of native Actors and Actors which
+  acts as a proxy for legacy components, in this example the camera.
+
+
+
+
+  \textit{Calvin} is built upon the well-established actor model, using a methodology often referred to as dataflow programming[11], and
+  its life cycle can be summarized in four, well-distinct, phases: \textit{Describe}, \textit{Connect}, \textit{Manage}
+  and \textit{Deploy}.
 
 \subsection{Describe}
   The smallest functional units in \textit{Calvin} is an Actor. Actors do not share
@@ -212,7 +231,59 @@ and \textit{Deploy}.
   \end{figure}
 
 
+\subsection{Connect}
 
+    \begin{figure}[h]
+    \caption{CalvinScript Example}
+    \label{fig:calvinscript}
+    \centering
+    \includegraphics[scale=0.75]{calvin2.png}
+    \end{figure}
+
+  After describing the many functionalities provided by the various Actors in the system
+  we need to tie them to build applications. \textit{Calvin} offer a scripting language,
+  named \textbf{CalvinScript}, to describe the various connections between actors
+  and their input and output ports. In figure \ref{fig:calvinscript} there is an example
+  of a script for detecting faces in an image. The first part is relative to the actors declaration
+  and initialization, giving a clear description of which actors will be playing in the current
+  environment. The second part describes the links between each actors, structuring the flow
+  of the process. In this case the actors in the system are 3: the \textit{Camera}, the \textit{Detector}
+  and the \textit{Alert}. The flow of the process is relatively simple in this case, and it is structured
+  as follows: the  \textit{Camera} takes a picture, which will be passed to the \textit{Detector}. Subsequently
+  the \textit{Detector} will send its result to the \textit{Alert} actor, which will possibly fire an "alarm" if he
+  detects any human face inside the picture.\\
+  Figure \ref{fig:calvinactors} shows a more complex interaction between actors. %%[TODO] maybe add something here about the picture
+
+  \begin{figure}[h]
+  \caption{Actors interaction}
+  \label{fig:calvinactors}
+  \centering
+  \includegraphics[scale=0.75]{calvin3.png}
+  \end{figure}
+
+
+
+\subsection{Deploy}
+
+  Each Actor has different resource requirements needs to be satisfied in order to be
+  deployed successfully. For example, referring to the previous scenario, an actor
+  using a camera needs to be deployed on a system where there actually is a camera. These
+  are also called \textit{hard} or \textit{unconditional requirements}, which determines
+  the possibility to instantiate or migrate the actor on a machine. \\
+  On the other side there are also \textit{non-functional requirements}, describing where
+  an actor would suit best for its task. Always referring to the former example, when applying
+  face detection it would be better to perform this task on a more performing machine compared to
+  a low-resource machine, like a \textit{Raspberry Pi}.\\
+  However at the moment \textit{Calvin} supports only \textit{static deployment}, needing the user
+  to define where to deploy and execute the actors.
+
+\subsection{Manage}
+  When the whole runtime is running it is more than needed to have a tool to keep
+  track and monitor the activities in the system. The runtime can be queried to retrieve
+  informations about the actors and locate them. It is also possible to track
+  the actors firings, on which ports and step by step execution. These are mainly
+  debugging tools, though it is also true that this is a recent framework and many
+  functionalities are already in development.
 
 \subsection{The relationship between the Actor Model and Microservices}
 Actors are isolated, single-threaded components that encapsulates both state and behavior.

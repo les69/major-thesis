@@ -1,8 +1,11 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2-1}{\ignorespaces Graphic illustration of microservices and SOA}}{20}
-\contentsline {figure}{\numberline {2-2}{\ignorespaces Describe Phase}}{23}
+\contentsline {figure}{\numberline {2-2}{\ignorespaces Proxies interaction}}{23}
+\contentsline {figure}{\numberline {2-3}{\ignorespaces Describe Phase}}{24}
+\contentsline {figure}{\numberline {2-4}{\ignorespaces CalvinScript Example}}{24}
+\contentsline {figure}{\numberline {2-5}{\ignorespaces Actors interaction}}{25}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B-1}{\ignorespaces Armadillo slaying lawyer.}}{27}
-\contentsline {figure}{\numberline {B-2}{\ignorespaces Armadillo eradicating national debt.}}{28}
+\contentsline {figure}{\numberline {B-1}{\ignorespaces Armadillo slaying lawyer.}}{29}
+\contentsline {figure}{\numberline {B-2}{\ignorespaces Armadillo eradicating national debt.}}{30}
