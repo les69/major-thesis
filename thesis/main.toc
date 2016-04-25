@@ -1,29 +1,29 @@
 \contentsline {chapter}{\numberline {1}Introduction}{11}
 \contentsline {section}{\numberline {1.1}Motivations}{11}
 \contentsline {section}{\numberline {1.2}The Scenario}{12}
-\contentsline {section}{\numberline {1.3}Microservices and IoT}{13}
+\contentsline {section}{\numberline {1.3}Microservices and IoT}{12}
 \contentsline {subsection}{\numberline {1.3.1}M2M: Machine to Machine}{13}
 \contentsline {subsection}{\numberline {1.3.2}A RESTful interface}{13}
-\contentsline {section}{\numberline {1.4}The power of Social Networks}{14}
-\contentsline {section}{\numberline {1.5}False positives}{15}
-\contentsline {subsection}{\numberline {1.5.1}Approaches}{15}
+\contentsline {section}{\numberline {1.4}The power of Social Networks}{13}
+\contentsline {section}{\numberline {1.5}False positives}{14}
+\contentsline {subsection}{\numberline {1.5.1}Approaches}{14}
 \contentsline {chapter}{\numberline {2}Literature}{17}
 \contentsline {section}{\numberline {2.1}Internet of Things}{17}
 \contentsline {subsection}{\numberline {2.1.1}Ecosystems}{17}
 \contentsline {subsubsection}{Google - Nest}{18}
 \contentsline {subsubsection}{Apple - HomeKit}{18}
-\contentsline {subsubsection}{Samsung - SmartThings}{19}
+\contentsline {subsubsection}{Samsung - SmartThings}{18}
 \contentsline {section}{\numberline {2.2}The Microservice Architectural Style}{19}
 \contentsline {subsubsection}{SOA vs Microservices}{19}
-\contentsline {subsection}{\numberline {2.2.1}Internal integration}{21}
-\contentsline {subsection}{\numberline {2.2.2}Integration as a Service}{21}
+\contentsline {subsection}{\numberline {2.2.1}Internal integration}{19}
+\contentsline {subsection}{\numberline {2.2.2}Integration as a Service}{20}
 \contentsline {subsection}{\numberline {2.2.3}Other benefits}{21}
-\contentsline {subsection}{\numberline {2.2.4}Microservice Oriented Internet of Things}{22}
+\contentsline {subsection}{\numberline {2.2.4}Microservice Oriented Internet of Things}{21}
 \contentsline {section}{\numberline {2.3}Calvin}{22}
-\contentsline {subsection}{\numberline {2.3.1}Describe}{23}
+\contentsline {subsection}{\numberline {2.3.1}Describe}{22}
 \contentsline {subsection}{\numberline {2.3.2}Connect}{23}
 \contentsline {subsection}{\numberline {2.3.3}Deploy}{24}
-\contentsline {subsection}{\numberline {2.3.4}Manage}{25}
+\contentsline {subsection}{\numberline {2.3.4}Manage}{24}
 \contentsline {subsection}{\numberline {2.3.5}The relationship between the Actor Model and Microservices}{25}
 \contentsline {chapter}{\numberline {A}Tables}{27}
 \contentsline {chapter}{\numberline {B}Figures}{29}

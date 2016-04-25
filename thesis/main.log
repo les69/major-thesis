@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.30)  8 APR 2016 16:29
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.30)  12 APR 2016 15:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -344,19 +344,19 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (./biblio.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 50.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
+LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 52.
  (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -425,19 +425,12 @@ e
 
 
 (./cover.tex
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 92.
- (/usr/share/texmf/tex/latex/lm/omslmr.fd
-File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 92.
-
-
-(/usr/share/texmf/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 92.
-<<oms.cmap>>
+! Undefined control sequence.
+\maketitle ...\@degreeyear \par \@copyrightnotice 
+                                                  \par \vskip 3\baselineskip...
+l.92 \maketitle
+               
+? 
 ! Undefined control sequence.
 <argument> \@chairmanname 
                           \\ \@chairmantitle 
@@ -479,6 +472,11 @@ LaTeX Font Info:    Try loading font information for OML+lmm on input line 2.
  (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )<<oml.cmap>>
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 2.
+
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)<<oms.cmap>>
 LaTeX Font Info:    Try loading font information for OMX+lmex on input line 2.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
@@ -491,22 +489,22 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 2.
+)
+\tf@toc=\write3
+\openout3 = `main.toc'.
+
  [5
 
 
 
-])
-\tf@toc=\write3
-\openout3 = `main.toc'.
+] [6
 
- [6] (./main.lof)
+] (./main.lof)
 \tf@lof=\write4
 \openout4 = `main.lof'.
 
 
-[7
-
-] [8
+[7] [8
 
 ] (./main.lot)
 \tf@lot=\write5
@@ -526,26 +524,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--16
 
  []
 
-[11]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[11] [12]
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 115.
 
- [12]
+ (/usr/share/texmf/tex/latex/lm/omslmr.fd
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 115.
-
-[13] [14] [15]) [16]
+ [13] [14]) [15]
 \openout2 = `chap2.aux'.
 
- (./chap2.tex
+
+(./chap2.tex [16
+
+
+
+]
 Chapter 2.
-[17
-
-
-
-] [18] [19] <soavsmicro.png, id=75, 457.71pt x 344.28625pt>
+[17] [18] <soavsmicro.png, id=71, 457.71pt x 344.28625pt>
 File: soavsmicro.png Graphic file (type png)
-
-<use soavsmicro.png>
+ <use soavsmicro.png>
 Package pdftex.def Info: soavsmicro.png used on input line 123.
 (pdftex.def)             Requested size: 457.7089pt x 344.2854pt.
 
@@ -554,56 +553,43 @@ Overfull \hbox (24.0889pt too wide) in paragraph at lines 123--124
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Warning: `h' float specifier changed to `ht'.
 
- [20 <./soavsmicro.png>] [21] <calvin4.png, id=84, 256.96pt x 301.125pt>
+[19] [20 <./soavsmicro.png>] [21] <calvin4.png, id=84, 256.96pt x 301.125pt>
 File: calvin4.png Graphic file (type png)
 
 <use calvin4.png>
-Package pdftex.def Info: calvin4.png used on input line 204.
+Package pdftex.def Info: calvin4.png used on input line 214.
 (pdftex.def)             Requested size: 192.71951pt x 225.84319pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[22] <calvin1.png, id=88, 256.96pt x 301.125pt>
+ [22 <./calvin4.png>]
+<calvin1.png, id=89, 256.96pt x 301.125pt>
 File: calvin1.png Graphic file (type png)
  <use calvin1.png>
-Package pdftex.def Info: calvin1.png used on input line 230.
+Package pdftex.def Info: calvin1.png used on input line 240.
 (pdftex.def)             Requested size: 192.71951pt x 225.84319pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<calvin2.png, id=89, 301.125pt x 97.36375pt>
+<calvin2.png, id=90, 301.125pt x 97.36375pt>
 File: calvin2.png Graphic file (type png)
  <use calvin2.png>
-Package pdftex.def Info: calvin2.png used on input line 240.
+Package pdftex.def Info: calvin2.png used on input line 250.
 (pdftex.def)             Requested size: 225.84319pt x 73.02261pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[23 <./calvin4.png>] <calvin3.png, id=94, 262.9825pt x 301.125pt>
+ [23 <./calvin1.png> <./calvin2.png>] <calvin3.png, id=96, 262.9825pt x 301.125
+pt>
 File: calvin3.png Graphic file (type png)
 
 <use calvin3.png>
-Package pdftex.def Info: calvin3.png used on input line 261.
+Package pdftex.def Info: calvin3.png used on input line 271.
 (pdftex.def)             Requested size: 197.23637pt x 225.84319pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[24 <./calvin1.png> <./calvin2.png>]) [25 <./calvin3.png>] [26]
+) [24 <./calvin3.png>] [25]
 \openout2 = `appa.aux'.
 
- (./appa.tex
+ (./appa.tex [26
+
+
+
+]
 Appendix A.
-[27
-
-
-
-])
+[27])
 \openout2 = `appb.aux'.
 
  (./appb.tex [28
@@ -623,22 +609,26 @@ No file main.bbl.
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
- ) 
+ )
+(\end occurred inside a group at level 1)
+
+### semi simple group (level 1) entered at line 39 (\begingroup)
+### bottom level 
 Here is how much of TeX's memory you used:
- 2392 strings out of 493304
- 31629 string characters out of 6139871
- 89841 words of memory out of 5000000
- 5697 multiletter control sequences out of 15000+600000
- 57562 words of font info for 40 fonts, out of 8000000 for 9000
+ 2387 strings out of 493304
+ 31558 string characters out of 6139871
+ 91637 words of memory out of 5000000
+ 5693 multiletter control sequences out of 15000+600000
+ 57259 words of font info for 39 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 37i,7n,23p,243b,253s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
-ips/lm/lm-mathsy.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/publi
-c/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/
-texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/l
-mri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on main.pdf (30 pages, 474350 bytes).
+ 37i,7n,23p,243b,975s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/
+texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx
+10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fon
+ts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
+Output written on main.pdf (30 pages, 478009 bytes).
 PDF statistics:
  146 PDF objects out of 1000 (max. 8388607)
  91 compressed objects within 1 object stream
