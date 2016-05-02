@@ -7,7 +7,7 @@
 \contentsline {section}{\numberline {1.4}The power of Social Networks}{13}
 \contentsline {section}{\numberline {1.5}False positives}{14}
 \contentsline {subsection}{\numberline {1.5.1}Approaches}{14}
-\contentsline {chapter}{\numberline {2}Literature}{17}
+\contentsline {chapter}{\numberline {2}State of the Art}{17}
 \contentsline {section}{\numberline {2.1}Internet of Things}{17}
 \contentsline {subsection}{\numberline {2.1.1}Ecosystems}{17}
 \contentsline {subsubsection}{Google - Nest}{18}
@@ -20,10 +20,25 @@
 \contentsline {subsection}{\numberline {2.2.3}Other benefits}{21}
 \contentsline {subsection}{\numberline {2.2.4}Microservice Oriented Internet of Things}{21}
 \contentsline {section}{\numberline {2.3}Calvin}{22}
-\contentsline {subsection}{\numberline {2.3.1}Describe}{22}
+\contentsline {subsection}{\numberline {2.3.1}Describe}{23}
 \contentsline {subsection}{\numberline {2.3.2}Connect}{23}
 \contentsline {subsection}{\numberline {2.3.3}Deploy}{24}
-\contentsline {subsection}{\numberline {2.3.4}Manage}{24}
+\contentsline {subsection}{\numberline {2.3.4}Manage}{25}
 \contentsline {subsection}{\numberline {2.3.5}The relationship between the Actor Model and Microservices}{25}
-\contentsline {chapter}{\numberline {A}Tables}{27}
-\contentsline {chapter}{\numberline {B}Figures}{29}
+\contentsline {chapter}{\numberline {3}Detecting Intruders}{27}
+\contentsline {section}{\numberline {3.1}Preface}{27}
+\contentsline {section}{\numberline {3.2}Fingerprinting a Human}{27}
+\contentsline {subsection}{\numberline {3.2.1}Behavioral biometrics}{27}
+\contentsline {section}{\numberline {3.3}Expanding the system}{28}
+\contentsline {section}{\numberline {3.4}The Architecture}{28}
+\contentsline {subsection}{\numberline {3.4.1}Accessing different systems}{28}
+\contentsline {section}{\numberline {3.5}Accessing Nest}{29}
+\contentsline {subsection}{\numberline {3.5.1}Nest API Model}{29}
+\contentsline {subsubsection}{Nest Thermostat}{29}
+\contentsline {subsubsection}{Nest Protect}{30}
+\contentsline {subsubsection}{Nest Camera}{30}
+\contentsline {subsection}{\numberline {3.5.2}Nest with Calvin}{31}
+\contentsline {subsubsection}{Device Abstraction}{31}
+\contentsline {subsection}{\numberline {3.5.3}Accessing HomeKit}{32}
+\contentsline {chapter}{\numberline {A}Tables}{33}
+\contentsline {chapter}{\numberline {B}Figures}{35}
