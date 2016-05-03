@@ -220,24 +220,111 @@ An example guard condition can be written as:
 \begin{verbatim}
     @guard(lambda self: self.nest._in_progress is None and self.operation == "set")
 \end{verbatim}
-This guard condition is used to enter the function only when the \textit{nest} object is not still
+This guard condition is used to enter the function only when the \textit{nest} object is not
 working on an asynchronous task and the operation has to be the \textit{set} operation.\\
 One of the constraints that an actor has to follow is the \textbf{reactivity}, which implies
 non-blocking calls in the body of its functions. However, as in our case, the actor will have to
 make some calls to the \textit{Nest} cloud, which is a blocking call. This is reached
 using a two step asynchronous system: first the value is acquired and the actor
 will delegate the request to a different thread; second when the delegate terminates it will
-modify a flag to mark its completition, at that point the actor will return the value obtained
-from the nest cloud.
+modify a flag to mark its completion, at that point the actor will return the value obtained
+from the nest cloud. Asynchronous calls are needed since the scheduler loop can't be blocked
+during the execution otherwise it would break the reactivity of the other actors.
+
+\subsection{A Microservice Oriented approach}
+
+Despite of the correctness of the former solution, it does however contains some
+flaws in the architecture. The solution works with under the following circumstances:
+
+\begin{enumerate}
+    \item Libraries for connecting to a different ecosystem are provided in the same language (e.g. \textit{Python}).
+    \item We assume the actor does never crash, and if it does the system may crash subsequently.
+    \item The integration library won't require any change or modification in the future.
+\end{enumerate}
+
+However these assumptions are too risky to be considered for an always running system, because the likeliness
+of one of the above problems to happen is very high.\\
+To face these problems we adopted a \textbf{microservice} architecture style to implement the integration with
+other ecosystems. In the case of \textit{Nest} is not very significative but it will be much more for \textit{HomeKit}, as
+we'll see later.
+
+\subsubsection{Microservice Architecture}
 
 
+\begin{figure}[h]
+\caption{Microservice Integration architecture}
+\label{fig:test-arch}
+\centering
+\includegraphics[scale=0.65]{test-arch.png}
+\end{figure}
 
+Figure \ref{fig:test-arch} illustrates the architecture proposed in our solution.
+All the microservices can be reached through a router service, which doesn't expose
+the real location of each service. This approach moves the service finding logic outside
+of \textit{Calvin}, simplifying the work of the actor who won't have to deal with possible
+re-deployments or re-locations of the service, it will just need to know where to reach the
+routing service. This task will be deferred to the \textit{routing} service, which will act
+as a proxy to the other micro-services.\\
+Each ecosystem has a microservice dedicated, this is due to the different internal structure of the
+different technologies. For example \textit{HomeKit} uses a hierarchical structure divided in the following,
+from above to the bottom: \textbf{HMHome}, \textbf{HMRoom}, \textbf{HMAccessory}, \textbf{HMService} and \textbf{HMCharacteristic}.
+Which differs from the simpler one of \textit{Nest}, where there are mostly Structures and Devices.\\
+Moreover structuring the integration with ecosystems introduces the capability to link more accounts, more devices,
+to the \textit{Calvin} runtime.
 
+\subsubsection{The microservice API}
 
+The API to describe the connection between \textit{Nest} and the microservice
+resembles the former actor structure.
+Following the classic \textit{RESTful} style, to access a device will look like
+\begin{verbatim}
+    Url
+    GET /device/<deviceid>
 
+    Example Response
+    {"device":
+        {
+        "name": "DFF9", "temperature": 37, "humidity": 50, "fan": false,
+        "mode": "heat", "online": false, "serial": "fake9396122EDFF9",
+        "where": "basement","structure": "HomeTest", "target": 25
+        }
+    }
+
+    [TODO] add all the other calls
+\end{verbatim}
 
 
 
 
 
 \subsection{Accessing HomeKit}
+
+\textit{HomeKit}, introduced in details in the previous chapter, is the other ecosystem
+for which we are extending \textit{Calvin} integration. First of all, HomeKit doesn't
+expose any cloud API, it's functionalities can be accessed only through their \textbf{HomeKit.framework},
+a library available only for \textit{iOS}. As can be seen the limitations compared to Nest
+are much more strict, which implies no direct integration. The only possible solution for the
+moment is to have an \textit{HTTP} web server exposing HomeKit functionalities to the outside of
+the world. As previously mentioned, their library is not available on both \textbf{Mac OS X} nor
+the Apple TV \textbf{tvOS}, which means the only possible approach is a mobile application.
+However it is predicted to be supported by the former OS in the future, on which would be a more
+elegant and nicer solution.\\
+
+\subsubsection{Understanding}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{lol}
+The answer is 42

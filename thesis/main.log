@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.12)  2 MAY 2016 16:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.12)  3 MAY 2016 19:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -653,26 +653,39 @@ Overfull \hbox (43.52489pt too wide) in paragraph at lines 222--222
  self.operation == "set")[] 
  []
 
-) [32]
+[32] <test-arch.png, id=129, 581.17125pt x 418.56375pt>
+File: test-arch.png Graphic file (type png)
+ <use test-arch.png>
+Package pdftex.def Info: test-arch.png used on input line 258.
+(pdftex.def)             Requested size: 377.75684pt x 272.0632pt.
+
+Underfull \vbox (badness 3965) has occurred while \output is active []
+
+ [33 <./test-arch.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 302--312
+
+ []
+
+) [34]
 \openout2 = `appa.aux'.
 
  (./appa.tex
 Appendix A.
-[33
+[35
 
 
 
 ])
 \openout2 = `appb.aux'.
 
- (./appb.tex [34
+ (./appb.tex [36
 
 
 
 
 ]
 Appendix B.
-[35] [36])
+[37] [38])
 \openout2 = `biblio.aux'.
 
  (./biblio.tex
@@ -684,13 +697,13 @@ No file main.bbl.
 ### semi simple group (level 1) entered at line 42 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 3829 strings out of 493089
- 52865 string characters out of 6134842
+ 3835 strings out of 493089
+ 52964 string characters out of 6134842
  128014 words of memory out of 5000000
- 7131 multiletter control sequences out of 15000+600000
+ 7136 multiletter control sequences out of 15000+600000
  57578 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,7n,40p,243b,1157s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,7n,40p,243b,1159s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ec.en
 c}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/lo
 cal/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texliv
@@ -700,10 +713,10 @@ onts/type1/public/lm/lmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
 public/lm/lmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/l
 mri10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (36 pages, 564596 bytes).
+Output written on main.pdf (38 pages, 595799 bytes).
 PDF statistics:
- 171 PDF objects out of 1000 (max. 8388607)
- 107 compressed objects within 2 object streams
+ 181 PDF objects out of 1000 (max. 8388607)
+ 114 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

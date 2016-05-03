@@ -39,6 +39,11 @@
 \contentsline {subsubsection}{Nest Camera}{30}
 \contentsline {subsection}{\numberline {3.5.2}Nest with Calvin}{31}
 \contentsline {subsubsection}{Device Abstraction}{31}
-\contentsline {subsection}{\numberline {3.5.3}Accessing HomeKit}{32}
-\contentsline {chapter}{\numberline {A}Tables}{33}
-\contentsline {chapter}{\numberline {B}Figures}{35}
+\contentsline {subsection}{\numberline {3.5.3}A Microservice Oriented approach}{32}
+\contentsline {subsubsection}{Microservice Architecture}{33}
+\contentsline {subsubsection}{The microservice API}{34}
+\contentsline {subsection}{\numberline {3.5.4}Accessing HomeKit}{34}
+\contentsline {subsubsection}{Understanding}{34}
+\contentsline {subsection}{\numberline {3.5.5}lol}{34}
+\contentsline {chapter}{\numberline {A}Tables}{35}
+\contentsline {chapter}{\numberline {B}Figures}{37}
