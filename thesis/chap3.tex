@@ -296,7 +296,7 @@ Following the classic \textit{RESTful} style, to access a device will look like
 
 
 
-
+\pagebreak
 \subsection{Accessing HomeKit}
 
 \textit{HomeKit}, introduced in details in the previous chapter, is the other ecosystem
@@ -310,7 +310,57 @@ the Apple TV \textbf{tvOS}, which means the only possible approach is a mobile a
 However it is predicted to be supported by the former OS in the future, on which would be a more
 elegant and nicer solution.\\
 
-\subsubsection{Understanding}
+\subsubsection{The Application}
+
+Before entering in the application logic of the solution, is better to review
+some concepts regarding mobile development. Here are some of the architectural
+issue we had to deal with:
+ %%First of all Swift or Objective-C is not
+%%meant for building web services, therefore there are no official libraries for
+%starting and handling HTTP requests. Second, the architecture for mobile applications
+%doesn't fit well with the standard daemon running in the background. Third, the
+%\textit{HomeKit} accessories are accessible only from a specific component, \textit{UIView},
+%which means the server has to be started in one of these views.
+
+
+\begin{enumerate}
+    \item First of all Swift or Objective-C is not
+    meant for building web services, therefore there are no official libraries for
+    starting and handling HTTP requests.
+    \item Second, the architecture for mobile applications
+    doesn't fit well with the standard daemon running in the background.
+    \item Third, the \textit{HomeKit} accessories are accessible only from a
+    specific component, \textit{UIView},which means the server has to be started
+    in one of these views.
+\end{enumerate}
+
+However on the Internet there are many open source solutions, including some HTTP
+servers which also supports url matching. We choose to use \textbf{GCDWebServer}[15], a lightweight
+HTTP server embedded in both \textit{iOS} and \textit{Mac OS X}.
+
+\subsubsection{Grand Central Dispatch}
+
+In order to fully understand how to run a web server on a mobile application we
+have to briefly introduce the \textit{Grand Central Dispatch} (GCD).
+The \textit{Grand Central Dispatch} is a set of tools and libraries made available from
+Apple for developers to handle concurrency in their applications[16]. GCD allows
+developers to create and dispatch objects, which will be deferred to a differed thread
+and queued for concurrent execution.\newline
+GCD provides three different queues on which tasks will be submitted in a form of block object;
+all the submitted blocks are executed on a pool of threads fully managed by the system. The three
+queues are:\pagebreak
+
+\begin{description}
+    \item[Main]: task executed serially on the main application thread;
+    \item[Concurrent]: tasks dequeued following a FIFO policy but executed in parallel;
+    \item[Serial]: Same as before but executed in serial order;
+\end{description}
+
+Dispatching different parts of our system can be very helpful when we need to handle
+a request from a client without locking the main view of the application. In \textbf{GCDWebServer}
+to each handler for the different url paths, there is a block of code assigned to it,
+which will be handled by the GCD.
+
 
 
 

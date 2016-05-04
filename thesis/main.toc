@@ -42,8 +42,9 @@
 \contentsline {subsection}{\numberline {3.5.3}A Microservice Oriented approach}{32}
 \contentsline {subsubsection}{Microservice Architecture}{33}
 \contentsline {subsubsection}{The microservice API}{34}
-\contentsline {subsection}{\numberline {3.5.4}Accessing HomeKit}{34}
-\contentsline {subsubsection}{Understanding}{34}
-\contentsline {subsection}{\numberline {3.5.5}lol}{34}
-\contentsline {chapter}{\numberline {A}Tables}{35}
-\contentsline {chapter}{\numberline {B}Figures}{37}
+\contentsline {subsection}{\numberline {3.5.4}Accessing HomeKit}{35}
+\contentsline {subsubsection}{The Application}{35}
+\contentsline {subsubsection}{Grand Central Dispatch}{35}
+\contentsline {subsection}{\numberline {3.5.5}lol}{36}
+\contentsline {chapter}{\numberline {A}Tables}{37}
+\contentsline {chapter}{\numberline {B}Figures}{39}
