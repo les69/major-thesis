@@ -293,7 +293,6 @@ an environment where new technologies are frequently added or modified.
   debugging tools, though it is also true that this is a recent framework and many
   functionalities are already in development.
 
- %%[TODO] add description of the Calvin layers (actor, calvinsys, runtime)
 
 \subsection{The relationship between the Actor Model and Microservices}
 Actors are isolated, single-threaded components that encapsulates both state and behavior.
@@ -306,3 +305,120 @@ themselves [12] meanwhile others defines actors as a subset of microservices[13]
 This however heavily depends on the actors framework adopted for the situation, which in our
 case an Actor can not be compared to a microservice due to an insight limitation: \textbf{Calvin Actors can not
 use different technologies}, at the moment.
+
+\subsection{Calvin's Three Tier architecture}
+
+Calvin is structured with a three tier architecture: the actor layer, the system layer and the runtime layer.
+Each of them is isolated and can communicate with each other only passing values through the various
+layers. The architecture is summarized in picture \ref{fig:calvinlayers}
+
+\begin{description}
+    \item[Actor Layer] The actor layer is the upper layer which exposes all the actors and their functionalities.
+    Actors can used only the functionalities offered by the lower level calvinsys with no direct access to the runtime
+    system.
+    \item[Calvinsys Layer] Calvinsys is considered the middleware, where all the runtime logic is exposed through
+    high level functions and objects. This layers wraps and uses the functionalities offered by the runtime layer,
+    offering tools for the development of advanced actors.
+    \item[Runtime Layer] the runtime layer is considered the core, in this layer are stored all the low level
+    implementation.In this layer can be found detailed implementations of how to communicate with different kinds
+    of sensors, an asynchronous implementation of HTTP calls for Calvin and etc. Here's the core of all
+    the functionalities adopted by the higher level objects such Actors or middleware libraries.
+\end{description}
+
+\begin{figure}[h]
+\caption{Calvin Architecture}
+\label{fig:calvinlayers}
+\centering
+\includegraphics[scale=0.45]{calvinlayers.png}
+\end{figure}
+
+
+\subsection{Anatomy of an Actor}
+
+As previously introduced Actors are abstract reactive entities which exposes inbound and outbound connections.
+In contemplation of \textit{reactivity} all the actions taken from an actor must be simple, fast and short. Nonetheless
+this optimal situation is hardly achievable in real life, it's usually more common to have blocking calls to services
+in the runtime which require on average more then 1-2 seconds. This limitation can be solved simply moving the logic
+in the runtime towards an asynchronous approach for long time tasks. Typical tasks requiring asynchronous interaction
+can be reading data from a sensor, sending an HTTP request or authenticating into any service, the list is longer but
+can summarize in most of interaction with out of the system objects.\newline
+An actor anatomy can summarized in the following parts:
+\begin{itemize}
+    \item Declaration of the connections
+    \item Initialization and setup
+    \item Migration
+    \item Actions, Guards and Conditions
+
+\end{itemize}
+
+\subsubsection{Declaring the connections}
+
+All the connections of an actor has to be declared a priori, and hence be all used (or allocated)
+when the actor is used. The declaration is done simply adding under a comment the names of the many connections
+and their type: either input/output or both. Here is a simple example of an actor for HTTP GET requests:
+
+\begin{verbatim}
+    Input:
+      URL : URL to get
+      params : Optional parameters to request as a JSON dictionary
+      header: JSON dictionary with headers to include in request
+    Output:
+      status: 200/404/...
+      header: JSON dictionary of incoming headers
+      data : body of request
+\end{verbatim}
+
+In this example we can see the 3 input ports: URL, params and header, which will all be needed to be set
+in order to fire one of the actions, depending on the condition. These inputs can be used
+as a condition parameter using \texttt{action\_input['var\_name']} and \texttt{action\_output['var\_name']}
+for outputs.\\
+However it is very likely that we won't need all these inputs or outputs, specially if they are optional
+like \texttt{params}. For this reason there exists two special actors which will connect to these
+ports without generating tokens or consuming them without doing anything (namely Void and Terminator).
+
+\subsubsection{Initial phase}
+
+The initial phase is denoted by the decorator \texttt{@manage['inputs']}, where all the variables
+are set and the required libraries are loaded. It is possible to pass inputs at instantiation
+time using manage and bypassing the input ports, though this approach is discouraged and
+advised only for particular situations. Furthermore in this phase all the components
+from the \textit{calvinsys} will be loaded for a consequent use during the actor actions.
+
+\subsubsection{Migration}
+
+One of \textit{Calvin's} key feature is the simplicity of migrating actors through the
+different nodes in a cloud system. Migration of the object is achieved using a special function
+\texttt{migrate(self):} to which can be passed the current actor object, and it will be serialized.
+Migrating implies serializing all the current variables which composes the actor's state to be sent, though
+problems may arise if these variable contains complex objects such as connections (e.g. DataBase connection,
+TCP connection etc). When the state will be sent to another machine, this will setup the actor
+passing from the former phase, hence creating a new (almost) identical actor.
+
+\subsubsection{Actions, Guards and Conditions}
+
+The core of an actor are the actions it can perform, but these needs some conditions to bet met
+before being fired (e.g. having a variable set to \texttt{true}). Most of actions are composed of three
+key elements:
+
+\begin{description}
+    \item[Condition] is a mandatory decorator which describes the inbound and outbound connections for the action.
+    Although the name suggests it to be the condition statement to for firing an action, condition is related to the
+    input and output condition of the action. An example of condition for a camera actor can be
+    \texttt{@condition(action\_input=['trigger'], action\_output=['image'])}. In this case our actor when will receive a token
+    on the \texttt{trigger} port will enable the action, but the next decorator will be the definitive check to pass to the action
+    body.
+    \item[Guard]  is an optional decorator, for checking some conditions before passing to the body of the action.
+    Guard is more related to the internal state of the actor instead of the connected ports, thus it's the real condition
+    check to fire the action. Guard can be used to see if a variable has been set or if its value is correct. For example
+    if we want to check that an actor has completed an asynchronous task we can use a guard similar to this one:
+    \texttt{@guard(lambda self: self.camera.picture\_taken)}. In this case \textit{Calvin} will perform an evaluation
+    of one the actor internal objects: it the value is set to \texttt{true}, it means that the picture has been taken and
+    its stream has been saved on the disk (i.e. the file exists). This allow the system to prevent firing actions
+    when the actor may not be ready for it even though the firing connections are set.
+    \item[Action] The action is a simple function which has to take as parameter the inbound values in the condition
+    statement, and return an \texttt{ActionResult} object with the expected output bounded to the outbound values.
+
+\end{description}
+
+Moreover inside the actor the actions has to be listed by priority, to avoid ambiguity
+when choosing with the correct action to fire. 

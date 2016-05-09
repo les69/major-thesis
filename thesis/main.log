@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.12)  4 MAY 2016 15:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.12)  6 MAY 2016 15:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -621,89 +621,109 @@ Package pdftex.def Info: calvin3.png used on input line 269.
 
 Underfull \vbox (badness 2856) has occurred while \output is active []
 
- [24 <./calvin3.png>]) [25]
-\openout2 = `chap3.aux'.
+ [24 <./calvin3.png>] <calvinlayers.png, id=101, 569.12625pt x 631.35875pt>
+File: calvinlayers.png Graphic file (type png)
 
- (./chap3.tex [26
+<use calvinlayers.png>
+Package pdftex.def Info: calvinlayers.png used on input line 332.
+(pdftex.def)             Requested size: 256.10445pt x 284.10881pt.
 
 
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-]
-Chapter 3.
-[27] [28] <nest-architecture.png, id=114, 963.6pt x 443.6575pt>
-File: nest-architecture.png Graphic file (type png)
-
-<use nest-architecture.png>
-Package pdftex.def Info: nest-architecture.png used on input line 113.
-(pdftex.def)             Requested size: 337.26506pt x 155.28244pt.
- [29 <./nest-architecture.png (PNG copy)>] [30]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 185.
+[25] [26 <./calvinlayers.png>]
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 360.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Underfull \hbox (badness 10000) in paragraph at lines 191--195
+) [27]
+Overfull \hbox (36.5292pt too wide) in paragraph at lines 404--410
+\T1/lmr/m/n/10.95 An ex-am-ple of con-di-tion for a cam-era ac-tor can be \T1/l
+mtt/m/n/10.95 @condition(action_input=['trigger'],
+ []
+
+) [28]
+\openout2 = `chap3.aux'.
+
+ (./chap3.tex
+Chapter 3.
+[29
+
+
+
+] [30] <nest-architecture.png, id=122, 963.6pt x 443.6575pt>
+File: nest-architecture.png Graphic file (type png)
+
+<use nest-architecture.png>
+Package pdftex.def Info: nest-architecture.png used on input line 108.
+(pdftex.def)             Requested size: 337.26506pt x 155.28244pt.
+ [31 <./nest-architecture.png (PNG copy)>] [32]
+Underfull \hbox (badness 10000) in paragraph at lines 198--202
 
  []
 
-[31]
-Overfull \hbox (43.52489pt too wide) in paragraph at lines 222--222
+[33]
+Overfull \hbox (43.52489pt too wide) in paragraph at lines 229--229
 []    \T1/lmtt/m/n/10.95 @guard(lambda self: self.nest._in_progress is None and
  self.operation == "set")[] 
  []
 
-[32] <test-arch.png, id=129, 581.17125pt x 418.56375pt>
+[34] <test-arch.png, id=136, 581.17125pt x 418.56375pt>
 File: test-arch.png Graphic file (type png)
  <use test-arch.png>
-Package pdftex.def Info: test-arch.png used on input line 258.
+Package pdftex.def Info: test-arch.png used on input line 265.
 (pdftex.def)             Requested size: 377.75684pt x 272.0632pt.
 
-Underfull \vbox (badness 3965) has occurred while \output is active []
-
- [33 <./test-arch.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [34]
-Underfull \hbox (badness 10000) in paragraph at lines 302--312
+[35 <./test-arch.png>] [36]
+Underfull \hbox (badness 10000) in paragraph at lines 329--339
 
  []
 
-[35]) [36]
+[37] <arch2.png, id=147, 826.08624pt x 316.18124pt>
+File: arch2.png Graphic file (type png)
+ <use arch2.png>
+Package pdftex.def Info: arch2.png used on input line 401.
+(pdftex.def)             Requested size: 413.0421pt x 158.09023pt.
+) [38 <./arch2.png>]
 \openout2 = `appa.aux'.
 
  (./appa.tex
 Appendix A.
-[37
+[39
 
 
 
 ])
 \openout2 = `appb.aux'.
 
- (./appb.tex [38
+ (./appb.tex [40
 
 
 
 
 ]
 Appendix B.
-[39] [40])
+[41] [42])
 \openout2 = `biblio.aux'.
 
  (./biblio.tex
 No file main.bbl.
 ) (./main.aux (./cover.aux) (./contents.aux) (./chap1.aux) (./chap2.aux)
-(./chap3.aux) (./appa.aux) (./appb.aux) (./biblio.aux)) )
+(./chap3.aux) (./appa.aux) (./appb.aux) (./biblio.aux))
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
 (\end occurred inside a group at level 1)
 
 ### semi simple group (level 1) entered at line 42 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 3835 strings out of 493089
- 52964 string characters out of 6134842
+ 3847 strings out of 493089
+ 53163 string characters out of 6134842
  128014 words of memory out of 5000000
- 7136 multiletter control sequences out of 15000+600000
+ 7146 multiletter control sequences out of 15000+600000
  57578 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,7n,40p,243b,1161s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -716,10 +736,10 @@ onts/type1/public/lm/lmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
 public/lm/lmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/l
 mri10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (40 pages, 598689 bytes).
+Output written on main.pdf (42 pages, 680891 bytes).
 PDF statistics:
- 187 PDF objects out of 1000 (max. 8388607)
- 118 compressed objects within 2 object streams
+ 195 PDF objects out of 1000 (max. 8388607)
+ 122 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

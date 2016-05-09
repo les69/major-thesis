@@ -82,8 +82,6 @@ In the following sections we'll describe the approaches taken to solve
 the problem.
 
 
-
-
 \section{Accessing Nest}
 
 As said in the previous section \textit{Nest} has some advantages
@@ -101,11 +99,8 @@ a \textbf{Streaming} feature for REST, which allows our application to receive u
 in real-time or to stream from a device, namely camera, since web-sockets are not supported.
 However it applies the same rule as before, with some limits in the data usage to prevent abuse.
 
-%%[TODO] maybe add some more description or api usage examples
 
-However, the cloud functions of \textit{Nest} are limited to a restricted set of devices:
-Thermostat, Protect (alarm), Camera and the Home.
-Here are the functionalities offered by each of the products, with a brief description:
+
 \begin{figure}[h]
 \caption{Nest Cloud architecture}
 \label{fig:nestarch}
@@ -113,6 +108,18 @@ Here are the functionalities offered by each of the products, with a brief descr
 \includegraphics[scale=0.35]{nest-architecture.png}
 \end{figure}
 
+As can be seen in figure \ref{fig:nestarch}, the only way to access \textit{Nest} devices at the
+moment is only through their cloud system. However this will add many layers of overhead
+and delay due to the various layers, including calling services external to our network. However,
+in the upcoming future it will be also possible to use \textit{Nest Wave}, a direct device
+to device communication through protocols such as BLE or Wi-Fi, moving the integration to a higher
+lever of quality.
+
+
+
+The cloud functions of \textit{Nest} are limited to a restricted set of devices:
+Thermostat, Protect (alarm), Camera and the Home.
+Here are the functionalities offered by each of the products, with a brief description:
 \subsubsection{Nest Thermostat}
 Thermostat, as the name suggests, is a smart thermostat ,which can also be remotely controlled,
 with some energy saving settings to help the user avoiding unnecessary heating expenses.   \\
@@ -278,7 +285,8 @@ The API to describe the connection between \textit{Nest} and the microservice
 resembles the former actor structure.
 Following the classic \textit{RESTful} style, to access a device will look like
 \begin{verbatim}
-    Url
+    1.
+    Show details about device
     GET /device/<deviceid>
 
     Example Response
@@ -290,7 +298,26 @@ Following the classic \textit{RESTful} style, to access a device will look like
         }
     }
 
-    [TODO] add all the other calls
+    2.
+    Show property value of a given device
+    GET /device/<deviceid>/<property>
+
+    { "value": 37 }
+
+    3.
+    List all the devices
+    GET /devices
+
+    {
+       "devices": [
+            "4A32","12DE","DFF9",
+            "18B430AAFAA447E5","18B430AA542D0893",
+            "fakebb555fb772ce405b91729b3c4ac1962b"]}
+    4.
+    Set a value for a specified property of a device
+    PUT /device/<deviceid>/<property>/<value>
+
+    { "success": true }
 \end{verbatim}
 
 
@@ -315,12 +342,6 @@ elegant and nicer solution.\\
 Before entering in the application logic of the solution, is better to review
 some concepts regarding mobile development. Here are some of the architectural
 issue we had to deal with:
- %%First of all Swift or Objective-C is not
-%%meant for building web services, therefore there are no official libraries for
-%starting and handling HTTP requests. Second, the architecture for mobile applications
-%doesn't fit well with the standard daemon running in the background. Third, the
-%\textit{HomeKit} accessories are accessible only from a specific component, \textit{UIView},
-%which means the server has to be started in one of these views.
 
 
 \begin{enumerate}
@@ -362,9 +383,32 @@ to each handler for the different url paths, there is a block of code assigned t
 which will be handled by the GCD.
 
 
+\subsubsection{Calvin and HomeKit}
+
+The connection between a \textit{Calvin} Actor and \textit{HomeKit} is very similar
+to the former approach: the actor fires an async HTTP request, the request will travel
+through the whole microservice circuit and it will get the result. \newline
+The only difference lies in the number of hops to reach the device, in this case
+four(eight considering the returning path) including the device itself. However this
+implies more overhead and more latency, resulting in an overall reduction of performance,
+which we'll analyze more in details in the next chapter.
+Figure \ref{fig:arch-homekit} illustrates the general architecture for \textit{Calvin}
+to communicate with a \textit{Homekit} device.
+\begin{figure}[h]
+\caption{HomeKit communication architecture}
+\label{fig:arch-homekit}
+\centering
+\includegraphics[scale=0.5]{arch2.png}
+\end{figure}
+
+Despite the overhead due to the different services, being on the same network, under the
+assumption of it being fast enough, the total delay should be more than acceptable.
+However the architecture present a weakness,due to the single point-of-failure in the
+iOS application, which is the only access to the HomeKit devices.
 
 
 
+\subsubsection{Advantages}
 
 
 
