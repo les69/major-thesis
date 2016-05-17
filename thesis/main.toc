@@ -8,51 +8,57 @@
 \contentsline {section}{\numberline {1.5}False positives}{14}
 \contentsline {subsection}{\numberline {1.5.1}Approaches}{14}
 \contentsline {chapter}{\numberline {2}State of the Art}{17}
-\contentsline {section}{\numberline {2.1}Internet of Things}{17}
-\contentsline {subsection}{\numberline {2.1.1}Ecosystems}{17}
-\contentsline {subsubsection}{Google - Nest}{18}
-\contentsline {subsubsection}{Apple - HomeKit}{18}
-\contentsline {subsubsection}{Samsung - SmartThings}{18}
-\contentsline {section}{\numberline {2.2}The Microservice Architectural Style}{19}
-\contentsline {subsubsection}{SOA vs Microservices}{19}
-\contentsline {subsection}{\numberline {2.2.1}Internal integration}{19}
-\contentsline {subsection}{\numberline {2.2.2}Integration as a Service}{20}
-\contentsline {subsection}{\numberline {2.2.3}Other benefits}{21}
-\contentsline {subsection}{\numberline {2.2.4}Microservice Oriented Internet of Things}{21}
-\contentsline {section}{\numberline {2.3}Calvin}{22}
-\contentsline {subsection}{\numberline {2.3.1}Describe}{23}
-\contentsline {subsection}{\numberline {2.3.2}Connect}{23}
-\contentsline {subsection}{\numberline {2.3.3}Deploy}{24}
-\contentsline {subsection}{\numberline {2.3.4}Manage}{25}
-\contentsline {subsection}{\numberline {2.3.5}The relationship between the Actor Model and Microservices}{25}
-\contentsline {subsection}{\numberline {2.3.6}Calvin's Three Tier architecture}{25}
-\contentsline {subsection}{\numberline {2.3.7}Anatomy of an Actor}{26}
-\contentsline {subsubsection}{Declaring the connections}{27}
-\contentsline {subsubsection}{Initial phase}{27}
-\contentsline {subsubsection}{Migration}{27}
-\contentsline {subsubsection}{Actions, Guards and Conditions}{28}
-\contentsline {chapter}{\numberline {3}Detecting Intruders}{29}
-\contentsline {section}{\numberline {3.1}Preface}{29}
-\contentsline {section}{\numberline {3.2}Fingerprinting a Human}{29}
-\contentsline {subsection}{\numberline {3.2.1}Behavioral biometrics}{29}
-\contentsline {section}{\numberline {3.3}Expanding the system}{30}
-\contentsline {section}{\numberline {3.4}The Architecture}{30}
-\contentsline {subsection}{\numberline {3.4.1}Accessing different systems}{30}
-\contentsline {section}{\numberline {3.5}Accessing Nest}{31}
-\contentsline {subsection}{\numberline {3.5.1}Nest API Model}{31}
-\contentsline {subsubsection}{Nest Thermostat}{32}
-\contentsline {subsubsection}{Nest Protect}{32}
-\contentsline {subsubsection}{Nest Camera}{32}
-\contentsline {subsection}{\numberline {3.5.2}Nest with Calvin}{33}
-\contentsline {subsubsection}{Device Abstraction}{33}
-\contentsline {subsection}{\numberline {3.5.3}A Microservice Oriented approach}{34}
-\contentsline {subsubsection}{Microservice Architecture}{35}
-\contentsline {subsubsection}{The microservice API}{36}
-\contentsline {subsection}{\numberline {3.5.4}Accessing HomeKit}{37}
-\contentsline {subsubsection}{The Application}{37}
-\contentsline {subsubsection}{Grand Central Dispatch}{37}
-\contentsline {subsubsection}{Calvin and HomeKit}{38}
-\contentsline {subsubsection}{Advantages}{38}
-\contentsline {subsection}{\numberline {3.5.5}lol}{38}
-\contentsline {chapter}{\numberline {A}Tables}{39}
-\contentsline {chapter}{\numberline {B}Figures}{41}
+\contentsline {section}{\numberline {2.1}Biometric factors}{17}
+\contentsline {subsection}{\numberline {2.1.1}Speaker recognition}{18}
+\contentsline {subsubsection}{Speaker based variability}{19}
+\contentsline {subsubsection}{Conversation based variability}{20}
+\contentsline {subsubsection}{Technology based variability}{20}
+\contentsline {subsubsection}{Feature Parameters}{20}
+\contentsline {subsection}{\numberline {2.1.2}Speaker Recognition algorithms}{21}
+\contentsline {subsubsection}{Gaussian Mixture Model Based}{21}
+\contentsline {section}{\numberline {2.2}Internet of Things}{21}
+\contentsline {subsection}{\numberline {2.2.1}Ecosystems}{22}
+\contentsline {subsubsection}{Google - Nest}{22}
+\contentsline {subsubsection}{Apple - HomeKit}{23}
+\contentsline {subsubsection}{Samsung - SmartThings}{23}
+\contentsline {section}{\numberline {2.3}The Microservice Architectural Style}{23}
+\contentsline {subsubsection}{SOA vs Microservices}{23}
+\contentsline {subsection}{\numberline {2.3.1}Internal integration}{24}
+\contentsline {subsection}{\numberline {2.3.2}Integration as a Service}{24}
+\contentsline {subsection}{\numberline {2.3.3}Other benefits}{26}
+\contentsline {subsection}{\numberline {2.3.4}Microservice Oriented Internet of Things}{26}
+\contentsline {section}{\numberline {2.4}Calvin}{27}
+\contentsline {subsection}{\numberline {2.4.1}Describe}{28}
+\contentsline {subsection}{\numberline {2.4.2}Connect}{28}
+\contentsline {subsection}{\numberline {2.4.3}Deploy}{29}
+\contentsline {subsection}{\numberline {2.4.4}Manage}{30}
+\contentsline {subsection}{\numberline {2.4.5}The relationship between the Actor Model and Microservices}{30}
+\contentsline {subsection}{\numberline {2.4.6}Calvin's Three Tier architecture}{30}
+\contentsline {subsection}{\numberline {2.4.7}Anatomy of an Actor}{31}
+\contentsline {subsubsection}{Declaring the connections}{32}
+\contentsline {subsubsection}{Initial phase}{32}
+\contentsline {subsubsection}{Migration}{33}
+\contentsline {subsubsection}{Actions, Guards and Conditions}{33}
+\contentsline {chapter}{\numberline {3}Detecting Intruders}{35}
+\contentsline {section}{\numberline {3.1}Preface}{35}
+\contentsline {section}{\numberline {3.2}Fingerprinting a Human}{35}
+\contentsline {subsection}{\numberline {3.2.1}Behavioral biometrics}{36}
+\contentsline {section}{\numberline {3.3}Expanding the system}{36}
+\contentsline {section}{\numberline {3.4}The Architecture}{36}
+\contentsline {subsection}{\numberline {3.4.1}Accessing different systems}{36}
+\contentsline {section}{\numberline {3.5}Accessing Nest}{37}
+\contentsline {subsection}{\numberline {3.5.1}Nest API Model}{37}
+\contentsline {subsubsection}{Nest Thermostat}{38}
+\contentsline {subsubsection}{Nest Protect}{38}
+\contentsline {subsubsection}{Nest Camera}{39}
+\contentsline {subsection}{\numberline {3.5.2}Nest with Calvin}{39}
+\contentsline {subsubsection}{Device Abstraction}{39}
+\contentsline {subsection}{\numberline {3.5.3}A Microservice Oriented approach}{41}
+\contentsline {subsubsection}{Microservice Architecture}{41}
+\contentsline {subsubsection}{The microservice API}{42}
+\contentsline {subsection}{\numberline {3.5.4}Accessing HomeKit}{44}
+\contentsline {subsubsection}{The Application}{44}
+\contentsline {subsubsection}{Grand Central Dispatch}{44}
+\contentsline {subsubsection}{Calvin and HomeKit}{46}
+\contentsline {subsubsection}{Advantages}{47}
+\contentsline {subsection}{\numberline {3.5.5}lol}{47}

@@ -1,16 +1,13 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2-1}{\ignorespaces Graphic illustration of microservices and SOA}}{20}
-\contentsline {figure}{\numberline {2-2}{\ignorespaces Proxies interaction}}{22}
-\contentsline {figure}{\numberline {2-3}{\ignorespaces Describe Phase}}{23}
-\contentsline {figure}{\numberline {2-4}{\ignorespaces CalvinScript Example}}{23}
-\contentsline {figure}{\numberline {2-5}{\ignorespaces Actors interaction}}{24}
-\contentsline {figure}{\numberline {2-6}{\ignorespaces Calvin Architecture}}{26}
+\contentsline {figure}{\numberline {2-1}{\ignorespaces Sources of variability in speaker recognition}}{19}
+\contentsline {figure}{\numberline {2-2}{\ignorespaces Graphic illustration of microservices and SOA}}{25}
+\contentsline {figure}{\numberline {2-3}{\ignorespaces Proxies interaction}}{27}
+\contentsline {figure}{\numberline {2-4}{\ignorespaces Describe Phase}}{28}
+\contentsline {figure}{\numberline {2-5}{\ignorespaces CalvinScript Example}}{28}
+\contentsline {figure}{\numberline {2-6}{\ignorespaces Actors interaction}}{29}
+\contentsline {figure}{\numberline {2-7}{\ignorespaces Calvin Architecture}}{31}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3-1}{\ignorespaces Nest Cloud architecture}}{31}
-\contentsline {figure}{\numberline {3-2}{\ignorespaces Microservice Integration architecture}}{35}
-\contentsline {figure}{\numberline {3-3}{\ignorespaces HomeKit communication architecture}}{38}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {B-1}{\ignorespaces Armadillo slaying lawyer.}}{41}
-\contentsline {figure}{\numberline {B-2}{\ignorespaces Armadillo eradicating national debt.}}{42}
+\contentsline {figure}{\numberline {3-1}{\ignorespaces Nest Cloud architecture}}{38}
+\contentsline {figure}{\numberline {3-2}{\ignorespaces Microservice Integration architecture}}{42}
+\contentsline {figure}{\numberline {3-3}{\ignorespaces HomeKit communication architecture}}{46}

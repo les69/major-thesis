@@ -9,9 +9,201 @@
 In this chapter there will be an extensive explanation to the technologies used
 throughout the document.
 
+
+
+\section{Biometric factors}
+%%[todo] add the description of the verious types of biometric authentications
+Biometrics is the set of characteristics which allows a person to be identified
+by one or more of its physiological traits. Biometric traits can be used for
+authentication or identification of a person with a relatively high precision, and
+usually are more secure than password or token based authentications. Some examples
+of biometric factors typically used in authentication are: DNA, retina, iris, palm
+veins, fingerprints and face recognition. There is another subclass of biometric
+factors also called behavioral patterns, which relates more to the behavior of a person
+like typing, gait and voice.\\
+Due to its nature biometric factors depends on the technology used to gather them,
+introducing some noise or errors, for which exists some metrics to evaluate their
+reliability:
+
+\begin{itemize}
+    \item \textbf{False match rate} related to the probability of the system to
+    match incorrectly pattern an input to a non-matching element in the database.
+    \item \textbf{False non-match rate} is the probability that the system will reject
+    a correct input.
+    \item \textbf{Equal error rate}, the rate at which acceptance and rejection error is
+    equal. The lower the better.
+    \item \textbf{Failure to enroll rate}, rate at which the system fails to create
+    a pattern from an input, typical of low quality inputs.
+    \item \textbf{False to capture rate}, rate at which the systems fails to detect
+    a biometric input.
+
+\subsection{Speaker recognition}
+%%[TODO] describe more in details the types of speaker recognition
+Identifying a person by his or her voice is an important trait taken for granted
+in human to human interaction.[17] Everyday we use the voice as an identification pattern
+to distinguish people we are not seeing, to remember people
+we've met a long time ago whom face we are not recognizing.
+Moreover humans ability to identify a person by the voice grows linearly
+with the familiarity with the person they're talking with, arriving at the point
+of recognizing someone just from their laugh. On the other hand it is
+also true that we as humans find sometimes hard to remember a one-time heard voice,
+or having a tough time recognizing someone from the phone.\\
+Speaker recognition can be accomplished in three ways:
+\begin{description}
+    \item[Naive speaker recognition] is the process of recognizing familiar
+    voices without any conscious training. This process is used daily by most of the people
+    when interacting to each other.
+    \item[Forensic speaker recognition] is the process used by forensics to identify
+    criminals from their vocal activity. Special listeners are trained to listen phone
+    conversations activity from suspects and compared with the criminal records, trying
+    to find any match between them.
+    \item[Automatic speaker recognition] is the process used by computers to learn
+    about a human and then recognize known voices in audio files.
+\end{description}
+
+Speaker recognition is a large topic of research which includes two separated taks: spaker
+identification and speaker verification. Although we will focus mainly on the identification,
+speaker verification happens when an unknown claims to be a known person and the task
+of the system is to verify the correctness of the claim.
+In speaker identification the task is to identify an unknown speaker from a set of known speakers,
+using audio samples to find the closest speaker to him or her. We define \textit{closed} or \textit{in-set scenario}
+when all the speakers are known and \textit{out-of-set speaker identification} when the potential input
+may be out of the predefined speaker group.
+Moreover speaker recognition can be:
+\begin{description}
+        \item[Text dependent] when the content of the speech is important to the
+        identification of the person. Different people have different patterns of
+        using words, adding a new trait of distinction between humans. This is usually
+        used to authenticate users in restricted systems or resources.
+        \item[Text independent] when the content doesn't influence the recognition
+        of a known speaker but only the voice traits are used to identify the person.
+\end{description}
+Human speech is a performance biometric, making it intrinsic different from the majority
+of the common biometrics (e.g. iris, fingerprints, footprint etc). This is due to the
+identification made on how something is said rather than what, with a larger
+degree variability. As can be seen in figure \ref{fig:sourcesvar} The sources of variability in speaker recognition can be partitioned
+in three major classes: speaker based, conversation based and technology based.
+
+\begin{figure}[h]
+\caption{Sources of variability in speaker recognition}
+\label{fig:sourcesvar}
+\centering
+\includegraphics[scale=0.20]{sourcesvariability.png}
+\par{Source: Speaker Recognition by Machines and Humans}
+
+\end{figure}
+
+\subsubsection{Speaker based variability}
+These sources of variability depends on the speaker voice traits,
+for which a range of changes of how the speaker produces a speech and
+include the following factors:
+
+\begin{description}
+    \item[Situational task stress] when the speech is influenced by a task,
+    typically stressful, made by the speaker. This usually happens when someone
+    is speaking meanwhile doing some task such as driving, calling for an emergency.
+    All these tasks includes cognitive or physical stress which introduces variability
+    in how the speaker speaks.
+    \item[Vocal effort/style] happens when the speaker alters his or her voice to react to
+    a noisy situation modulating his or her voice to the situation; furthermore this happens
+    also when singing.
+    \item[Emotion] introduces a bias while speaking due to the human instinct of communicating
+    the speaker emotional state through the tone of his voice.
+    \item[Physiological] source is related to the physiological state of the speaker which
+    can alter the normal voice trait for situations including: illness, cold, aging or medications / surgery.
+    \item[Disguise] is a variability introduced by an intentional alteration of the speaker's voice
+    for exceptional circumstances such as mimicking someone or avoiding detection.
+\end{description}
+
+
+
+\subsubsection{Conversation based variability}
+
+These sources of variability are reflected from the conversational
+situation of the speaker, including the interaction with a human
+or with a machine.
+
+\begin{description}
+    \item[Human-to-Human] speech which may include two or more
+    people interacting and discussing as well as one person addressing
+    an audience. It may also consider different cases involving remote conversation
+    through computer with headphones and a monologue.
+    \item[Human-to-Machine] speech involving an interaction between a human
+    speaker and a machine. This is mostly the case when a human has to adapt his
+    voice to be understood by a computer, for example when using a virtual assistant, namely
+    Siri.
+\end{description}
+
+
+\subsubsection{Technology based variability}
+These sources are introduced by the technology used to acquire
+the speech, mostly depends on the quality of the input (microphones).
+Noise is typically introduced from the following channels:
+
+\begin{itemize}
+    \item electromechanical - which includes the
+    transmission channel used to acquire the input.
+    \item environmental - all the noises introduced by the background or from
+    outside all the input components. Some examples may be white noise, background noise
+    from the sun or the environment.
+    \item data quality—duration, sampling rate, recording quality, and audio codec/compression.
+\end{itemize}
+
+\subsubsection{Feature Parameters}
+Each speaker voice has some insight characteristics which identifies uniquely
+the voice. Individual traits taken from the speaker vocal tract physiology or
+from the articulation learnt during the time (i.e. dialects).
+These traits are also called \textit{feature parameters}, defined as a set
+of measurable and predefined aspects of a speech to be considered for a meaningful
+comparison between two different voices. Typically multiple features
+are used to identify a voice, and is more important if we consider the noise introduced by
+the previous sources, which makes having many features an important aspect to consider.
+Different voices may have similar or identical values for a specific feature but differ in all
+the others.
+As outlined from Nolan[18], typical features has to have the following properties:
+\begin{itemize}
+    \item High between-speaker variability and low within-speaker variability
+    \item Resistance to disguise and mimicry
+    \item Robust in transmissions
+    \item High frequency of occurrence in materials
+    \item Easy to extract and measure
+
+\end{itemize}
+
+\subsection{Speaker Recognition algorithms}
+
+In the following sections we'll provide a brief introduction
+to the state-of-the-art of speaker recognition methods.
+
+\subsubsection{Gaussian Mixture Model Based}
+
+A Gaussian Mixture Model (GMM) is a combination of probability
+density functions (PDFs) used to model multi-variate data. [17]
+GMM will provide a score evaluating the PDFs at different times, which
+will be used to calculate the similarity between a speaker's GMM and an
+unknown speaker. During an identification the system will calculate
+a GMM for each known speaker, and use it to make comparisons between
+for which the highest ranking will be selected.\\
+Before GMM there were Vector Quantization(VQ) methods, which used
+sets of prototypes instead of PDFs to build models for the speakers.
+However GMM proved to be better because of its probabilistic model being
+able to relate better to data despite of the more restrictive VQ model.
+The Model is represented by the sum of the individual PDFs, where a random
+vector $x_{n}$ can be modeled by $N$ gaussians with mean vectors $\mu_{g}$ and
+covariance matrices $\Sigma_{g}$, where g=1,2...$N$. The PDFs $x_{n}$ is given by
+
+\begin{equation}
+    f(x_{n}|\lambda) = {\sum_{g=1}^N \pi_{g}N(x_{n}| \mu_{g}, \Sigma_{g})}
+\end{equation}
+
+where $\pi_{g}$ is the weight related to the $g_{th}$ component. The model
+is denoted by $\lambda = \{ \pi_{g}, \mu_{g},\Sigma_{g}| g=1...N\}$, where the
+probability of a feature vector given the GMM can be calculated with the above equation.
+
+
+
 \section{Internet of Things}
 
-What is the \textbf{\textit{Internet of Things}}?\\
 \textit{Internet of Things}, better known as IoT, is the world of interconnected devices
 connected to the real world and to the Internet. These devices has a very
 broad definition, from the smart sensors in a power plant to the smart fridge in
@@ -21,22 +213,9 @@ revolution in the IT sector, prompting new opportunities for developers, entrepr
 and end users. Some of the most relevant endings of these technologies are \textit{Smart Houses},
 \textit{Smart Cities}, Cars etc. %[TODO] continue a little bit here
 
-
-\subsection{Biometric authentication}
-%%[todo] add the description of the verious types of biometric authentications
-
-
-\subsection{Speaker recognition}
-%%[TODO] describe more in details the types of speaker recognition
-
-\subsection{Step recognition}
-
-
-
-
 \subsection{Ecosystems}
 
-What is an Ecosystem? An ecosystems is by definition \textit{a system, or a group of interconnected elements,
+An ecosystems is by definition \textit{a system, or a group of interconnected elements,
 formed by the interaction of a community of organisms with their environment.},
 in our case a set of smart devices connected between them. The IoT world is evolving
 from distinct single entities to more evolved clusters of devices which can communicate
@@ -220,9 +399,11 @@ an environment where new technologies are frequently added or modified.
 
         \begin{figure}[h]
         \caption{Proxies interaction}
+
         \label{fig:calvinproxy}
         \centering
         \includegraphics[scale=0.75]{calvin4.png}
+        \par{Source: Ericsson Blog}
         \end{figure}
   Figure \ref{fig:calvinproxy} shows the interaction of native Actors and Actors which
   acts as a proxy for legacy components, in this example the camera.
@@ -247,8 +428,10 @@ an environment where new technologies are frequently added or modified.
 
   \begin{figure}[h]
   \caption{Describe Phase}
+
   \centering
   \includegraphics[scale=0.75]{calvin1.png}
+  \par{Source: Ericsson Blog}
   \end{figure}
 
 
@@ -256,9 +439,11 @@ an environment where new technologies are frequently added or modified.
 
     \begin{figure}[h]
     \caption{CalvinScript Example}
+
     \label{fig:calvinscript}
     \centering
     \includegraphics[scale=0.75]{calvin2.png}
+    \par{Source: Ericsson Blog}
     \end{figure}
 
   After describing the many functionalities provided by the various Actors in the system
@@ -277,9 +462,11 @@ an environment where new technologies are frequently added or modified.
 
   \begin{figure}[h]
   \caption{Actors interaction}
+
   \label{fig:calvinactors}
   \centering
   \includegraphics[scale=0.75]{calvin3.png}
+  \par{Source: Ericsson Blog}
   \end{figure}
 
 
