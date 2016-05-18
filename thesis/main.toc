@@ -47,22 +47,24 @@
 \contentsline {section}{\numberline {3.1}Preface}{37}
 \contentsline {section}{\numberline {3.2}Fingerprinting a Human}{37}
 \contentsline {subsection}{\numberline {3.2.1}Behavioral biometrics}{38}
-\contentsline {section}{\numberline {3.3}Expanding the system}{38}
-\contentsline {section}{\numberline {3.4}The Architecture}{38}
-\contentsline {subsection}{\numberline {3.4.1}Accessing different systems}{38}
-\contentsline {section}{\numberline {3.5}Accessing Nest}{39}
-\contentsline {subsection}{\numberline {3.5.1}Nest API Model}{39}
-\contentsline {subsubsection}{Nest Thermostat}{40}
-\contentsline {subsubsection}{Nest Protect}{40}
-\contentsline {subsubsection}{Nest Camera}{41}
-\contentsline {subsection}{\numberline {3.5.2}Nest with Calvin}{41}
-\contentsline {subsubsection}{Device Abstraction}{41}
-\contentsline {subsection}{\numberline {3.5.3}A Microservice Oriented approach}{43}
-\contentsline {subsubsection}{Microservice Architecture}{43}
-\contentsline {subsubsection}{The microservice API}{44}
-\contentsline {subsection}{\numberline {3.5.4}Accessing HomeKit}{46}
+\contentsline {section}{\numberline {3.3}In House Speaker Recognition}{38}
+\contentsline {subsection}{\numberline {3.3.1}Speaker recognition and Calvin}{38}
+\contentsline {section}{\numberline {3.4}Expanding the system}{39}
+\contentsline {section}{\numberline {3.5}The Architecture}{39}
+\contentsline {subsection}{\numberline {3.5.1}Accessing different systems}{39}
+\contentsline {section}{\numberline {3.6}Accessing Nest}{40}
+\contentsline {subsection}{\numberline {3.6.1}Nest API Model}{40}
+\contentsline {subsubsection}{Nest Thermostat}{41}
+\contentsline {subsubsection}{Nest Protect}{41}
+\contentsline {subsubsection}{Nest Camera}{42}
+\contentsline {subsection}{\numberline {3.6.2}Nest with Calvin}{42}
+\contentsline {subsubsection}{Device Abstraction}{42}
+\contentsline {subsection}{\numberline {3.6.3}A Microservice Oriented approach}{44}
+\contentsline {subsubsection}{Microservice Architecture}{44}
+\contentsline {subsubsection}{The microservice API}{45}
+\contentsline {subsection}{\numberline {3.6.4}Accessing HomeKit}{46}
 \contentsline {subsubsection}{The Application}{46}
-\contentsline {subsubsection}{Grand Central Dispatch}{46}
-\contentsline {subsubsection}{Calvin and HomeKit}{48}
-\contentsline {subsubsection}{Advantages}{49}
-\contentsline {subsection}{\numberline {3.5.5}lol}{49}
+\contentsline {subsubsection}{Grand Central Dispatch}{47}
+\contentsline {subsubsection}{Calvin and HomeKit}{47}
+\contentsline {subsubsection}{Advantages}{48}
+\contentsline {subsection}{\numberline {3.6.5}empty}{48}

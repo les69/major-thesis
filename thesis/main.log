@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.12)  18 MAY 2016 11:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.12)  18 MAY 2016 15:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -664,81 +664,86 @@ Chapter 3.
 
 
 
-] [38] <nest-architecture.png, id=157, 963.6pt x 443.6575pt>
+] <calvin-speaker1.png, id=154, 727.71875pt x 441.65pt>
+File: calvin-speaker1.png Graphic file (type png)
+
+<use calvin-speaker1.png>
+Package pdftex.def Info: calvin-speaker1.png used on input line 71.
+(pdftex.def)             Requested size: 363.85847pt x 220.82445pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[38] [39 <./calvin-speaker1.png>]
+<nest-architecture.png, id=161, 963.6pt x 443.6575pt>
 File: nest-architecture.png Graphic file (type png)
 
 <use nest-architecture.png>
-Package pdftex.def Info: nest-architecture.png used on input line 108.
+Package pdftex.def Info: nest-architecture.png used on input line 140.
 (pdftex.def)             Requested size: 337.26506pt x 155.28244pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[39] [40 <./nest-architecture.png (PNG copy)>]
-Overfull \hbox (1.91515pt too wide) in paragraph at lines 195--195
+[40] [41 <./nest-architecture.png (PNG copy)>]
+Overfull \hbox (1.91515pt too wide) in paragraph at lines 228--228
  []    \T1/lmtt/m/n/10.95 setproperty: in device_id, property_name, value ; out
  True or False[] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--202
+Underfull \hbox (badness 10000) in paragraph at lines 231--235
 
  []
 
-[41]
-Overfull \hbox (1.91515pt too wide) in paragraph at lines 211--211
+[42]
+Overfull \hbox (1.91515pt too wide) in paragraph at lines 244--244
  []        \T1/lmtt/m/n/10.95 operation: string representing the operation to d
 o (get or set)[] 
  []
 
 
-Overfull \hbox (70.89995pt too wide) in paragraph at lines 229--229
+Overfull \hbox (70.89995pt too wide) in paragraph at lines 262--262
  []    \T1/lmtt/m/n/10.95 @guard(lambda self: self.nest._in_progress is None an
 d self.operation == "set")[] 
  []
 
-[42] <test-arch.png, id=170, 581.17125pt x 418.56375pt>
+[43] <test-arch.png, id=175, 581.17125pt x 418.56375pt>
 File: test-arch.png Graphic file (type png)
  <use test-arch.png>
-Package pdftex.def Info: test-arch.png used on input line 265.
+Package pdftex.def Info: test-arch.png used on input line 298.
 (pdftex.def)             Requested size: 377.75684pt x 272.0632pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[43]
-Overfull \hbox (7.66388pt too wide) in paragraph at lines 321--321
+[44]
+Overfull \hbox (7.66388pt too wide) in paragraph at lines 354--354
  []        \T1/lmtt/m/n/10.95 "name": "DFF9", "temperature": 37, "humidity": 50
 , "fan": false,[] 
  []
 
-[44 <./test-arch.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [45]
-Overfull \hbox (11.76447pt too wide) in paragraph at lines 329--339
+[45 <./test-arch.png>]
+Overfull \hbox (11.76447pt too wide) in paragraph at lines 362--372
 \T1/lmr/m/n/10.95 cloud API, it's func-tion-al-i-ties can be ac-cessed only thr
 ough their \T1/lmr/bx/n/10.95 Home-Kit.framework\T1/lmr/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 329--339
+Underfull \hbox (badness 10000) in paragraph at lines 362--372
 
  []
 
-[46]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [47]
-<arch2.png, id=187, 826.08624pt x 316.18124pt>
+[46] <arch2.png, id=185, 826.08624pt x 316.18124pt>
 File: arch2.png Graphic file (type png)
  <use arch2.png>
-Package pdftex.def Info: arch2.png used on input line 401.
+Package pdftex.def Info: arch2.png used on input line 434.
 (pdftex.def)             Requested size: 413.0421pt x 158.09023pt.
-)
-Underfull \vbox (badness 2035) has occurred while \output is active []
 
- [48 <./arch2.png>] [49]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[47]) [48 <./arch2.png>]
 \openout2 = `biblio.aux'.
 
  (./biblio.tex
@@ -766,13 +771,13 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 ### semi simple group (level 1) entered at line 42 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 3840 strings out of 493089
- 53228 string characters out of 6134842
+ 3846 strings out of 493089
+ 53360 string characters out of 6134842
  128014 words of memory out of 5000000
- 7151 multiletter control sequences out of 15000+600000
+ 7156 multiletter control sequences out of 15000+600000
  57578 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,7n,40p,243b,1246s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,7n,40p,243b,1244s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ec.en
 c}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
 texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/20
@@ -788,10 +793,10 @@ t/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
 e1/public/lm/lmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm
 /lmri10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pf
 b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (49 pages, 1790945 bytes).
+Output written on main.pdf (48 pages, 1881872 bytes).
 PDF statistics:
- 243 PDF objects out of 1000 (max. 8388607)
- 155 compressed objects within 2 object streams
+ 240 PDF objects out of 1000 (max. 8388607)
+ 152 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

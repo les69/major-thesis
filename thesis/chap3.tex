@@ -1,4 +1,4 @@
-\chapter{Detecting Intruders}
+\chapter{Detection and Integration}
 
 
 \section{Preface}
@@ -50,6 +50,31 @@ for microphones. Hence a good surveillance system with many microphones around
 the house should be able to detect any external voice during an intrusion. In the following
 paragraphs we'll show how we implemented such a system using some of the state-of-the art
 algorithm with \textit{Calvin} to improve the security in the house.
+
+\subsection{Speaker recognition and Calvin}
+
+Machine learning tasks are typically cpu and time consuming tasks, which
+are not supposed to run on low-resource machines like a Raspberry Pi. However
+we need to access physically some sensors to gather the input and not many computers
+offer direct GPIO access, making devices like a Raspberry Pi a must when interfacing
+with hardware. Despite of this limitation \textit{Calvin} offers the solution to this problem
+when adopting the philosophy of \textit{"run it where you need"}. As said in the previous chapter
+Calvin actors can run on different machines, and communicate through the network.
+As can be seen in figure \ref{fig:calvin-spkr1}, in the basic configuration we need two machines:
+one interfacing with the hardware, mainly a microphone and a sound detector, and a more powerful
+machine.
+
+\begin{figure}[h]
+\caption{Spaker Recognition Architecture with Calvin}
+\label{fig:calvin-spkr1}
+\centering
+\includegraphics[scale=0.50]{calvin-speaker1.png}
+\end{figure}
+
+In more detail, in our architecture there will be 2 actors controlling the input from
+the two sensors, and at least 3 in the other machine, each of them taking care of a different
+task, namely identification, diarization and verification.
+
 
 
 
@@ -117,6 +142,7 @@ However it applies the same rule as before, with some limits in the data usage t
 \label{fig:nestarch}
 \centering
 \includegraphics[scale=0.35]{nest-architecture.png}
+\par{Source: Nest Inc}
 \end{figure}
 
 As can be seen in figure \ref{fig:nestarch}, the only way to access \textit{Nest} devices at the
@@ -334,7 +360,7 @@ Following the classic \textit{RESTful} style, to access a device will look like
 
 
 
-\pagebreak
+%%\pagebreak
 \subsection{Accessing HomeKit}
 
 \textit{HomeKit}, introduced in details in the previous chapter, is the other ecosystem
@@ -380,7 +406,7 @@ developers to create and dispatch objects, which will be deferred to a differed 
 and queued for concurrent execution.\newline
 GCD provides three different queues on which tasks will be submitted in a form of block object;
 all the submitted blocks are executed on a pool of threads fully managed by the system. The three
-queues are:\pagebreak
+queues are:%%\pagebreak
 
 \begin{description}
     \item[Main]: task executed serially on the main application thread;
@@ -431,5 +457,4 @@ iOS application, which is the only access to the HomeKit devices.
 
 
 
-\subsection{lol}
-The answer is 42
+\subsection{empty}
