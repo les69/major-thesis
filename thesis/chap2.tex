@@ -199,8 +199,109 @@ covariance matrices $\Sigma_{g}$, where g=1,2...$N$. The PDFs $x_{n}$ is given b
 where $\pi_{g}$ is the weight related to the $g_{th}$ component. The model
 is denoted by $\lambda = \{ \pi_{g}, \mu_{g},\Sigma_{g}| g=1...N\}$, where the
 probability of a feature vector given the GMM can be calculated with the above equation.
+Given a GMM the probability of observing a sequence of feature vectors $X=\{x_{n}| n \in 1..T\}$
+can be computed as
+
+\begin{equation}
+    p(X | \lambda) = {\prod_{n=1}^Tp(x_{n}| \lambda)}
+\end{equation}
 
 
+\subsubsection{GMM-UBM Speaker Verification}
+
+Although GMM model based techniques are effective for speaker
+identification tasks, to achieve speaker recognition a further
+speaker model is needed. The new approach implies the use of
+a \textit{Universal Background Model} (UBM) as alternate speaker model.
+The idea behind UBM is to represent everyone except the speaker itself, essentially
+a large GMM trained to represent the generic speaker-independent distribution
+of speech features.\\
+GMM-UBM is an approach combining the previous GMM model adapting it from
+the UBM using Bayesian adaptation. The model is obtained updating a well
+trained UBM instead of calculating the maximum likelihood training of the GMM
+for a speaker. Speaker models obtained from the adaption of a trained UBM
+are more reliable than GMM trained directly for each speaker.[17]
+
+\subsubsection{GMM Supervector SVM}
+
+During the years research moved toward having fixed size representations
+of speech. However this is far from reality where most of utterances used to train
+models are of different duration lengths. A solution for the problem is the use of
+\textit{supervectors}, a fixed size vector made concatenating all the variable duration
+utterances parameters. A GMM supervector is typically obtained by concatenating
+the GMM mean vectors of a MAP-adapted speaker model.\\
+Supervectors can be used effectively using support vector machines (SVM) for speaker
+recognition tasks. Basically the supervectors obtained from the training are used
+as a positive example meanwhile different utterances are used as negative examples for
+the model. An SVM classifier aim is to separate multidimensional data points obtained from two classes
+on a hyperplane, and predict the class of an unknown observation from its location
+on the hyperplane.
+Given a set of training vectors and labels $(x_{n},y_{n}) for n \in \{1..T\}$ where
+$x_{n} \in R^d$ and $y_{n} \in \{-1,+1\}$. Therefore an SVM goal is to learn
+a function $f:R^d \rightarrow R$, for which the class label of an unknown vector x
+can be predicted by:
+
+\begin{equation}
+    I(x)= sign(f(x))
+\end{equation}
+
+A hyperplane $H$ for linearly separable data given by $w^Tx+b = 0$ can be a class separator for
+two classes as:
+
+\begin{equation}
+    y_{n}(w^Tx_{n}+b) \geq 1,n = 1...T
+\end{equation}
+
+The optimal situation happens when the  $H$ provides the maximum
+margin between classes, the points ling on the margin are also known as support vectors.
+An example of hyperplane can be seen in figure \ref{fig:gmmsvm}.
+In conclusion this approach is considered very robust due to its ability
+to combine the effectiveness of adapted GMMs with the discriminating ability of the SVM.
+\begin{figure}[h]
+\caption{Sources of variability in speaker recognition}
+\label{fig:gmmsvm}
+\centering
+\includegraphics[scale=0.20]{gmmsvm.png}
+\par{Source: Speaker Recognition by Machines and Humans}
+
+\end{figure}
+
+
+
+\subsubsection{Joint JFA}
+The Joint Factor Analysis model is built combining both
+eiganvoice and eiganchannel together, using a MAP adaptation
+for a single model. The model basic assumption is that both
+channel and speaker variability lies in the  lower dimensional
+subspaces of GMMs supervector space. These subspaces are
+modeled by two matrices $U$ and $V$, where for a random
+utterance with speaker $s$ and session $h$ a GMM supervector
+can represented by:
+\begin{equation}
+    m_{s,h} = m_{0} + Ux_{h} + Vy_{s} + Dz_{s,h}
+\end{equation}
+Joint FA exploits the behavior of speaker features in a variety of
+conditions learned using FA [17].
+
+\subsubsection{i-Vector Approach}
+
+An i-Vector uses a set of low-dimensional factors(w) to represent the conversations
+side. These factors controls an eigan-dimension of the total variability matrix (T) and
+are also called \textit{i-vectors}.
+
+\begin{equation}
+    s = m + Tw
+\end{equation}
+Where
+\begin{itemize}
+    \item s is the conversation side supervector
+    \item T the total variability matrix
+    \item w is the i-vector
+\end{itemize}
+Unlike JFA or other factor analysis models, i-vector does not consider any
+distinction between speaker and channel but rather consider them as a dimensional
+reduction of a GMM supervector. I-Vectors effectively summarize utterances allowing
+compensating methods that were unpractical before with large supervectors.
 
 \section{Internet of Things}
 
