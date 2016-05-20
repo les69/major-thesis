@@ -1,0 +1,191 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Master Thesis
+% LaTeX Template
+%
+% Created by:
+% Dániel Fehér
+% If you have questions, feel free to contact me at:
+% feher.dani46@gmail.com
+%
+% This is a LaTex template for the Master Diploma Thesis to use at the Eötvös Loránd University Faculty of Informatics,
+% EIT Digital Master School
+%
+% You are suggested to use it to write your EIT Digital Master Diploma Thesis at the Eötvös Loránd University
+% Faculty of Informatics, EIT Digital Master School.
+%
+% You can modify this template, if you have improvements please send it to Zsófia Lovas (zslovas@inf.elte.hu)
+%
+% v1 28/04/2016
+%
+% This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[a4paper,11pt]{report} % If you want to change the font size, you can do it here
+
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage[latin2]{inputenc}
+%\usepackage{t1enc}
+\usepackage[english]{babel}
+\usepackage{anysize}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{epstopdf}
+\usepackage{fancyhdr}
+\usepackage{etoolbox}
+\usepackage {xcolor}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{url}
+\usepackage{hyperref}
+
+\pagestyle{fancyplain}
+\marginsize{3.5cm}{2.5cm}{2.5cm}{2.5cm}
+\frenchspacing
+\linespread{1.3} % If you want to change the line spacing, you can do it here
+
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyfoot[C]{\thepage}
+
+
+
+\patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+
+\usepackage{ntheorem}
+\theoremstyle{change}
+\makeatletter
+\theoremseparator{.}
+\newtheoremstyle{theoremstyle}%
+{\item[\hskip\labelsep\theorem@headerfont
+            ##2.\ ##1\theorem@separator]}%
+{\item[\hskip\labelsep\theorem@headerfont
+            ##2.\ ##1\theorem@separator\ (##3)]}%
+\theoremstyle{theoremstyle}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{defi}[theorem]{Definiton}
+{\theorembodyfont{\rmfamily}
+\newtheorem{note}[theorem]{Note}
+\newtheorem{conseq}[theorem]{Consequence}
+\newtheorem{eg}[theorem]{Example}
+}%
+\newenvironment{proof}{\par\noindent{\bf Proof.}\enspace\ignorespaces}{~$\square$}
+\makeatother
+
+
+
+\def\myauthor{Mirko Morandi} % Your Name
+\def\mytitle{Improving house security using an IoT infrastructure} % Title of thesis
+\def\myacdsup{Kitlei Ròbert} % Your Academic Supervisor from elte
+\def\myacdsuptit{Prof.}% Title of your Academic Supervisor from ELTE
+\def\myacdsupen{Marchese Maurizio} % Your Academic Supervisor from your Entry University
+\def\myacdsupentit{Prof.}% Title of your Academic Supervisor from your Entry University
+\def\myentryuni{Trento}% Your Entry University
+\def\myindsup{László Szilágyi}% Your Industrial Supervisor
+\def\myindsuptit{Team Leader}% Your Industrial Supervisor's title at its company
+\def\myindcom{Ericsson}% Your Industrial Supervisor's company
+\def\currentyear{2016.}% The Current Year
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%
+% Title Page - Don't Modify this! %%%%%
+%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+\pagenumbering{roman}
+\thispagestyle{empty}
+
+\textcolor{white}{}
+\begin{wrapfigure}{l}{0.25\textwidth}
+\vspace*{-30pt}
+\includegraphics*[scale=0.25]{elte-logo.jpg}
+%\vspace{-10pt}\vspace{-10pt}
+\end{wrapfigure}
+\vspace*{-30pt}
+\begin{flushright}
+{\fontsize{17.28}{20}
+\scshape Eötvös Loránd University\\}
+{\fontsize{14}{10}
+\scshape Faculty of Informatics}
+\end{flushright}
+\textcolor{white}{
+\\
+\\
+\\
+ \\
+}
+\vspace{2cm}
+\begin{center}
+{\fontsize{20.74}{20}  \scshape  \mytitle}
+\end{center}
+
+\vspace{4cm}
+
+\begin{tabular}{p{9cm}c}
+
+{\fontsize{14}{10} \scshape \myacdsup} & {\fontsize{14}{10} \scshape \myauthor}\\
+
+{\fontsize{12}{20} \scshape  \myacdsuptit \ at ELTE}\quad & {\fontsize{12}{20} \scshape Computer Science}\\
+
+{\fontsize{14}{20} \scshape \myacdsupen}&\\
+
+{\fontsize{12}{20} \scshape \myacdsupentit \ at \myentryuni}&\\
+
+{\fontsize{14}{20} \scshape \myindsup}&\\
+
+{\fontsize{12}{20} \scshape \myindsuptit \ at \myindcom}&\\
+\end{tabular}
+
+\vspace{3cm}
+\begin{center}
+{\large \scshape Budapest, \currentyear \\}
+\end{center}
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Title Page ended, you can modify from here %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{abstract}
+
+
+
+\chapter*{Acknowledgement}
+...
+
+\tableofcontents
+
+
+
+%\chapter{Abstract}
+
+\pagenumbering{arabic} %leave this here, to make the page numbering with arabic numbers from here
+
+
+\include{chap1}
+\include{chap2}
+\include{chap3}
+\include{chap4}
+\include{chap5}
+\include{chap6}
+
+This is an example for citation \cite{abramowitz+stegun}
+
+
+\bibliography{bibexample} % just insert the bib file name, without .bib, it has to be in the same folder as the .tex file,
+%%%%%%%%%%%%%% separate the bib files with a comma inside the parenthesis
+\bibliographystyle{alpha}
+
+
+
+\end{document}

@@ -51,6 +51,19 @@ the house should be able to detect any external voice during an intrusion. In th
 paragraphs we'll show how we implemented such a system using some of the state-of-the art
 algorithm with \textit{Calvin} to improve the security in the house.
 
+
+\section{Expanding the system}
+One of the biggest limitations of nowadays security system is their isolation
+when installed. Most of devices are stand alone solutions incapable of extending
+their functionalities to pre existing devices. If we want to expand \textit{Calvin} to
+be adopted by others, including users and developers, we need to be able to extend its
+functionalities with the ability to communicate with different other systems.
+
+\section{The Architecture}
+
+In this section we will go deep in the details of the architecture of the solutions
+we propose.
+
 \subsection{Speaker recognition and Calvin}
 
 Machine learning tasks are typically cpu and time consuming tasks, which
@@ -75,21 +88,76 @@ In more detail, in our architecture there will be 2 actors controlling the input
 the two sensors, and at least 3 in the other machine, each of them taking care of a different
 task, namely identification, diarization and verification.
 
+\subsection{Actor Structure and Interaction}
 
+The interaction between actors in this situation can be summarized as a chain
+of events triggered by the detection of a sound to the detection of a person, either
+familiar or unknown. In our proposed architecture an Actor linked to the sound detector sensor
+will continue listening, and when something is detected it will generate a token for the microphone Actor
+to switch to the recording state for a finite period of time. However it is not possible to stream in real time the recording
+to another machine without overcomplicating the system, for which we proposed to split the original
+audio recording in small pieces to be sent through the network. This approach has some theoretical benefits:
 
+\begin{itemize}
+    \item Dividing the record in small units make it faster to detect someone, since the
+    verification phase will require less time.
+    \item Small audio recorded files are easier to send instead of a single big one.
+\end{itemize}
 
+Despite of the benefits, in the following chapter we will try to prove the effectiveness of this approach,
+and the best duration of time for each time slot.\newline
+After recording the audio slice the Actor will have to send it to the identification /diarization/ verification
+actor residing on a different machine. However sending binary objects through the network
+may be tricky without working directly with sockets, in our solution we decided to
+use the \textit{base64} encoding and envelope it into a JSON object. The object will be decoded
+and stored as a binary object and subsequently the machine learning actor will execute
+its algorithm on it.
 
-\section{Expanding the system}
-One of the biggest limitations of nowadays security system is their isolation
-when installed. Most of devices are stand alone solutions incapable of extending
-their functionalities to pre existing devices. If we want to expand \textit{Calvin} to
-be adopted by others, including users and developers, we need to be able to extend its
-functionalities with the ability to communicate with different other systems.
+\subsection{Hardware Interacting Actors}
 
-\section{The Architecture}
+In this section we'll go in the details of the low level actors handling the resources
+such as sound detection and microphone, illustrating their internal logic and actions.
 
-In this section we will go deep in the details of the architecture of the solutions
-we propose.
+\subsubsection{Sound Detection Actor}
+
+The simplest actor is the one dealing with the sound detection. It's state works
+as a simple switch turned on by the change of state of the sensors. This actor does
+accept only an input, the trigger for reading the sensor value. This allows us to
+decide at which rate reading the sensor without leaving the read rate to the internal
+scheduler. The actor generates only a token each time the value read by the
+sensor is equal to 1 (i.e. a sound is detected). Therefore the conditions
+of the Actor will be like:
+
+\begin{verbatim}
+    Condition for receiving the input
+    @condition(action_input=['trigger'])
+
+    Condition for returning the output
+    @condition(action_output=['token'])
+
+\end{verbatim}
+ These conditions will bound the input and outputs to the correct functions.
+ Furthermore, to clarify the internal state change of the actor here is shown
+ how the control on the sensor reading using the \textit{Calvin} \texttt{@guard}
+ statement:
+
+ \begin{verbatim}
+     @guard(lambda self: self['sensor'].read_state() == 1 and self.trigger)
+ \end{verbatim}
+ The sensor can be accessed through a managed object handled by the \textit{calvinsys}
+ layer, hiding the implementation details. Moreover the \texttt{self.trigger} secondary
+ condition requires the Actor to be in possession of a valid token, which will be consumed
+ after each reading.
+
+ \subsubsection{Recording Actor}
+
+ The recording actor will have some more complicated logic having to deal with
+ the audio sampling. The Actor will be bounded to the former actor to receive
+ the token and start the recording process. As said previously we decided to
+ take a different approach, instead of a single recording we will sample it in
+ $n$ segments of the same duration. The Actor will therefore change its state
+ in order to generate the needed amount of audio recordings to be sent to the
+ speaker recognition
 
 \subsection{Accessing different systems}
 
@@ -234,8 +302,8 @@ allowing a possible reuse of the actor. Here is the pseudocode for the high-leve
 
 However going deeper into the actor architecture we have to define some more constraints,
 like the events which trigger the execution and the tokens for which returning the results.
-First of all, all incoming port of an actor has to be linked, we can not have an unbounded port,
-both input or output. Here's a list of our actor's ports:\\
+All incoming port of an actor has to be linked, we can not have an unbounded port,
+both input or output. Here's a list of our actor ports:\\
 
 \begin{verbatim}
     Inputs:
