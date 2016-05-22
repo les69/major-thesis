@@ -335,7 +335,7 @@ for testing, and because they suits perfectly our scenario.
 
 \subsubsection{Google - Nest}
 
-\textbf{Nest} is a home automation producer of smart devices
+\textbf{Nest}[19] is a home automation producer of smart devices
 which ranges from their famous Smart Thermostat to the locking system, from the
 washing machine to the light system, from the \textit{Dropcamera} to the Hi-Fi Sound system,and
 these are just some examples. The number of components supported by this company
@@ -356,7 +356,7 @@ mainly \textbf{802.11} standards.
 
 \subsubsection{Apple - HomeKit}
 
-\textbf{HomeKit} is a very similar ecosystem to the one described before, producing or supporting
+\textbf{HomeKit}[20] is a very similar ecosystem to the one described before, producing or supporting
 home automation devices. \textit{HomeKit} relies on the large network of Apple devices,
 making it an environment to be considered even if it is relatively new on the market. The key
 point of \textit{HomeKit} is the easy integration with Apple devices, fitting almost perfectly wherever
@@ -412,7 +412,7 @@ in all dimensions}.[10]
 \begin{figure}[h]
 \caption{Graphic illustration of microservices and SOA}
 \centering
-\includegraphics[scale=1]{soavsmicro.png}
+\includegraphics[scale=0.65]{soavsmicro.png}
 \end{figure}
 
 \subsection{Internal integration}
@@ -480,7 +480,7 @@ challenges aimed to be solved. Microservices \textit{decentralized governance} f
 which allows the use of different technologies inside the same systems holds the key for
 solving the interoperability problem. Key IoT devices vendors realizes that if their products
 supports multiple interoperability standard they're likely to be adopted also by their
-competitors (e.g. Nest products are available on HomeKit).[3] Microservices here can be
+competitors (e.g. Nest products are available on HomeKit[3]). Microservices here can be
 used as isolated adapters for the many different technologies, facing the spreading
 fragmentation of communication protocols between machines.\\
 Microservices are by nature dynamic and reactive, which makes them a good choice for
@@ -704,7 +704,7 @@ key elements:
 \begin{description}
     \item[Condition] is a mandatory decorator which describes the inbound and outbound connections for the action.
     Although the name suggests it to be the condition statement to for firing an action, condition is related to the
-    input and output condition of the action. An example of condition for a camera actor can be
+    input and output condition of the action. An example of condition for a camera actor can be \\
     \texttt{@condition(action\_input=['trigger'], action\_output=['image'])}. In this case our actor when will receive a token
     on the \texttt{trigger} port will enable the action, but the next decorator will be the definitive check to pass to the action
     body.

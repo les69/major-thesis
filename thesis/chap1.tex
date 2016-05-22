@@ -12,7 +12,7 @@ catch him[1]. Nonetheless these systems are not yet perfect, and during
 this document we will investigate on some optimizations with respect to
 the \textit{integration} with other ecosystems and the \textit{reduction}
 of false positives.\\
-Here follows the main structure of the document:\\
+Here follows the main structure of the thesis:\\
 
 Chapter two introduces the technologies used in our scenario, with a brief
 introduction on the techniques adopted to face the various problems.
@@ -24,10 +24,10 @@ Chapter four shows the implementation of our use case with the optimizations
 we have described formerly.
 
 
-\section{Motivations}
+\section{Motivation}
 
 In this document we try to illustrate the common problems that arises
-when introducing a new IoT system in an existing environment, let's define it as
+when introducing a new IoT system in an existing environment. Let's define it as
 an average person house, we'll define the scenario details later.
 The first motivating problem taken in consideration is the \textbf{integration} of a new
 system in a house where there's already a different coexisting ecosystem.
@@ -36,8 +36,8 @@ with an innovative and different approach. Nowadays there are many standalone
 solutions for IoT surveillance, which acts separately from all the other
 components in the house. We address this isolation, trying to create
 a system capable of interconnecting with other existing components in the house.
-There are currently 4 billion of connected devices [2] as 2016, and the forecasts
-says they will be 13.5b in 2020. This means a growth in the heterogeneity of companies
+There are currently 4 billion of connected devices [2] as of 2016, and the forecasts
+says they will be 13.5 billion in 2020. This means a growth in the heterogeneity of companies
 and products, which makes a must the interoperability between devices from different
 producers.\\
 Most of the common Smart devices are built to work specifically with their own application,
@@ -81,7 +81,7 @@ Each service holds a functionality isolated in it's context, which can be deploy
 at runtime without any interruption of the service. In microservices the
 equivalent of the kernel is the API interface that exposes all the functionalities
 to the external world.
-With the raising of the need of interoperability, \textit{microservices}
+With the advent of the need of interoperability, \textit{microservices}
 seems to hold the key for this problem.
 Vendors have published their protocols, and have exposed API’s to their various hubs.
 A MicroService can serve as an adapter between various protocols. It can be lightweight and disposable,
@@ -104,7 +104,7 @@ device. \\
 In our architecture each gateway is a device exposing a service using
 a \textbf{RESTful} architecture, for a higher simplicity of use.
 
-\subsection{A RESTful interface}
+\subsection{RESTful interfaces}
 The communication between different devices is a common and dated
 problem in \textit{Computer Science}. Many approaches has been introduced
 during time, all of them with their relative pro and cons:

@@ -51,19 +51,6 @@ the house should be able to detect any external voice during an intrusion. In th
 paragraphs we'll show how we implemented such a system using some of the state-of-the art
 algorithm with \textit{Calvin} to improve the security in the house.
 
-
-\section{Expanding the system}
-One of the biggest limitations of nowadays security system is their isolation
-when installed. Most of devices are stand alone solutions incapable of extending
-their functionalities to pre existing devices. If we want to expand \textit{Calvin} to
-be adopted by others, including users and developers, we need to be able to extend its
-functionalities with the ability to communicate with different other systems.
-
-\section{The Architecture}
-
-In this section we will go deep in the details of the architecture of the solutions
-we propose.
-
 \subsection{Speaker recognition and Calvin}
 
 Machine learning tasks are typically cpu and time consuming tasks, which
@@ -157,7 +144,63 @@ of the Actor will be like:
  take a different approach, instead of a single recording we will sample it in
  $n$ segments of the same duration. The Actor will therefore change its state
  in order to generate the needed amount of audio recordings to be sent to the
- speaker recognition
+ speaker recognition Actor(s).\newline
+ Here are the conditions applied to the actor in order to fire the many actions:
+
+ \begin{verbatim}
+ Initialize the actor with a number of samples and their duration
+ @manage(['n_samples','duration'])
+ This is a one time initialization, without bounding these parameters
+ to any inbound port.
+
+ The condition for setting the actor as active, coming from the
+ sound detector
+ @condition(action_input['token'])
+
+ The outbound connection is a bas64 encoded audio recording loaded
+ into a json object
+ @condition(action_output['wav'])
+ \end{verbatim}
+
+ However the former skeleton doesn't explain enough about the internal structure of the Actor,
+ for which the more specific guard conditions explains it in more detail.
+
+ \begin{verbatim}
+ This guard condition starts the recording process of an audio sample,
+ with three conditions to match:
+ token available, the number of recordings done and the microphone state
+
+ @guard(lambda self: self.token and self.token_used > 0 and
+                                    not self['microphone'].recording())
+ Here the actor checks if the there is any wav file to dispatch
+ @guard(lambda self: self.wav)
+ \end{verbatim}
+
+ It is necessary to clarify the behavior of some internal variables:
+
+ \begin{itemize}
+     \item token - is a variable set to True each time a token is received from the previous
+     actor. It gets voided when the actor dispatches all the $n$ audio recordings.
+     \item token\_used - an internal variable initialized to $n$ each time the actor receives
+     a token and decremented each time the actor sends an audio file to the speaker recognition actor.
+     \item wav - is a simple flag representing the availability of a wav file to dispatch
+     \item microphone - is the physical sensor managed from the \textit{calvinsys} layer.
+ \end{itemize}
+
+\subsection{Speaker Recognition Actors}
+
+
+\section{Expanding the system}
+One of the biggest limitations of nowadays security system is their isolation
+when installed. Most of devices are stand alone solutions incapable of extending
+their functionalities to pre existing devices. If we want to expand \textit{Calvin} to
+be adopted by others, including users and developers, we need to be able to extend its
+functionalities with the ability to communicate with different other systems.
+
+\section{The Architecture}
+
+In this section we will go deep in the details of the architecture of the solutions
+we propose.
 
 \subsection{Accessing different systems}
 
@@ -346,7 +389,7 @@ during the execution otherwise it would break the reactivity of the other actors
 \subsection{A Microservice Oriented approach}
 
 Despite of the correctness of the former solution, it does however contains some
-flaws in the architecture. The solution works with under the following circumstances:
+flaws in the architecture. The solution works only under the following circumstances:
 
 \begin{enumerate}
     \item Libraries for connecting to a different ecosystem are provided in the same language (e.g. \textit{Python}).

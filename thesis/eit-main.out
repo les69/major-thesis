@@ -1,9 +1,9 @@
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Motivations}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.1}{Motivation}{chapter.1}% 2
 \BOOKMARK [1][-]{section.1.2}{The Scenario}{chapter.1}% 3
 \BOOKMARK [1][-]{section.1.3}{Microservices and IoT}{chapter.1}% 4
 \BOOKMARK [2][-]{subsection.1.3.1}{M2M: Machine to Machine}{section.1.3}% 5
-\BOOKMARK [2][-]{subsection.1.3.2}{A RESTful interface}{section.1.3}% 6
+\BOOKMARK [2][-]{subsection.1.3.2}{RESTful interfaces}{section.1.3}% 6
 \BOOKMARK [1][-]{section.1.4}{The power of Social Networks}{chapter.1}% 7
 \BOOKMARK [1][-]{section.1.5}{False positives}{chapter.1}% 8
 \BOOKMARK [2][-]{subsection.1.5.1}{Approaches}{section.1.5}% 9
@@ -33,15 +33,23 @@
 \BOOKMARK [1][-]{section.3.3}{In House Speaker Recognition}{chapter.3}% 33
 \BOOKMARK [2][-]{subsection.3.3.1}{Speaker recognition and Calvin}{section.3.3}% 34
 \BOOKMARK [2][-]{subsection.3.3.2}{Actor Structure and Interaction}{section.3.3}% 35
-\BOOKMARK [1][-]{section.3.4}{Expanding the system}{chapter.3}% 36
-\BOOKMARK [1][-]{section.3.5}{The Architecture}{chapter.3}% 37
-\BOOKMARK [2][-]{subsection.3.5.1}{Accessing different systems}{section.3.5}% 38
-\BOOKMARK [1][-]{section.3.6}{Accessing Nest}{chapter.3}% 39
-\BOOKMARK [2][-]{subsection.3.6.1}{Nest API Model}{section.3.6}% 40
-\BOOKMARK [2][-]{subsection.3.6.2}{Nest with Calvin}{section.3.6}% 41
-\BOOKMARK [2][-]{subsection.3.6.3}{A Microservice Oriented approach}{section.3.6}% 42
-\BOOKMARK [2][-]{subsection.3.6.4}{Accessing HomeKit}{section.3.6}% 43
-\BOOKMARK [2][-]{subsection.3.6.5}{empty}{section.3.6}% 44
-\BOOKMARK [0][-]{chapter.4}{Validation}{}% 45
-\BOOKMARK [0][-]{chapter.5}{Related Work}{}% 46
-\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 47
+\BOOKMARK [2][-]{subsection.3.3.3}{Hardware Interacting Actors}{section.3.3}% 36
+\BOOKMARK [2][-]{subsection.3.3.4}{Speaker Recognition Actors}{section.3.3}% 37
+\BOOKMARK [1][-]{section.3.4}{Expanding the system}{chapter.3}% 38
+\BOOKMARK [1][-]{section.3.5}{The Architecture}{chapter.3}% 39
+\BOOKMARK [2][-]{subsection.3.5.1}{Accessing different systems}{section.3.5}% 40
+\BOOKMARK [1][-]{section.3.6}{Accessing Nest}{chapter.3}% 41
+\BOOKMARK [2][-]{subsection.3.6.1}{Nest API Model}{section.3.6}% 42
+\BOOKMARK [2][-]{subsection.3.6.2}{Nest with Calvin}{section.3.6}% 43
+\BOOKMARK [2][-]{subsection.3.6.3}{A Microservice Oriented approach}{section.3.6}% 44
+\BOOKMARK [2][-]{subsection.3.6.4}{Accessing HomeKit}{section.3.6}% 45
+\BOOKMARK [2][-]{subsection.3.6.5}{empty}{section.3.6}% 46
+\BOOKMARK [0][-]{chapter.4}{Validation}{}% 47
+\BOOKMARK [1][-]{section.4.1}{Validating Speaker Recognition}{chapter.4}% 48
+\BOOKMARK [2][-]{subsection.4.1.1}{Testing the basic model}{section.4.1}% 49
+\BOOKMARK [2][-]{subsection.4.1.2}{Testing different inputs with the same speaker}{section.4.1}% 50
+\BOOKMARK [2][-]{subsection.4.1.3}{Testing same speaker talking different languages}{section.4.1}% 51
+\BOOKMARK [2][-]{subsection.4.1.4}{Animal Identification}{section.4.1}% 52
+\BOOKMARK [2][-]{subsection.4.1.5}{Step Recognition}{section.4.1}% 53
+\BOOKMARK [0][-]{chapter.5}{Related Work}{}% 54
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 55
