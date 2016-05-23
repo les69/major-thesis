@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.12)  22 MAY 2016 19:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.12)  23 MAY 2016 11:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1090,7 +1090,7 @@ LaTeX Info: Redefining \nameref on input line 100.
 \openout4 = `eit-main.out'.
 
 
-<elte-logo.jpg, id=228, 428.60126pt x 427.5975pt>
+<elte-logo.jpg, id=232, 428.60126pt x 427.5975pt>
 File: elte-logo.jpg Graphic file (type jpg)
  <use elte-logo.jpg>
 Package pdftex.def Info: elte-logo.jpg used on input line 113.
@@ -1189,7 +1189,7 @@ Chapter 2.
 
 
 
-] [8] <sourcesvariability.png, id=351, 2074.75125pt x 1200.485pt>
+] [8] <sourcesvariability.png, id=356, 2074.75125pt x 1200.485pt>
 File: sourcesvariability.png Graphic file (type png)
 
 <use sourcesvariability.png>
@@ -1201,7 +1201,7 @@ Overfull \hbox (7.89636pt too wide) in paragraph at lines 149--150
 ty, and au-dio codec/compression. 
  []
 
-[10] [11] [12] <gmmsvm.png, id=387, 1694.33pt x 1277.77374pt>
+[10] [11] [12] <gmmsvm.png, id=392, 1694.33pt x 1277.77374pt>
 File: gmmsvm.png Graphic file (type png)
  <use gmmsvm.png>
 Package pdftex.def Info: gmmsvm.png used on input line 264.
@@ -1214,13 +1214,13 @@ fo-cuses on four main Smart de-vices cat-e-gories: \T1/cmr/m/it/10.95 Se-cu-rit
 y\T1/cmr/m/n/10.95 ,\T1/cmr/m/it/10.95 Monitoring\T1/cmr/m/n/10.95 ,
  []
 
-[16] <soavsmicro.png, id=418, 457.71pt x 344.28625pt>
+[16] <soavsmicro.png, id=423, 457.71pt x 344.28625pt>
 File: soavsmicro.png Graphic file (type png)
  <use soavsmicro.png>
 Package pdftex.def Info: soavsmicro.png used on input line 415.
 (pdftex.def)             Requested size: 297.50798pt x 223.7834pt.
 
-[17 <./soavsmicro.png>] [18] <calvin4.png, id=432, 256.96pt x 301.125pt>
+[17 <./soavsmicro.png>] [18] <calvin4.png, id=437, 256.96pt x 301.125pt>
 File: calvin4.png Graphic file (type png)
 
 <use calvin4.png>
@@ -1230,7 +1230,7 @@ Package pdftex.def Info: calvin4.png used on input line 506.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[19] <calvin1.png, id=439, 256.96pt x 301.125pt>
+[19] <calvin1.png, id=444, 256.96pt x 301.125pt>
 File: calvin1.png Graphic file (type png)
  <use calvin1.png>
 Package pdftex.def Info: calvin1.png used on input line 534.
@@ -1239,7 +1239,7 @@ Package pdftex.def Info: calvin1.png used on input line 534.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<calvin2.png, id=440, 301.125pt x 97.36375pt>
+<calvin2.png, id=445, 301.125pt x 97.36375pt>
 File: calvin2.png Graphic file (type png)
  <use calvin2.png>
 Package pdftex.def Info: calvin2.png used on input line 546.
@@ -1248,7 +1248,7 @@ Package pdftex.def Info: calvin2.png used on input line 546.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[20 <./calvin4.png>] <calvin3.png, id=448, 262.9825pt x 301.125pt>
+[20 <./calvin4.png>] <calvin3.png, id=453, 262.9825pt x 301.125pt>
 File: calvin3.png Graphic file (type png)
 
 <use calvin3.png>
@@ -1259,7 +1259,7 @@ Package pdftex.def Info: calvin3.png used on input line 569.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [21 <./calvin1.png> <./calvin2.png>] [22 <./calvin3.png>]
-<calvinlayers.png, id=466, 569.12625pt x 631.35875pt>
+<calvinlayers.png, id=471, 569.12625pt x 631.35875pt>
 File: calvinlayers.png Graphic file (type png)
  <use calvinlayers.png>
 Package pdftex.def Info: calvinlayers.png used on input line 633.
@@ -1289,7 +1289,7 @@ Chapter 3.
 
 
 
-] <calvin-speaker1.png, id=495, 727.71875pt x 441.65pt>
+] <calvin-speaker1.png, id=500, 727.71875pt x 441.65pt>
 File: calvin-speaker1.png Graphic file (type png)
 
 <use calvin-speaker1.png>
@@ -1300,7 +1300,7 @@ Package pdftex.def Info: calvin-speaker1.png used on input line 71.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [28] [29 <./calvin-speaker1.png>] [30] [31] [32]
-<nest-architecture.png, id=519, 963.6pt x 443.6575pt>
+<nest-architecture.png, id=524, 963.6pt x 443.6575pt>
 File: nest-architecture.png Graphic file (type png)
 
 <use nest-architecture.png>
@@ -1318,7 +1318,7 @@ Overfull \hbox (42.85344pt too wide) in paragraph at lines 377--377
  self.operation == "set")[] 
  []
 
-[36] <test-arch.png, id=543, 581.17125pt x 418.56375pt>
+[36] <test-arch.png, id=548, 581.17125pt x 418.56375pt>
 File: test-arch.png Graphic file (type png)
  <use test-arch.png>
 Package pdftex.def Info: test-arch.png used on input line 413.
@@ -1332,7 +1332,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 477--487
 
  []
 
-[39] [40] <arch2.png, id=575, 826.08624pt x 316.18124pt>
+[39] [40] <arch2.png, id=580, 826.08624pt x 316.18124pt>
 File: arch2.png Graphic file (type png)
  <use arch2.png>
 Package pdftex.def Info: arch2.png used on input line 549.
@@ -1347,7 +1347,7 @@ Chapter 4.
 
 
 
-] [43]) [44] [45]
+] [43] [44]) [45]
 \openout2 = `chap5.aux'.
 
  (./chap5.tex
@@ -1381,13 +1381,13 @@ chap4.aux) (./chap5.aux) (./chap6.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 191.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 191.
 Package rerunfilecheck Info: File `eit-main.out' has not changed.
-(rerunfilecheck)             Checksum: 5864D2386A8F395FE9B5010DF46303D2;3870.
+(rerunfilecheck)             Checksum: 4C575E4E572AD7FB9B4151A04B2D25FD;3938.
  ) 
 Here is how much of TeX's memory you used:
- 27687 strings out of 493089
- 639855 string characters out of 6134842
- 794419 words of memory out of 5000000
- 30429 multiletter control sequences out of 15000+600000
+ 27715 strings out of 493089
+ 640333 string characters out of 6134842
+ 794578 words of memory out of 5000000
+ 30456 multiletter control sequences out of 15000+600000
  20425 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,17n,85p,793b,2154s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1411,10 +1411,10 @@ mf-dist/fonts/type1/public/cm-super/sfcc2074.pfb></usr/local/texlive/2015/texmf
 -dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2015/texmf-dis
 t/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on eit-main.pdf (53 pages, 2039208 bytes).
+Output written on eit-main.pdf (53 pages, 2041104 bytes).
 PDF statistics:
- 726 PDF objects out of 1000 (max. 8388607)
- 624 compressed objects within 7 object streams
- 172 named destinations out of 1000 (max. 500000)
- 524 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 731 PDF objects out of 1000 (max. 8388607)
+ 629 compressed objects within 7 object streams
+ 173 named destinations out of 1000 (max. 500000)
+ 532 words of extra memory for PDF output out of 10000 (max. 10000000)
 
