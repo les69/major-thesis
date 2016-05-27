@@ -103,7 +103,7 @@ its algorithm on it.
 \subsection{Hardware Interacting Actors}
 
 In this section we'll go in the details of the low level actors handling the resources
-such as sound detection and microphone, illustrating their internal logic and actions.
+such as sound detection and microphone, describing their internal logic and actions.
 
 \subsubsection{Sound Detection Actor}
 
@@ -188,6 +188,89 @@ of the Actor will be like:
  \end{itemize}
 
 \subsection{Speaker Recognition Actors}
+
+In this section we will go further with the Actors specialized
+in the \textit{Speaker Recognition} task, namely: Speaker identification
+and speaker diarization.
+
+\subsubsection{Speaker Diarization}
+
+As introduced in the previous chapter, speaker diarization is the process of
+finding the various speakers in an audio recording. The Actor supports only two
+functions: extracting the speakers and adding models to use in the identification phase.
+The diarization works in two phases: first the system splits the recording in many clusters
+based on who is speaking, and subsequently it tries to identify the voices from the
+models in the database.\newline
+The Actor accepts the following inputs:
+\begin{itemize}
+    \item wav - The base64 encoded audio recording from an audio source (i.e. the former microphone actor)
+    \item operation - The operation to perform on the file, either extracting speakers or adding a model to the database.
+    \item model name - An unique identifier for the new model to be added in the database
+\end{itemize}
+
+Therefore the output connections will be:
+
+\begin{itemize}
+    \item number of matches - the number of different speakers in the audio recording
+    \item matches - the models for which there was a positive match in the database, unknown otherwise.
+\end{itemize}
+
+The following conditions apply in order to maintain a proper flow in the execution:
+
+\begin{verbatim}
+    These conditions only apply when receiving and returning
+    values:
+    @condition(action_input=['operation'])
+    @condition(action_input=['wav'])
+    @condition(action_input=['model_name'])
+    @condition(action_output=['n_people','names'])
+
+\end{verbatim}
+
+However these conditions doesn't express the real logic beneath the Actor, which
+is handled by the \texttt{@guard} conditions. Here follows the most
+important guard conditions.
+
+\begin{verbatim}
+    This guard allow us to set the operation only when it's unset,
+    restricting the set of possible choices for the operation.
+    @guard(lambda self, operation: self.operation ==
+        None and (operation == 'extract' or operation == 'add_model')
+
+    The following guards conditions are used for the two steps
+    asynchronous recognition. The first phase start the process
+    and needs some parameters to be set properly:
+    the operation must be extract, the wav file has to be set
+    and extracted means we did not pass already this phase.
+    @guard(lambda self: self.operation == 'extract' and self.wav
+        is not None and not self.extracted)
+
+    Here the same applies for the wav file, meanwhile
+    one of the conditions to enter the function is the end of
+    the previous process, indicated by the internal state
+    ._in_progress.
+    @guard(lambda self: self.wav is not None and
+        self.recognizer._in_progress == None and self.extracted)
+
+\end{verbatim}
+
+In conclusion, the Actor's purpose is to identify the different
+speakers and if they match with someone in the database return
+their names.
+
+\subsubsection{Speaker Verification and Identification}
+
+Due to its very subtle difference, we have decided to encapsulate verification
+and identification in a single actor. Speaker Identification is applied when no
+model to identify is given, meanwhile verification is executed when a model to match
+is available. The structure of the Actor is very similar to the one proposed in the
+previous: the actor accepts as input a wav file (base64 encoded) and a model name
+(in this case is optional), and an operation parameter for adding models to the database.
+Therefore the input are equal to the previous actor, though this time operation may
+be only restricted to \textit{recognize} and \textit{add model}. However the outbound
+connection of the Actor will be different, this time the actor will return the likelihood
+of the match, and the model for which there was a match (if it is identification).
+
 
 
 \section{Expanding the system}

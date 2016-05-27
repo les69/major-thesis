@@ -38,7 +38,6 @@ reliability:
     a biometric input.
 \end{itemize}
 \subsection{Speaker recognition}
-%%[TODO] describe more in details the types of speaker recognition
 Identifying a person by his or her voice is an important trait taken for granted
 in human to human interaction.[17] Everyday we use the voice as an identification pattern
 to distinguish people we are not seeing, to remember people
@@ -61,12 +60,16 @@ Speaker recognition can be accomplished in three ways:
     about a human and then recognize known voices in audio files.
 \end{description}
 
-Speaker recognition is a large topic of research which includes two separated taks: spaker
-identification and speaker verification. Although we will focus mainly on the identification,
+Speaker recognition is a large topic of research which includes two separated taks: speaker
+identification, speaker verification and speaker diarization. Although we will focus mainly on the identification,
 speaker verification happens when an unknown claims to be a known person and the task
 of the system is to verify the correctness of the claim.
 In speaker identification the task is to identify an unknown speaker from a set of known speakers,
-using audio samples to find the closest speaker to him or her. We define \textit{closed} or \textit{in-set scenario}
+using audio samples to find the closest speaker to him or her.
+Finally, speaker diarization is the process of partitioning an audio stream in clusters relatively
+to the different speakers in the recording. It is usually combined with speaker recognition and it answers
+the question: \textit{Who spoke when?}.
+We define \textit{closed} or \textit{in-set scenario}
 when all the speakers are known and \textit{out-of-set speaker identification} when the potential input
 may be out of the predefined speaker group.
 Moreover speaker recognition can be:

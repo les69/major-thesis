@@ -55,35 +55,39 @@
 \contentsline {subsubsection}{Sound Detection Actor}{30}{section*.20}
 \contentsline {subsubsection}{Recording Actor}{30}{section*.21}
 \contentsline {subsection}{\numberline {3.3.4}Speaker Recognition Actors}{32}{subsection.3.3.4}
-\contentsline {section}{\numberline {3.4}Expanding the system}{32}{section.3.4}
-\contentsline {section}{\numberline {3.5}The Architecture}{32}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Accessing different systems}{32}{subsection.3.5.1}
-\contentsline {section}{\numberline {3.6}Accessing Nest}{33}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Nest API Model}{33}{subsection.3.6.1}
-\contentsline {subsubsection}{Nest Thermostat}{34}{section*.22}
-\contentsline {subsubsection}{Nest Protect}{34}{section*.23}
-\contentsline {subsubsection}{Nest Camera}{35}{section*.24}
-\contentsline {subsection}{\numberline {3.6.2}Nest with Calvin}{35}{subsection.3.6.2}
-\contentsline {subsubsection}{Device Abstraction}{36}{section*.25}
-\contentsline {subsection}{\numberline {3.6.3}A Microservice Oriented approach}{37}{subsection.3.6.3}
-\contentsline {subsubsection}{Microservice Architecture}{37}{section*.26}
-\contentsline {subsubsection}{The microservice API}{38}{section*.27}
-\contentsline {subsection}{\numberline {3.6.4}Accessing HomeKit}{39}{subsection.3.6.4}
-\contentsline {subsubsection}{The Application}{40}{section*.28}
-\contentsline {subsubsection}{Grand Central Dispatch}{40}{section*.29}
-\contentsline {subsubsection}{Calvin and HomeKit}{41}{section*.30}
-\contentsline {subsubsection}{Advantages}{41}{section*.31}
-\contentsline {subsection}{\numberline {3.6.5}empty}{41}{subsection.3.6.5}
-\contentsline {chapter}{\numberline {4}Validation}{42}{chapter.4}
-\contentsline {section}{\numberline {4.1}Validating Speaker Recognition}{42}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Testing the basic model}{42}{subsection.4.1.1}
-\contentsline {subsubsection}{Results}{43}{section*.32}
-\contentsline {subsubsection}{Finding the optimal length for a Model}{43}{section*.33}
-\contentsline {subsubsection}{Finding the optimal length for an Audio Segment}{44}{section*.34}
-\contentsline {subsection}{\numberline {4.1.2}Testing different inputs with the same speaker}{45}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Testing same speaker talking different languages}{45}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}Animal Identification}{45}{subsection.4.1.4}
-\contentsline {subsection}{\numberline {4.1.5}Mimic a person}{45}{subsection.4.1.5}
-\contentsline {subsection}{\numberline {4.1.6}Step Recognition}{45}{subsection.4.1.6}
-\contentsline {chapter}{\numberline {5}Related Work}{46}{chapter.5}
-\contentsline {chapter}{\numberline {6}Conclusion}{47}{chapter.6}
+\contentsline {subsubsection}{Speaker Diarization}{32}{section*.22}
+\contentsline {subsubsection}{Speaker Verification and Identification}{33}{section*.23}
+\contentsline {section}{\numberline {3.4}Expanding the system}{34}{section.3.4}
+\contentsline {section}{\numberline {3.5}The Architecture}{34}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Accessing different systems}{34}{subsection.3.5.1}
+\contentsline {section}{\numberline {3.6}Accessing Nest}{35}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Nest API Model}{35}{subsection.3.6.1}
+\contentsline {subsubsection}{Nest Thermostat}{36}{section*.24}
+\contentsline {subsubsection}{Nest Protect}{36}{section*.25}
+\contentsline {subsubsection}{Nest Camera}{37}{section*.26}
+\contentsline {subsection}{\numberline {3.6.2}Nest with Calvin}{37}{subsection.3.6.2}
+\contentsline {subsubsection}{Device Abstraction}{38}{section*.27}
+\contentsline {subsection}{\numberline {3.6.3}A Microservice Oriented approach}{39}{subsection.3.6.3}
+\contentsline {subsubsection}{Microservice Architecture}{39}{section*.28}
+\contentsline {subsubsection}{The microservice API}{40}{section*.29}
+\contentsline {subsection}{\numberline {3.6.4}Accessing HomeKit}{41}{subsection.3.6.4}
+\contentsline {subsubsection}{The Application}{42}{section*.30}
+\contentsline {subsubsection}{Grand Central Dispatch}{42}{section*.31}
+\contentsline {subsubsection}{Calvin and HomeKit}{43}{section*.32}
+\contentsline {subsubsection}{Advantages}{43}{section*.33}
+\contentsline {subsection}{\numberline {3.6.5}empty}{43}{subsection.3.6.5}
+\contentsline {chapter}{\numberline {4}Validation}{44}{chapter.4}
+\contentsline {section}{\numberline {4.1}Validating Speaker Recognition}{44}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Testing the basic model}{44}{subsection.4.1.1}
+\contentsline {subsubsection}{Results}{45}{section*.34}
+\contentsline {subsubsection}{Finding the optimal length for a Model}{45}{section*.35}
+\contentsline {subsubsection}{Finding the optimal length for an Audio Segment}{46}{section*.36}
+\contentsline {subsection}{\numberline {4.1.2}Testing different inputs with the same speaker}{47}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Testing same speaker talking different languages}{47}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Animal Recognition}{48}{subsection.4.1.4}
+\contentsline {subsubsection}{Animal Identification}{48}{section*.37}
+\contentsline {subsubsection}{Animal Verification}{49}{section*.38}
+\contentsline {subsection}{\numberline {4.1.5}Mimic a person}{49}{subsection.4.1.5}
+\contentsline {subsection}{\numberline {4.1.6}Step Recognition}{49}{subsection.4.1.6}
+\contentsline {chapter}{\numberline {5}Related Work}{50}{chapter.5}
+\contentsline {chapter}{\numberline {6}Conclusion}{51}{chapter.6}

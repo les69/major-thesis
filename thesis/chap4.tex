@@ -34,6 +34,10 @@ quality, we will make more specific tests later in the document.
 
 \subsubsection{Results}
 
+In the following table we summarize the results from the test, where \textit{score} is the
+likelihood percentage: less than 40\% is unlikely or wrong and 100\% is completely sure.
+The remaining fields are the average execution time for the different tests and the mean duration
+of the test files.
 \begin{table}
     \label{tab:basicres}
 \centering
@@ -194,7 +198,81 @@ speaker but from a different audio source.
 
 \subsection{Testing same speaker talking different languages}
 
-\subsection{Animal Identification}
+One of the many interesting points of speaker recognition is its ability to perform
+recognition of people talking different languages. Although it is very unlikely
+for people to speak different languages in the same house, it is a characteristic to
+validate. In this test we will use different models, all of them based on the reading of a
+paragraph in different languages. Therefore we will analyze if there exists any noise or error
+in matching introduced by the spoken language into the model. The languages used in the test will be:
+English, Italian, German and Spanish. Those languages are chosen based on the speaker's ability to
+speak with an accent as appropriate as possible.
+
+\subsection{Animal Recognition}
+
+Animals, and more specifically pets are one of the typical sources of noise in the house
+which may lead to false positives when listening for intruders. The question in this test
+is the ability of the system to learn from \textit{"animals"} and recognize them as different identities.
+The first test to run is the basic capability of the algorithm to adapt itself to a dog's barking,
+and test if it can recognize the dog as familiar. Furthermore the test can be continued by testing
+if the model can recognize all dogs apart from human voices. We have used dogs in our examples
+only because it is relatively easy to find their barking recorder, though there should be no
+difference in using other animal sounds to perform the test (e.g. cats).
+Finally it is important to test
+the system functionalities when identifying also different kind of animals.
+
+\subsubsection{Animal Identification}
+
+The purpose of this test is to analyze the identification of a dog given a model
+and recognize the animal from it. The main purpose is to be able to identify
+the dog as animal, and not the dog as a familiar voice. Our assumption is that
+given a dog barking sample we will be able to recognize all the dogs and categorize
+them as dog instead of human. \newline
+However the test results proved us wrong, the system can not recognize dogs from a single
+model, at least not precisely. From the test we had a high variance between the results, some
+where matching with relatively good scores (around 70\% on average) meanwhile others
+were completely failing. Despite the non reliable result, the problem relies in the
+difference of dog races, specially on their size. This results in a very different
+and wide range of barking sounds hard to summarize in a single model. However, from
+the matching examples we inferred the similarity of size and race, which is a hint for
+the next test where we will try to verify a dog identity given its bark.
+
+\begin{table}
+    \label{tab:animalres}
+\centering
+\caption{Animal match results}
+\begin{tabular}{|c|c|} \hline
+    \textbf{Matches} & \textbf{Avg Likelihood (\%)} \\ \hline
+    6 out of 13 & 74.7 \\ \hline
+\end{tabular}
+\end{table}
+
+As can be seen in the table above \ref{tab:animalres}, 6 out of 13 matched, with an accuracy of
+~46\%, not enough for a general dog recognition but enough to open new leads for different and more
+accurate tests.
+
+\subsubsection{Animal Verification}
+
+From the experience of the previous test we can assume that there is an opportunity
+for the verification of an animal identity. The purpose of this validation is to
+test the ability of the system to recognize a familiar voice, even though it's a dog
+barking. This would allow us to decrease the number of false positives due to pet
+noise while listening for possible intrusions. \newline
+This test will use a single recording of a bark and split it in the classical way: 80\%
+for learning and 20\% for test. This limitation is due to the difficulty of gathering
+barks from the same dog in different situations, though the approach is typical from
+machine learning and should work fine as well.
+
+
+
+
+
+
+
+
+
+
+
+
 \subsection{Mimic a person}
 
 \subsection{Step Recognition}
