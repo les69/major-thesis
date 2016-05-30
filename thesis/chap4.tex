@@ -196,6 +196,44 @@ speaker but from a different audio source.
 
 \subsection{Testing different inputs with the same speaker}
 
+As seen in the previous tests it is now clear that the input quality influences the output
+of the recognition. However we don't know how much the input quality affects the matching,
+which we will investigate in the following test. In order to get a qualitative result
+we set up the validation using different audio inputs, ranging in quality and with different
+devices. In our test we have considered the following devices:
+
+\begin{itemize}
+    \item Laptops - usually have a built-in microphone, though the quality
+    is not high. Furthermore we used different laptops to see an average likelihood
+    score not biased by only one device.
+    \item Smartphones - also have an integrated microphone, usually of a higher quality
+    since it is one of the key components of a smartphone.
+    \item Integrated microphone - many high quality headphones have an integrated
+    microphone, typically of better quality then the previous ones.
+\end{itemize}
+
+\subsubsection{Results}
+
+\begin{table}
+    \label{tab:inputres}
+\centering
+\caption{Test with different speakers}
+\begin{tabular}{|c|c|} \hline
+\textbf{Device} & \textbf{Avg Score \%} \\ \hline
+\textbf{Laptop} & 83 \\ \hline
+\textbf{Smartphone} & 88  \\ \hline
+\textbf{Headphones} & 93.6  \\ \hline
+\end{tabular}
+\end{table}
+
+As can be see in \ref{tab:inputres} there is a definitive difference in the matching score
+with different inputs. The test highlighted our assumption, though the error introduced is
+not too high. We consider \textgreater 80\% already a good result, though there is only a 10\%
+of difference between the lowest quality and the highest in the test. Therefore a halfway
+is more then perfect for an accurate recognition.
+
+
+
 \subsection{Testing same speaker talking different languages}
 
 One of the many interesting points of speaker recognition is its ability to perform
@@ -206,6 +244,69 @@ paragraph in different languages. Therefore we will analyze if there exists any 
 in matching introduced by the spoken language into the model. The languages used in the test will be:
 English, Italian, German and Spanish. Those languages are chosen based on the speaker's ability to
 speak with an accent as appropriate as possible.
+
+
+
+\subsubsection{Results}
+
+The results showed only a small variability introduced by the language spoken. Although
+the speaker was using different languages the system could recognize the person without
+any mismatch and with high likelihood scores. It is interesting to see that the language
+which had the lowest match values is English. The reason may be due to the high difference
+in the accent with the other languages, whereas Italian and Spanish have a high relative
+match score.
+\begin{center}
+
+
+\begin{tikzpicture}
+
+\begin{axis}[
+    title={Variability in likelihood for different languages},
+    xlabel={Language spoken [name]},
+    ylabel={Likelihood score [percentage]},
+    symbolic x coords={English,Italian,German,Spanish},
+    xtick=data,
+    ytick={80,90,100},
+    legend pos=south east,
+    ymajorgrids=true,
+    grid style=dashed,
+]
+
+\addplot[
+    color=blue,
+    mark=square,
+    ]
+    coordinates {
+    (English,100) (Italian,91) (German,89) (Spanish,84)
+    };
+\addplot[
+    color=red,
+    mark=square,
+    ]
+    coordinates {
+    (English,79) (Italian,100) (German,96) (Spanish,99)
+    };
+\addplot[
+    color=green,
+    mark=square,
+    ]
+    coordinates {
+    (English,77) (Italian,99) (German,100) (Spanish,97)
+    };
+\addplot[
+    color=purple,
+    mark=square,
+    ]
+    coordinates {
+    (English,79) (Italian,95) (German,90) (Spanish,100)
+    };
+    \legend{English,Italian,German,Spanish}
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+
 
 \subsection{Animal Recognition}
 
@@ -237,9 +338,10 @@ the matching examples we inferred the similarity of size and race, which is a hi
 the next test where we will try to verify a dog identity given its bark.
 
 \begin{table}
-    \label{tab:animalres}
+
 \centering
 \caption{Animal match results}
+\label{tab:animalres}
 \begin{tabular}{|c|c|} \hline
     \textbf{Matches} & \textbf{Avg Likelihood (\%)} \\ \hline
     6 out of 13 & 74.7 \\ \hline
@@ -257,22 +359,181 @@ for the verification of an animal identity. The purpose of this validation is to
 test the ability of the system to recognize a familiar voice, even though it's a dog
 barking. This would allow us to decrease the number of false positives due to pet
 noise while listening for possible intrusions. \newline
-This test will use a single recording of a bark and split it in the classical way: 80\%
-for learning and 20\% for test. This limitation is due to the difficulty of gathering
-barks from the same dog in different situations, though the approach is typical from
-machine learning and should work fine as well.
+This test will use a single recording of a bark and split it using the optimal
+durations for model and test obtained from the previous tests.
+This limitation is due to the difficulty of gathering
+barks from the same dog in different situations, though the approach should work fine as well.
+
+\subsubsection{Results}
+
+In our simulation we used three different dogs barking of different
+sizes and races. As expected from the previous test the system
+managed successfully to match the dogs with their relative models. Furthermore,
+the accuracy of the match is very high with a minimum of 85\% in the likelihood
+for the worst match.
+
+\begin{table}
+
+\centering
+\caption{Animal verification}
+\label{tab:animalresver}
+\begin{tabular}{|c|c|} \hline
+    - & \textbf{Avg Likelihood (\%)} \\ \hline
+    \textbf{Dog \#1} & 93 \\ \hline
+    \textbf{Dog \#2} & 85 \\ \hline
+    \textbf{Dog \#3} & 97 \\ \hline
+\end{tabular}
+\end{table}
+
+As can be seen in table \ref{tab:animalresver}, the results of the different test
+show a high likelihood in the match. We can therefore say that speaker recognition
+also applies with non human voices, including pets.\newline
+Finally we can conclude that a speaker recognition system can be used to reduce the number
+of false positives adding the pets in the model.
 
 
+\subsection{Cheating the Speaker Recognition}
 
-
-
-
-
-
-
-
-
-
-\subsection{Mimic a person}
+Until now we have demonstrated speaker recognition working, and not, in many different situations.
+Another relevant question is if speaker recognition can be affected by fake impersonations,
+more accurately mimicking a voice. Voice imitation can be used to bypass security and
+surveillance systems, as in our case it would avoid the detection of the intruder.
 
 \subsection{Step Recognition}
+
+In recent years gait recognition gained popularity due to its
+non-invasivity and does not require any cooperation from the user.
+However, we think it's possible to apply the same thinking to steps,
+identifying someone by their steps. It's still a non invasive technique,
+and it is supposed to work similarly as it worked for the animal verification.
+We will start verifying the base hypothesis: is the steps are actually recognized.
+Subsequently we will try the identification with different pairs of shoes and see if
+there is any different or the steps matches anyway. Finally we will try to limit the system
+using different models of walking, as final verification.
+
+\section{Validation of the Microservice approach}
+
+In this section we will test the differences between the micro-service
+oriented approach with the typical integration. The microservice oriented
+will surely be a slower approach, mainly due to the impact of the introduced
+overhead. However, we will analyze the different approaches in order to establish
+the effective impact, evaluating its feasibility in a real world situation.
+
+
+
+\subsection{Microservices Oriented integration and Typical integration}
+
+The first and most basic test to run is the running time of the different approaches,
+showing the real difference in the execution of the approaches. Profiling the performance
+of the two is the easiest way of highlighting the difference.\newline
+For this comparison we will run some reading and writing requests for some simulated devices
+on the \textit{Nest} ecosystem. The test will dig into the two possible scenarios when interacting with
+Nest:Get and Put. More in detail:
+
+\begin{itemize}
+    \item GET - will apply on the same device on the same property on both the tests
+    \item PUT - will also apply to the same devices and property.
+\end{itemize}
+
+\subsubsection{Results}
+
+\begin{table}
+
+\centering
+\caption{Animal match results}
+\label{tab:nestbasic}
+\begin{tabular}{|c|c|c|} \hline
+\textbf{Method} &  \textbf{Operation} & \textbf{Avg Execution time (ms)} \\ \hline
+    Direct & GET & 0.27 \\ \hline
+    Direct & PUT & 0.31 \\ \hline
+    Microservice & GET & 4.10 \\ \hline
+    Microservice & PUT & 5.76 \\ \hline
+\end{tabular}
+\end{table}
+
+As expected the running time with the typical integration is smaller. As can be seen
+from table \ref{tab:nestbasic} the average running for a \texttt{GET} request with the direct integration is 0.27 ms whereas the average time for
+the microservice approach is 4.10 ms. Similar situation for the \texttt{PUT} operation, with an average of 0.31 ms for the first approach and a higher
+execution time for the microservices with an average of 5.76 ms.
+Therefore the average delay introduced by the microservice chain is,
+on average, 4.64 ms, calculated on both of the operations. This is the price to pay for the different approach, a price that is worth the flexibility
+given in the structure. Moreover with the advent of faster networks this price given by the inter network communication will drop
+significantly, though even now it doesn't invalidate the overall performance.
+
+\begin{center}
+
+
+\begin{tikzpicture}
+
+\begin{axis}[
+    title={Execution time for GET},
+    xlabel={attempt [\# number]},
+    ylabel={Execution time [ms]},
+    xtick={1,2,3,4,5,6},
+    ytick={0,1,2,3,4,5},
+    legend pos=north west,
+    ymajorgrids=true,
+    grid style=dashed,
+]
+\addplot[
+    color=green,
+    mark=square,
+    ]
+    coordinates {
+    (1,0.177) (2,0.29) (3,0.27) (4,0.34)  (5,0.26) (6,0.32)
+    };
+\addplot[
+    color=purple,
+    mark=square,
+    ]
+    coordinates {
+    (1,4.19) (2,4.39) (3,3.78) (4,3.68) (5,4.06) (6,5.03)
+    };
+    \legend{Direct,Microservice}
+
+\end{axis}
+
+\end{tikzpicture}
+
+\begin{tikzpicture}
+
+\begin{axis}[
+    title={Execution time for PUT},
+    xlabel={attempt [\# number]},
+    ylabel={Execution time [ms]},
+    xtick={1,2,3,4,5,6},
+    ytick={0,1,2,3,4,5,6,7},
+    legend pos=north west,
+    ymajorgrids=true,
+    grid style=dashed,
+]
+\addplot[
+    color=green,
+    mark=square,
+    ]
+    coordinates {
+    (1,0.344) (2,0.229) (3,0.312) (4,0.355)  (5,0.297) (6,0.345)
+    };
+\addplot[
+    color=purple,
+    mark=square,
+    ]
+    coordinates {
+    (1,4.038) (2,5.74) (3,3.9) (4,6.53) (5,5.86) (6,3.89)
+    };
+    \legend{Direct,Microservice}
+
+\end{axis}
+
+\end{tikzpicture}
+\end{center}
+
+\subsection{Architecture limits}
+
+Our architecture, especially in the \textit{HomeKit} situation has some limits
+due to the bottleneck given by the web server running on the application. Despite the
+fact that all the microservices can scale at need, the service dealing with the homekit
+devices has to run as a single instance. In this situation we will try to find the limits
+trying to run a high number of requests to the end-point application and see the behavior.\newline
+In this scenario we will have many actors (i.e. from 50 to 100), all trying to read or write
+a casual property, stressing as much as possible the application.

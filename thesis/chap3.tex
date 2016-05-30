@@ -403,7 +403,6 @@ other typical features offered by smart cameras.
 
 \subsection{Nest with Calvin}
 
-%%[TODO] create a nice chart to describe this
 One of the key aspects of \textit{Calvin's} Actors is their abstraction
 to allow their reuse in different situations. However, due to the different
 nature of the ecosystem, specially \textit{Nest} and \textit{HomeKit} the actors
@@ -515,6 +514,7 @@ to the \textit{Calvin} runtime.
 The API to describe the connection between \textit{Nest} and the microservice
 resembles the former actor structure.
 Following the classic \textit{RESTful} style, to access a device will look like
+\pagebreak
 \begin{verbatim}
     1.
     Show details about device
@@ -554,7 +554,7 @@ Following the classic \textit{RESTful} style, to access a device will look like
 
 
 
-%%\pagebreak
+\pagebreak
 \subsection{Accessing HomeKit}
 
 \textit{HomeKit}, introduced in details in the previous chapter, is the other ecosystem
@@ -641,14 +641,10 @@ iOS application, which is the only access to the HomeKit devices.
 
 \subsubsection{Advantages}
 
-
-
-
-
-
-
-
-
-
-
-\subsection{empty}
+Integration with different ecosystems is a new topic, focusing more on the big
+picture rather than connecting single devices. Microservices are a bright promise
+for the future, for a certain category of problems and integration between ecosystems
+fits perfectly into it. There are some pros and cons as there are for any solution,
+an example may be the introduced overhead and complexity. Despite the cons the flexibility
+introduced my microservices is more valuable, a value for which both overhead and complexity
+are paid back.

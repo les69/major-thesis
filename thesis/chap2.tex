@@ -279,8 +279,8 @@ channel and speaker variability lies in the  lower dimensional
 subspaces of GMMs supervector space. These subspaces are
 modeled by two matrices $U$ and $V$, where for a random
 utterance with speaker $s$ and session $h$ a GMM supervector
-can represented by:
-\begin{equation}
+can represented by equation \ref{eq:gmmsv}
+\begin{equation} \label{eq:gmmsv}
     m_{s,h} = m_{0} + Ux_{h} + Vy_{s} + Dz_{s,h}
 \end{equation}
 Joint FA exploits the behavior of speaker features in a variety of
@@ -354,7 +354,7 @@ The remote access through APIs unlinks developers from platform dependent librar
 that restricts the use or the integration with a specific technology.
 Furthermore it is possible to access directly \textit{Nest} devices with their \textit{Nest Wave}
 which allows direct communication with non-branded devices using two different communication protocols,
-mainly \textbf{802.11} standards.
+mainly \textit{802.11} standards.
 
 
 \subsubsection{Apple - HomeKit}
@@ -372,7 +372,7 @@ make the system independent from specific technologies.
 
 \subsubsection{Samsung - SmartThings}
 
-\textbf{SmartThings} is another ecosystem from \textit{Samsungs} with many similarities
+\textbf{SmartThings}[21] is another ecosystem from \textit{Samsungs} with many similarities
 with the former producers.\textit{SmartThings} focuses on four main Smart devices categories:
 \textit{Security},\textit{Monitoring}, \textit{Lighting and Energy} and \textit{Convenience and Entertainment}.
 \textit{SmartThings} as the previous ecosystem does not allow a direct interaction with the smart devices,
@@ -435,7 +435,7 @@ monolith approach, meanwhile for this situation would be better to use a microse
 Considering the \textit{Microservice} architectural pattern we can decompose
 the above situation creating dedicated services capable of handling the
 required business logic to interact with an external system. This approach
-is also called \textbf{Componentization via Services}[7], where a component is defined
+is also called \textit{Componentization via Services}[7], where a component is defined
 as a \textit{unit of software that is independently replaceable and upgradeable.}
 It is important to distinguish between \textit{libraries} and \textit{services}:
 the latter uses out-of-service components to communicate, mainly HTTP requests or
@@ -460,7 +460,7 @@ adopting the microservice architecture:
   possible optimization that can be achieved using the right technology for the
   right task. Furthermore this removes completely the problem of creating adapters
   for different technologies to integrate in the system if they do not exist. This is
-  also called \textbf{Decentralized Governance}.
+  also called \textit{Decentralized Governance}.
   \item[Evolutionary Design] is a concept popularized by the \textit{Extreme Programming},
   where the system is continuously evolving during the phases of it's development.
   This key feature makes possible to evolve adopting a microservice architecture while
@@ -552,7 +552,7 @@ an environment where new technologies are frequently added or modified.
 
   After describing the many functionalities provided by the various Actors in the system
   we need to tie them to build applications. \textit{Calvin} offer a scripting language,
-  named \textbf{CalvinScript}, to describe the various connections between actors
+  named \textit{CalvinScript}, to describe the various connections between actors
   and their input and output ports. In figure \ref{fig:calvinscript} there is an example
   of a script for detecting faces in an image. The first part is relative to the actors declaration
   and initialization, giving a clear description of which actors will be playing in the current
@@ -607,7 +607,7 @@ usually microservices uses RESTful interfaces. There is some discussion
 in the community whether some argues that actors are actually microservices
 themselves [12] meanwhile others defines actors as a subset of microservices[13].
 This however heavily depends on the actors framework adopted for the situation, which in our
-case an Actor can not be compared to a microservice due to an insight limitation: \textbf{Calvin Actors can not
+case an Actor can not be compared to a microservice due to an insight limitation: \textit{Calvin Actors can not
 use different technologies}, at the moment.
 
 \subsection{Calvin's Three Tier architecture}

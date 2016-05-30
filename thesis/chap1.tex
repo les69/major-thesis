@@ -6,7 +6,7 @@
 %% prompt when you run the file main.tex through LaTeX.
 \chapter{Introduction}
 
-IoT surveillance systems has been proved to be effective during the time,
+Internet of Things(IoT) based surveillance systems has been proved to be effective during the time,
 catching the burglar committing the crime and helping the authorities to
 catch him[1]. Nonetheless these systems are not yet perfect, and during
 this document we will investigate on some optimizations with respect to
@@ -17,11 +17,11 @@ Here follows the main structure of the thesis:\\
 Chapter two introduces the technologies used in our scenario, with a brief
 introduction on the techniques adopted to face the various problems.
 
-Chapter three illustrates the main architecture of the optimizations proposed
-during the document and the motivation behind them.
+Chapter three illustrates the main architecture proposed
+during the document and its implementation.
 
-Chapter four shows the implementation of our use case with the optimizations
-we have described formerly.
+Chapter four shows the validation of the architecture proposed in the former
+chapter, showing the real benefits of the approach.
 
 
 \section{Motivation}
@@ -29,7 +29,7 @@ we have described formerly.
 In this document we try to illustrate the common problems that arises
 when introducing a new IoT system in an existing environment. Let's define it as
 an average person house, we'll define the scenario details later.
-The first motivating problem taken in consideration is the \textbf{integration} of a new
+The first motivating problem taken in consideration is the \textit{integration} of a new
 system in a house where there's already a different coexisting ecosystem.
 The idea behind our research in this field is to improve the existing solutions
 with an innovative and different approach. Nowadays there are many standalone
@@ -47,7 +47,7 @@ ecosystem. The inability of a user to switch or adopt a new technology is also c
 a common commercial practice to retain users. However research is moving forward
 this direction investigating in new innovative and efficient methods to solve this
 problem, and there are already some approaches which will be discussed in the next chapter.
-\textbf{False positives} is another key issue in our investigation on the improvement of a
+\textit{False positives} is another key issue in our investigation on the improvement of a
 house monitoring scenario. The reason behind this choice lies in the connection with the "idea"
 of a house with an alarm connection to a third party security agency. We need to have a real
 alarm when something is happening, reducing the probability of false alarms and not wasting time
@@ -67,6 +67,16 @@ on the identification of issues while designing the systems rather than facing
 and solving problems at the last moment due to some unpredictable variables of a
 too varied scenario.
 
+\section{Calvin}
+
+\textit{Calvin} is an open-source and cloud oriented framework
+for IoT applications. Calvin is built to scale well, offering the opportunity
+to run it on both small devices and more powerful machines in order to use the
+full power of cloud computing. It's distributed perspective follows the principle
+of \textit{run it where it's most needed},exploiting the high interoperability with
+hardware of small devices combined to the more powerful execution of server machines.
+Calvin aims to be easy to develop, using an actor model architecture where actors are
+simple but reactive entities interacting with each other.
 
 \section{Microservices and IoT}
 
@@ -74,13 +84,11 @@ The Microservice architecture is an innovative modeling pattern that aims
 to solve a well defined class of problems: scaling.
 The idea behind microservices is to split the architecture on different machines
 usually communicating through a RESTful interface.
-This pattern is similar to the \textit{microkernel} architecture for Operative Systems,
-where the kernel contains the most vital functions and each functionality is a Plug-In
-(or Driver Module) that can be added externally.
-Each service holds a functionality isolated in it's context, which can be deployed
-at runtime without any interruption of the service. In microservices the
-equivalent of the kernel is the API interface that exposes all the functionalities
-to the external world.
+In microservices the
+functionalities are exposed through an API interface to the external world using the
+\textit{gateway pattern}. Microservices share many key aspects with the \textit{microkernel}
+architecture pattern, offering a better reliability, resiliency, portability, extensibility,
+flexibility and easier and faster environment for development and testing.
 With the advent of the need of interoperability, \textit{microservices}
 seems to hold the key for this problem.
 Vendors have published their protocols, and have exposed API’s to their various hubs.
@@ -102,7 +110,7 @@ needed to communicate and provide these knowledge as a service to
 whom has the necessity to access the functionalities provided by the
 device. \\
 In our architecture each gateway is a device exposing a service using
-a \textbf{RESTful} architecture, for a higher simplicity of use.
+a \textit{RESTful} architecture, for a higher simplicity of use.
 
 \subsection{RESTful interfaces}
 The communication between different devices is a common and dated
@@ -123,7 +131,7 @@ during time, all of them with their relative pro and cons:
 All of them are good candidates for the construction of a distributed system,
 but it's better to adopt a single protocol for communication instead of many to
 avoid over complicating the problem.
-We choose to use the \textbf{RESTful} architecture, which
+We choose to use the \textit{RESTful} architecture, which
 better suits our scenario. Our decision complies with the current trend in the
 implementation of microservices, where REST is the typical choice for exposing
 functionalities. Its simplicity made it very popular and widely adopted, making
@@ -131,37 +139,6 @@ REST one of the "standards" for communication between services on the web, mainl
 due to its capability to work over \textit{HTTP} without any additional infrastructure.
 
 
-
-
-
-\section{The power of Social Networks}
-
-Social networks plays a fundamental role in people's life nowadays,
-keeping in touch people from different countries or sharing their life
-moments with everyone. On average American's spend 4.7 hours browsing on their
-social profile, usually around 17 times per day [4].\\
-However social networks opened the door for some important issues for people in their
-daily/working life
-\begin{description}
-    \item[Productivity] The most common problem with social networks is of course
-    the reduction of productivity/attention that affects people impacting negatively on their life.
-    \item[Scams] Scam are very common on social networks, people using fake profiles to perpetrate
-    illegal actions such as blackmailing or phishing.
-    \item[Spying] This problem is the less recognized but most dangerous vulnerability introduced by social networks.
-    Basically, if you share you're entire life with your friends, there may be someone else interested in your activity: thieves.
-    Burglars checks people's social activity with fake accounts or looking at who has checked in in airports to select the houses
-    to break into. This is the case we will work in the following pages of the document.
-\end{description}
-
-Although their vulnerabilities, social networks has the power to connect thousands or millions of people together,
-allowing users to spread news at unthinkable speed compared to traditional methods. Let's consider
-Belgium's police, who uses twitter to share the terrorists video hoping to reach someone who
-can recognize them.[5] \\
-Furthermore this has been proved to be working, when a woman recorded a burglar
-who intruded in her house, after she shared her position, and tracked him
-posting his image on \textit{Facebook}.[6] This episode is a clear example
-of how social networks can be exploited to use their power, and we
-will apply this concept in our scenario.
 
 \section{False positives}
 
@@ -190,11 +167,10 @@ Here's a list of the proposed approaches taken in consideration during this docu
   \item[Face recognition] Face recognition is just an improvement of the above technique, which would allow
   us to recognize a familiar face in the system and reduce significantly the probability of a false alarm.
   This approach however is affected by the same problems from the former one.
-  \item[Speaker recognition] This approach involves machine learning to learn and recognize familiar voices
+  \item[Speaker recognition](text independent) This approach involves machine learning to learn and recognize familiar voices
   during an intrusion. Knowing with a certain precision that the voice belongs to someone familiar will
   drastically drop the probability of a possible false detection. Furthermore this approach does not suffer
   from the same problems as the former two approaches.
-  \item[Dictation recognition] People's biometric signature also includes the way they do talk. It is
-  actually possible to identify someone by the words they say. This is an abstraction or a limitation of
-  the approach described before. However it's a good idea to test it's performance on our use case.
+  \item[Dictation recognition](text dependent) People's biometric signature also includes the way they do talk. It is
+  actually possible to identify someone by the words they say.
 \end{description}
