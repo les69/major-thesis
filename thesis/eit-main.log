@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.12)  30 MAY 2016 14:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.12)  30 MAY 2016 20:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1346,12 +1346,22 @@ Chapter 4.
 
 
 
-] [46] [47] [48] [49] [50] [51] [52] [53]) [54] [55]
+] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55]
+Underfull \hbox (badness 10000) in paragraph at lines 571--577
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 648--655
+
+ []
+
+) [56] [57]
 \openout2 = `chap5.aux'.
 
  (./chap5.tex
 Chapter 5.
-) [56
+) [58
 
 
 
@@ -1360,17 +1370,17 @@ Chapter 5.
 
  (./chap6.tex
 Chapter 6.
-) [57
+) [59
 
 
 
-] (./eit-main.bbl [58
+] (./eit-main.bbl [60
 
 ])
 \tf@thm=\write6
 \openout6 = `eit-main.thm'.
 
- [59
+ [61
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 191.
@@ -1383,10 +1393,10 @@ Package rerunfilecheck Info: File `eit-main.out' has not changed.
 (rerunfilecheck)             Checksum: 869374CAECA73F166D4A62FBA515B718;4143.
  ) 
 Here is how much of TeX's memory you used:
- 27825 strings out of 493089
- 642266 string characters out of 6134842
- 805895 words of memory out of 5000000
- 30543 multiletter control sequences out of 15000+600000
+ 27901 strings out of 493089
+ 643948 string characters out of 6134842
+ 810923 words of memory out of 5000000
+ 30613 multiletter control sequences out of 15000+600000
  19724 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,17n,85p,793b,2184s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1409,10 +1419,10 @@ exmf-dist/fonts/type1/public/cm-super/sfcc2074.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2015/texmf
 -dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on eit-main.pdf (63 pages, 2048327 bytes).
+Output written on eit-main.pdf (65 pages, 2049803 bytes).
 PDF statistics:
- 801 PDF objects out of 1000 (max. 8388607)
- 690 compressed objects within 7 object streams
- 197 named destinations out of 1000 (max. 500000)
+ 815 PDF objects out of 1000 (max. 8388607)
+ 701 compressed objects within 8 object streams
+ 203 named destinations out of 1000 (max. 500000)
  548 words of extra memory for PDF output out of 10000 (max. 10000000)
 

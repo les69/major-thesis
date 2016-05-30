@@ -397,7 +397,24 @@ of false positives adding the pets in the model.
 Until now we have demonstrated speaker recognition working, and not, in many different situations.
 Another relevant question is if speaker recognition can be affected by fake impersonations,
 more accurately mimicking a voice. Voice imitation can be used to bypass security and
-surveillance systems, as in our case it would avoid the detection of the intruder.
+surveillance systems, as in our case it would avoid the detection of the intruder.\newline
+In the test we'll try to emulate first some of the models used in the previous tests, and subsequently
+try to emulate an animal. The latter is just an edgy proof of concept to test the limits of speaker recognition.
+
+\subsubsection{Results}
+
+Mimicking a voice is a skill that can be learned in years and require a lot of experience in practice.
+For this reason most of the cheating attempts failed with no match at all. However, we had some match
+with another model taken using the same input device (laptop- low quality). We did many attempts for it, and
+after some unsuccessful ones, more precisely they were matching they right voice, we managed to have a first
+match with a likelihood of 46\%. Not an optimal result but it was a starting point. We continued practicing and
+improving, also using the same speech as the model in question, obtaining in the end a good result: 76\% of likelihood
+in the match. We can therefore assume that with a proper mimicking experience and with a higher quality input device
+the system can be bypassed.\newline
+Furthermore we have also tried to reproduce some of the most common pets sound. However, all the test
+gave a negative match, probably again there may be a fault in the speaker's mimicking skills combined
+to the low quality inputs. It is very likely that an expert may be actually able to cheat on the system the
+same way it was possible for the previous test.
 
 \subsection{Step Recognition}
 
@@ -410,6 +427,17 @@ We will start verifying the base hypothesis: is the steps are actually recognize
 Subsequently we will try the identification with different pairs of shoes and see if
 there is any different or the steps matches anyway. Finally we will try to limit the system
 using different models of walking, as final verification.
+
+\subsubsection{Results}
+
+As predicted previously steps can be recognized, but not how we were thinking.
+Steps recognition works when the problem is recognizing a different type of sound and learns from it,
+but it does not learn the hidden pattern in the walking pattern. Therefore an audio recording can be
+recognized as a sequence of steps, but not learn the insight differences between different walking
+styles.\newline
+Furthermore another problem arises from the low volume of steps: it may get polluted from other background noise.
+It would require high quality and sophisticated audio input devices to perform a proper recording,
+and though it wouldn't work as expected from the beginning.
 
 \section{Validation of the Microservice approach}
 
@@ -537,3 +565,98 @@ devices has to run as a single instance. In this situation we will try to find t
 trying to run a high number of requests to the end-point application and see the behavior.\newline
 In this scenario we will have many actors (i.e. from 50 to 100), all trying to read or write
 a casual property, stressing as much as possible the application.
+
+\subsubsection{Testing the bottleneck}
+
+We decided to run the test with different steps of CPU load, analyzing the situation
+at the beginning scaling up adding more actors requesting data from the service.
+Each actor will try to read a different resource, which can be a the list of devices,
+the devices in a particular room or the property of a given device. The test will
+begin running an actor profiling a normal situation, scaling then by 20 each time and analyzing
+the situation up to 100 actors running in parallel.\newline
+
+
+\begin{center}
+
+\begin{tikzpicture}
+
+\begin{axis}[
+    title={Benchmark at scale},
+    xlabel={Time [seconds]},
+    ylabel={Execution time [ms]},
+    xtick={1,2,3,4,5,6,7,8,9},
+    ytick={0,50,70,100,200,500},
+    legend pos=north west,
+    ymajorgrids=true,
+    grid style=dashed,
+]
+\addplot[
+    color=green,
+    mark=square,
+    ]
+    coordinates {
+    (1,21.87895775) (2,19.08111572) (3,22.59707451) (4,18.11408997)  (5,19.16098595) (6,26.34191513) (7,20.85494995)
+    (8,30.29393196) (9,29.43609238)
+    };
+\addplot[
+    color=purple,
+    mark=square,
+    ]
+    coordinates {
+    (1,18.93997192) (2,24.08289909) (3,22.14694023) (4,18.24212074)  (5,28.82194519) (6,17.21215248) (7,21.40307426)
+    (8,26.5378952) (9,23.33211899)
+    };
+\addplot[
+    color=red,
+    mark=square,
+    ]
+    coordinates {
+    (1,30.39002419) (2,20.28203011) (3,46.96512222) (4,50.14491081)  (5,71.1889267) (6,50.345) (7,48.30002785)
+    (8,36.33999825) (9,46.73409462)
+    };
+\addplot[
+    color=blue,
+    mark=square,
+    ]
+    coordinates {
+    (1,124.7149944) (2,101.3119221) (3,70.96600533) (4,72.62611389)  (5,53.21192741) (6,138.5829449) (7,94.70200539)
+    (8,40.95816612) (9,46.73409462)
+    };
+\addplot[
+    color=black,
+    mark=square,
+    ]
+    coordinates {
+    (1,96.56691551) (2,203.6268711) (3,105.3650379) (4,110.1410389)  (5,217.3931599) (6,212.6379013) (7,137.6159191)
+    (8,141.4260864) (9,145.3590393)
+    };
+\addplot[
+    color=brown,
+    mark=square,
+    ]
+    coordinates {
+    (1,465.6479359) (2,468.8179493) (3,461.5280628) (4,452.9561996)  (5,448.964119) (6,449.0690231) (7,447.2949505)
+    (8,439.4059181) (9,440.5360222)
+    };
+
+\legend{Single process, 20 processes,40 processes,60 processes, 80 processes, 100 processes}
+\end{axis}
+
+\end{tikzpicture}
+\end{center}
+
+As can be seen from the diagram the situation remains almost unchanged until 40 processes,
+whereas there is almost no difference between a single execution and 20 processes. However
+things starts exploding after the limit of 40, moving quickly from an average of 50ms per request
+to an average of 100-150ms. Even more impressive the increase of execution time at 100 processes, which is around
+400 ms on average.\newline
+Despite of the performances, none of the services crashed or had any timeout, not even the application itself. The timeouts
+came when we tried to run even more heavy test with more than 150 processes, though the system continued working.\newline
+
+\subsubsection{Conclusion}
+
+It is a remarkably good result to have an almost unchanged situation until 40 processes running in parallel,
+a number that is rarely exceeded in house surveillance contexts. The system kept working nonetheless the
+load was increasing more and more, always returning a valid result. Despite the decrease in performances
+the system proved itself stable enough for being applied in a real world scenario, in contexts
+such as home surveillance.
