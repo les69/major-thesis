@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.12)  30 MAY 2016 20:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.12)  1 JUN 2016 14:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -899,7 +899,27 @@ Package: wrapfig 2003/01/31  v 3.6
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/breakurl/breakurl.sty
+Package: breakurl 2013/04/10 v1.40 Breakable hyperref URLs
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/texlive/2015/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks42
+\XKV@tempa@toks=\toks43
+)
+\XKV@depth=\count140
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+
+Package breakurl Warning: You are using breakurl while processing via pdflatex.
+
+(breakurl)                \burl will be just a synonym of \url.
+(breakurl)                 on input line 48.
+
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
@@ -942,19 +962,20 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
 \@linkdim=\dimen181
-\Hy@linkcounter=\count140
-\Hy@pagecounter=\count141
+\Hy@linkcounter=\count141
+\Hy@pagecounter=\count142
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count142
+\Hy@SavedSpaceFactor=\count143
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
+Package hyperref Info: Option `breaklinks' set `true' on input line 4319.
 Package hyperref Info: Hyper figures OFF on input line 4443.
 Package hyperref Info: Link nesting OFF on input line 4448.
 Package hyperref Info: Hyper index ON on input line 4451.
@@ -962,10 +983,10 @@ Package hyperref Info: Plain pages OFF on input line 4458.
 Package hyperref Info: Backreferencing OFF on input line 4463.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
-\c@Hy@tempcnt=\count143
+\c@Hy@tempcnt=\count144
 LaTeX Info: Redefining \url on input line 5041.
 \XeTeXLinkMargin=\dimen182
-\Fld@menulength=\count144
+\Fld@menulength=\count145
 \Field@Width=\dimen183
 \Fld@charsize=\dimen184
 Package hyperref Info: Hyper figures OFF on input line 6295.
@@ -977,17 +998,17 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count145
-\c@Item=\count146
-\c@Hfootnote=\count147
+\Hy@abspage=\count146
+\c@Item=\count147
+\c@Hfootnote=\count148
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count148
-\c@bookmark@seq@number=\count149
+\Fld@listcount=\count149
+\c@bookmark@seq@number=\count150
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
@@ -999,127 +1020,127 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ntheorem/ntheorem.sty
 Style `ntheorem', Version 1.33 <2011/08/15>
 Package: ntheorem 2011/08/15 1.33
-\theorem@style=\toks42
-\theorem@@style=\toks43
-\theorembodyfont=\toks44
-\theoremnumbering=\toks45
+\theorem@style=\toks44
+\theorem@@style=\toks45
+\theorembodyfont=\toks46
+\theoremnumbering=\toks47
 \theorempreskipamount=\skip59
 \theorempostskipamount=\skip60
 \theoremframepreskipamount=\skip61
 \theoremframepostskipamount=\skip62
 \theoreminframepreskipamount=\skip63
 \theoreminframepostskipamount=\skip64
-\theorem@preskip=\toks46
-\theorem@postskip=\toks47
-\theorem@framepreskip=\toks48
-\theorem@framepostskip=\toks49
-\theorem@inframepreskip=\toks50
-\theorem@inframepostskip=\toks51
+\theorem@preskip=\toks48
+\theorem@postskip=\toks49
+\theorem@framepreskip=\toks50
+\theorem@framepostskip=\toks51
+\theorem@inframepreskip=\toks52
+\theorem@inframepostskip=\toks53
 \theoremindent=\dimen185
 \theorem@indent=\dimen186
 \theoremrightindent=\dimen187
 \theorem@rightindent=\dimen188
-\theoremheaderfont=\toks52
-\theoremseparator=\toks53
-\theoremprework=\toks54
-\theorempostwork=\toks55
-\theoremsymbol=\toks56
-\qedsymbol=\toks57
-\theoremkeyword=\toks58
+\theoremheaderfont=\toks54
+\theoremseparator=\toks55
+\theoremprework=\toks56
+\theorempostwork=\toks57
+\theoremsymbol=\toks58
 \qedsymbol=\toks59
+\theoremkeyword=\toks60
+\qedsymbol=\toks61
 \thm@topsep=\skip65
 \thm@topsepadd=\skip66
 )
-\c@theorem=\count150
+\c@theorem=\count151
  (./eit-main.aux (./abstract.aux) (./chap1.aux) (./chap2.aux) (./chap3.aux)
 (./chap4.aux) (./chap5.aux) (./chap6.aux))
 \openout1 = `eit-main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 102.
+LaTeX Font Info:    ... okay on input line 102.
 
 ABD: EveryShipout initializing macros
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count151
+\scratchcounter=\count152
 \scratchdimen=\dimen189
 \scratchbox=\box43
-\nofMPsegments=\count152
-\nofMParguments=\count153
-\everyMPshowfont=\toks60
-\MPscratchCnt=\count154
+\nofMPsegments=\count153
+\nofMParguments=\count154
+\everyMPshowfont=\toks62
+\MPscratchCnt=\count155
 \MPscratchDim=\dimen190
-\MPnumerator=\count155
-\makeMPintoPDFobject=\count156
-\everyMPtoPDFconversion=\toks61
+\MPnumerator=\count156
+\makeMPintoPDFobject=\count157
+\everyMPtoPDFconversion=\toks63
 )
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.12} into 
 your preamble.
- on input line 100.
+ on input line 102.
 
 \AtBeginShipoutBox=\box44
-Package hyperref Info: Link coloring OFF on input line 100.
+Package hyperref Info: Link coloring OFF on input line 102.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count157
+\c@section@level=\count158
 )
-LaTeX Info: Redefining \ref on input line 100.
-LaTeX Info: Redefining \pageref on input line 100.
-LaTeX Info: Redefining \nameref on input line 100.
+LaTeX Info: Redefining \ref on input line 102.
+LaTeX Info: Redefining \pageref on input line 102.
+LaTeX Info: Redefining \nameref on input line 102.
 
 (./eit-main.out) (./eit-main.out)
 \@outlinefile=\write4
 \openout4 = `eit-main.out'.
 
 
-<elte-logo.jpg, id=240, 428.60126pt x 427.5975pt>
+<elte-logo.jpg, id=244, 428.60126pt x 427.5975pt>
 File: elte-logo.jpg Graphic file (type jpg)
  <use elte-logo.jpg>
-Package pdftex.def Info: elte-logo.jpg used on input line 113.
+Package pdftex.def Info: elte-logo.jpg used on input line 115.
 (pdftex.def)             Requested size: 107.15004pt x 106.89911pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--115
+Underfull \hbox (badness 10000) in paragraph at lines 112--117
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--130
+Underfull \hbox (badness 10000) in paragraph at lines 130--132
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--130
+Underfull \hbox (badness 10000) in paragraph at lines 130--132
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--130
+Underfull \hbox (badness 10000) in paragraph at lines 130--132
 
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 136.
+LaTeX Font Info:    Try loading font information for U+msa on input line 138.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 136.
+LaTeX Font Info:    Try loading font information for U+msb on input line 138.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1148,7 +1169,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.167 \tableofcontents
+l.174 \tableofcontents
                        [1
 
 
@@ -1189,7 +1210,7 @@ Chapter 2.
 
 
 
-] [8] <sourcesvariability.png, id=365, 2074.75125pt x 1200.485pt>
+] [8] <sourcesvariability.png, id=378, 2074.75125pt x 1200.485pt>
 File: sourcesvariability.png Graphic file (type png)
 
 <use sourcesvariability.png>
@@ -1201,26 +1222,19 @@ Overfull \hbox (7.89636pt too wide) in paragraph at lines 152--153
 ty, and au-dio codec/compression. 
  []
 
-[10] [11] [12] <gmmsvm.png, id=401, 1694.33pt x 1277.77374pt>
+[10] [11] [12] <gmmsvm.png, id=418, 1694.33pt x 1277.77374pt>
 File: gmmsvm.png Graphic file (type png)
  <use gmmsvm.png>
 Package pdftex.def Info: gmmsvm.png used on input line 267.
 (pdftex.def)             Requested size: 338.86pt x 255.55022pt.
 
-[13 <./gmmsvm.png>] [14] [15]
-Overfull \hbox (21.35979pt too wide) in paragraph at lines 375--381
-\T1/cmr/m/n/10.95 mer pro-duc-ers.\T1/cmr/m/it/10.95 SmartThings \T1/cmr/m/n/10
-.95 fo-cuses on four main Smart de-vices cat-e-gories: \T1/cmr/m/it/10.95 Se-cu
--rity\T1/cmr/m/n/10.95 ,\T1/cmr/m/it/10.95 Monitoring\T1/cmr/m/n/10.95 ,
- []
-
-[16] <soavsmicro.png, id=433, 457.71pt x 344.28625pt>
+[13 <./gmmsvm.png>] [14] [15] [16]
+<soavsmicro.png, id=462, 457.71pt x 344.28625pt>
 File: soavsmicro.png Graphic file (type png)
  <use soavsmicro.png>
 Package pdftex.def Info: soavsmicro.png used on input line 418.
 (pdftex.def)             Requested size: 297.50798pt x 223.7834pt.
-
-[17 <./soavsmicro.png>] [18] <calvin4.png, id=447, 256.96pt x 301.125pt>
+ [17 <./soavsmicro.png>] [18] <calvin4.png, id=480, 256.96pt x 301.125pt>
 File: calvin4.png Graphic file (type png)
 
 <use calvin4.png>
@@ -1230,7 +1244,7 @@ Package pdftex.def Info: calvin4.png used on input line 509.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[19] <calvin1.png, id=454, 256.96pt x 301.125pt>
+[19] <calvin1.png, id=490, 256.96pt x 301.125pt>
 File: calvin1.png Graphic file (type png)
  <use calvin1.png>
 Package pdftex.def Info: calvin1.png used on input line 537.
@@ -1239,7 +1253,7 @@ Package pdftex.def Info: calvin1.png used on input line 537.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<calvin2.png, id=455, 301.125pt x 97.36375pt>
+<calvin2.png, id=491, 301.125pt x 97.36375pt>
 File: calvin2.png Graphic file (type png)
  <use calvin2.png>
 Package pdftex.def Info: calvin2.png used on input line 549.
@@ -1248,7 +1262,7 @@ Package pdftex.def Info: calvin2.png used on input line 549.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[20 <./calvin4.png>] <calvin3.png, id=464, 262.9825pt x 301.125pt>
+[20 <./calvin4.png>] <calvin3.png, id=501, 262.9825pt x 301.125pt>
 File: calvin3.png Graphic file (type png)
 
 <use calvin3.png>
@@ -1259,7 +1273,7 @@ Package pdftex.def Info: calvin3.png used on input line 572.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [21 <./calvin1.png> <./calvin2.png>] [22 <./calvin3.png>]
-<calvinlayers.png, id=481, 569.12625pt x 631.35875pt>
+<calvinlayers.png, id=520, 569.12625pt x 631.35875pt>
 File: calvinlayers.png Graphic file (type png)
  <use calvinlayers.png>
 Package pdftex.def Info: calvinlayers.png used on input line 636.
@@ -1289,7 +1303,7 @@ Chapter 3.
 
 
 
-] <calvin-speaker1.png, id=510, 727.71875pt x 441.65pt>
+] <calvin-speaker1.png, id=551, 727.71875pt x 441.65pt>
 File: calvin-speaker1.png Graphic file (type png)
 
 <use calvin-speaker1.png>
@@ -1300,7 +1314,7 @@ Package pdftex.def Info: calvin-speaker1.png used on input line 71.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [28] [29 <./calvin-speaker1.png>] [30] [31] [32] [33] [34]
-<nest-architecture.png, id=545, 963.6pt x 443.6575pt>
+<nest-architecture.png, id=587, 963.6pt x 443.6575pt>
 File: nest-architecture.png Graphic file (type png)
 
 <use nest-architecture.png>
@@ -1318,7 +1332,7 @@ Overfull \hbox (42.85344pt too wide) in paragraph at lines 459--459
  self.operation == "set")[] 
  []
 
-[38] <test-arch.png, id=569, 581.17125pt x 418.56375pt>
+[38] <test-arch.png, id=610, 581.17125pt x 418.56375pt>
 File: test-arch.png Graphic file (type png)
  <use test-arch.png>
 Package pdftex.def Info: test-arch.png used on input line 495.
@@ -1332,7 +1346,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 560--570
 
  []
 
-[42] <arch2.png, id=600, 826.08624pt x 316.18124pt>
+[42] <arch2.png, id=645, 826.08624pt x 316.18124pt>
 File: arch2.png Graphic file (type png)
  <use arch2.png>
 Package pdftex.def Info: arch2.png used on input line 632.
@@ -1370,34 +1384,50 @@ Chapter 5.
 
  (./chap6.tex
 Chapter 6.
-) [59
+[59
 
 
 
-] (./eit-main.bbl [60
+]
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 49.
+
+) [60] (./eit-main.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 56--62
+[]\T1/cmr/m/n/10.95 Alan Mor-ri-son.  What is Mi-croser-vices Ar-chi-tec-ture? 
+Think Ant
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--62
+\T1/cmtt/m/n/10.95 technology / what -[] is -[] microservices -[] architecture 
+-[] think -[] ant -[] colonies -[]
+ []
+
+[61
+
 
 ])
 \tf@thm=\write6
 \openout6 = `eit-main.thm'.
 
- [61
-
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 191.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 191.
- (./eit-main.aux (./abstract.aux) (./chap1.aux) (./chap2.aux) (./chap3.aux) (./
-chap4.aux) (./chap5.aux) (./chap6.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 191.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 191.
+ [62]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 196.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 196.
+ (./eit-main.aux (./abstract.aux) (./chap1.aux) (./chap2.aux)
+(./chap3.aux) (./chap4.aux) (./chap5.aux) (./chap6.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 196.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 196.
 Package rerunfilecheck Info: File `eit-main.out' has not changed.
-(rerunfilecheck)             Checksum: 869374CAECA73F166D4A62FBA515B718;4143.
+(rerunfilecheck)             Checksum: CF05575AAD4FCBC36AF0924FF91B829A;4206.
  ) 
 Here is how much of TeX's memory you used:
- 27901 strings out of 493089
- 643948 string characters out of 6134842
- 810923 words of memory out of 5000000
- 30613 multiletter control sequences out of 15000+600000
- 19724 words of font info for 48 fonts, out of 8000000 for 9000
+ 28159 strings out of 493089
+ 647815 string characters out of 6134842
+ 816222 words of memory out of 5000000
+ 30837 multiletter control sequences out of 15000+600000
+ 20350 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,17n,85p,793b,2184s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
@@ -1419,10 +1449,10 @@ exmf-dist/fonts/type1/public/cm-super/sfcc2074.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2015/texmf
 -dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on eit-main.pdf (65 pages, 2049803 bytes).
+Output written on eit-main.pdf (66 pages, 2061428 bytes).
 PDF statistics:
- 815 PDF objects out of 1000 (max. 8388607)
- 701 compressed objects within 8 object streams
- 203 named destinations out of 1000 (max. 500000)
- 548 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 894 PDF objects out of 1000 (max. 8388607)
+ 779 compressed objects within 8 object streams
+ 222 named destinations out of 1000 (max. 500000)
+ 556 words of extra memory for PDF output out of 10000 (max. 10000000)
 

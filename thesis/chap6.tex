@@ -1,3 +1,63 @@
 \chapter{Conclusion}
 
-Just the conclusions here
+Throughout in our document we proposed some approaches aimed
+to solve some of the trending problems when creating House Security systems
+with IoT. \newline
+Integration among different devices is a hard subject being topic of research
+for some years, with different objectives and solutions. Our solution does not aim
+to be the perfect solution for all the integration problems but rather
+a better approach for the intercommunication between heterogeneous ecosystems.
+Furthermore we adopted a new approach, microservices, with a clear vision for
+upgradability and sustainability in a future. Microservices does not only
+solve many of our problems, but helps us building a system with some key
+properties such as upgradability, resiliency and flexibility. Moreover
+this approach fit very well in Calvin's architecture, making it easier to develop
+and maintain. There is of course a price to be paid for the microservice architecture,
+resulting from the overhead introduced by the chain of services: a higher execution time.
+As we have seen in the many different test, this overhead doesn't impact highly on the
+overall performance, remaining by far under an acceptable threshold. By that we mean
+the overall performance impact of microservices is not high enough to introduce
+any relevant delay when reading or writing values from sensors in different
+ecosystems.\newline
+One of the many aspects which has to be considered in a house security scenario is the
+number of false positives for intrusion detection. There are already a lot of different
+techniques to detect intruders and to reduce false positives for their use cases.
+However we decided to try a different path using speaker recognition, more precisely
+speaker identification, for revealing an intruder (possibly active only when there's no one in the house).
+Calvin is a perfect framework for the task, given its distributed architecture exploiting the
+key aspects of different characteristics. Having many actors with different tasks
+running on different types machines enables us to have high performances
+while accessing sensors from low hardware devices.\newline
+We built a speaker recognition system with Calvin using a distributed architecture,
+getting the input from one machine and processing it on a different one. All that using
+actors to model the flow of the execution.
+The overall system proved its validity by validating many of our assumptions and
+invalidating some others. The basic of recognition worked very well, and through
+our tests we learned the right set up for the different audio recording duration length (model and test)
+in order to achieve the best result. The results outlined some key aspects we have to consider
+before building such a system: the input quality, the background noise and the silences between the speech.
+All these aspects can influence the score, though they can be solved easily. Although many
+tests succeeded, many others failed, showing the limits of the speaker recognition system. Anyway those
+tests which failed were not impacting too heavily on the system overall feasibility, they were rather
+limit cases were it could have worker or not.\newline
+Finally we outlined the possibility for our system to fully recognize people with short
+audio models and for it being also able to learn and verify dog's by their barking. Furthermore
+the microservice system itself proved to be robust enough to handle even more than the typical
+traffic it should in a real world scenario.
+
+
+\subsection{Future work}
+
+Although our system proved its effectiveness it's still a Proof-of-Concept,
+far from a final deployment. Even though the techniques we used to integrate with
+different ecosystems use working solutions, some of them use solutions
+which could be improved in a future. For example, running a web service for integration
+with the ecosystem is not the best solution, but it's an actual limit imposed by Apple.
+It is very likely that in a future they will allow access to Homekit also from other
+operative systems like tvOS or Mac OS X. The approach is working, and moving it to a better
+platform won't be hard as starting from scratch.\newline
+The libraries we have used for speaker recognition uses a custom version of GMM-UBM algorithm,
+which works smoothly but there are more recent and performant state-of-the-art algorithms,
+as shown in Chapter 2. In the future these algorithms can be tested under the same
+situations and see the benefit introduced by them and if they can pass the test were
+our failed.

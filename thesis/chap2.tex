@@ -39,7 +39,7 @@ reliability:
 \end{itemize}
 \subsection{Speaker recognition}
 Identifying a person by his or her voice is an important trait taken for granted
-in human to human interaction.[17] Everyday we use the voice as an identification pattern
+in human to human interaction.\cite{speaker-recognition} Everyday we use the voice as an identification pattern
 to distinguish people we are not seeing, to remember people
 we've met a long time ago whom face we are not recognizing.
 Moreover humans ability to identify a person by the voice grows linearly
@@ -163,7 +163,7 @@ are used to identify a voice, and is more important if we consider the noise int
 the previous sources, which makes having many features an important aspect to consider.
 Different voices may have similar or identical values for a specific feature but differ in all
 the others.
-As outlined from Nolan[18], typical features has to have the following properties:
+As outlined from Nolan \cite{phonetic}, typical features has to have the following properties:
 \begin{itemize}
     \item High between-speaker variability and low within-speaker variability
     \item Resistance to disguise and mimicry
@@ -181,7 +181,7 @@ to the state-of-the-art of speaker recognition methods.
 \subsubsection{Gaussian Mixture Model Based}
 
 A Gaussian Mixture Model (GMM) is a combination of probability
-density functions (PDFs) used to model multi-variate data. [17]
+density functions (PDFs) used to model multi-variate data\cite{speaker-recognition}.
 GMM will provide a score evaluating the PDFs at different times, which
 will be used to calculate the similarity between a speaker's GMM and an
 unknown speaker. During an identification the system will calculate
@@ -223,7 +223,7 @@ GMM-UBM is an approach combining the previous GMM model adapting it from
 the UBM using Bayesian adaptation. The model is obtained updating a well
 trained UBM instead of calculating the maximum likelihood training of the GMM
 for a speaker. Speaker models obtained from the adaption of a trained UBM
-are more reliable than GMM trained directly for each speaker.[17]
+are more reliable than GMM trained directly for each speaker.\cite{speaker-recognition}
 
 \subsubsection{GMM Supervector SVM}
 
@@ -284,7 +284,7 @@ can represented by equation \ref{eq:gmmsv}
     m_{s,h} = m_{0} + Ux_{h} + Vy_{s} + Dz_{s,h}
 \end{equation}
 Joint FA exploits the behavior of speaker features in a variety of
-conditions learned using FA [17].
+conditions learned using FA \cite{speaker-recognition}.
 
 \subsubsection{i-Vector Approach}
 
@@ -338,7 +338,7 @@ for testing, and because they suits perfectly our scenario.
 
 \subsubsection{Google - Nest}
 
-\textbf{Nest}[19] is a home automation producer of smart devices
+\textbf{Nest}\cite{nest} is a home automation producer of smart devices
 which ranges from their famous Smart Thermostat to the locking system, from the
 washing machine to the light system, from the \textit{Dropcamera} to the Hi-Fi Sound system,and
 these are just some examples. The number of components supported by this company
@@ -359,7 +359,7 @@ mainly \textit{802.11} standards.
 
 \subsubsection{Apple - HomeKit}
 
-\textbf{HomeKit}[20] is a very similar ecosystem to the one described before, producing or supporting
+\textbf{HomeKit}\cite{homekit} is a very similar ecosystem to the one described before, producing or supporting
 home automation devices. \textit{HomeKit} relies on the large network of Apple devices,
 making it an environment to be considered even if it is relatively new on the market. The key
 point of \textit{HomeKit} is the easy integration with Apple devices, fitting almost perfectly wherever
@@ -372,7 +372,7 @@ make the system independent from specific technologies.
 
 \subsubsection{Samsung - SmartThings}
 
-\textbf{SmartThings}[21] is another ecosystem from \textit{Samsungs} with many similarities
+\textbf{SmartThings}\cite{smart} is another ecosystem from \textit{Samsungs} with many similarities
 with the former producers.\textit{SmartThings} focuses on four main Smart devices categories:
 \textit{Security},\textit{Monitoring}, \textit{Lighting and Energy} and \textit{Convenience and Entertainment}.
 \textit{SmartThings} as the previous ecosystem does not allow a direct interaction with the smart devices,
@@ -388,10 +388,10 @@ application as a suite of small services, each running in its own process and co
 lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities
 and independently deployable by fully automated deployment machinery. There is
 a bare minimum of centralized management of these services,
-which may be written in different programming languages and use different data storage technologies.[7]\\
+which may be written in different programming languages and use different data storage technologies.\cite{microarch}\\
 There is a close link between the \textit{microservice architecture} and the \textit{service oriented architecture},
 thus due to their nature the community classified microservices as a subclass of the service oriented architecture.
-\textit{Don Box} of Microsoft described the Service-Oriented paradigm with the following four principles [8]
+\textit{Don Box} of Microsoft described the Service-Oriented paradigm with the following four principles\cite{msdn}
 
 \begin{enumerate}
   \item Boundaries are explicit
@@ -410,7 +410,7 @@ to be the same in certain situations. \textit{Bob Ruhbart} from Oracle described
 \textit{Microservices are the kind of SOA we have been talking about for the last decade. Microservices must be independently deployable,
 whereas SOA services are often implemented in deployment monoliths.
 Classic SOA is more platform driven, so microservices offer more choices
-in all dimensions}.[10]
+in all dimensions}\cite{microsoa}.
 
 \begin{figure}[h]
 \caption{Graphic illustration of microservices and SOA}
@@ -435,7 +435,7 @@ monolith approach, meanwhile for this situation would be better to use a microse
 Considering the \textit{Microservice} architectural pattern we can decompose
 the above situation creating dedicated services capable of handling the
 required business logic to interact with an external system. This approach
-is also called \textit{Componentization via Services}[7], where a component is defined
+is also called \textit{Componentization via Services}\cite{microarch}, where a component is defined
 as a \textit{unit of software that is independently replaceable and upgradeable.}
 It is important to distinguish between \textit{libraries} and \textit{services}:
 the latter uses out-of-service components to communicate, mainly HTTP requests or
@@ -483,7 +483,7 @@ challenges aimed to be solved. Microservices \textit{decentralized governance} f
 which allows the use of different technologies inside the same systems holds the key for
 solving the interoperability problem. Key IoT devices vendors realizes that if their products
 supports multiple interoperability standard they're likely to be adopted also by their
-competitors (e.g. Nest products are available on HomeKit[3]). Microservices here can be
+competitors (e.g. Nest products are available on HomeKit[?]). Microservices here can be
 used as isolated adapters for the many different technologies, facing the spreading
 fragmentation of communication protocols between machines.\\
 Microservices are by nature dynamic and reactive, which makes them a good choice for
@@ -499,7 +499,7 @@ an environment where new technologies are frequently added or modified.
   proxies for the specific hardware to support. Proxies are actors written to handle
   communication with the legacy system. Such a proxy actor handles the task of converting data
   from the application into messages or requests the old system can handle, and converting the
-  response back into tokens the Calvin application understands.[14]
+  response back into tokens the Calvin application understands.\cite{calvin2}
 
         \begin{figure}[h]
         \caption{Proxies interaction}
@@ -515,9 +515,9 @@ an environment where new technologies are frequently added or modified.
 
 
 
-  \textit{Calvin} is built upon the well-established actor model, using a methodology often referred to as dataflow programming[11], and
+  \textit{Calvin} is built upon the well-established actor model, using a methodology often referred to as dataflow programming \cite{calvin1}, and
   its life cycle can be summarized in four, well-distinct, phases: \textit{Describe}, \textit{Connect}, \textit{Manage}
-  and \textit{Deploy}.
+  and \textit{Deploy}\cite{calvin-article}.
 
 \subsection{Describe}
   The smallest functional units in \textit{Calvin} is an Actor. Actors do not share
@@ -605,7 +605,7 @@ to receive or return inputs/parameters. Microservices are very similar to Actors
 of their key aspects, such as isolation, encapsulation and lightweight messaging, though
 usually microservices uses RESTful interfaces. There is some discussion
 in the community whether some argues that actors are actually microservices
-themselves [12] meanwhile others defines actors as a subset of microservices[13].
+themselves \cite{microarch1} meanwhile others defines actors as a subset of microservices \cite{microactor}.
 This however heavily depends on the actors framework adopted for the situation, which in our
 case an Actor can not be compared to a microservice due to an insight limitation: \textit{Calvin Actors can not
 use different technologies}, at the moment.

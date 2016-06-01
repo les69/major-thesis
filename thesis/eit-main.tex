@@ -45,8 +45,10 @@
 \usepackage {xcolor}
 \usepackage{float}
 \usepackage{wrapfig}
-\usepackage{url}
-\usepackage{hyperref}
+\usepackage{url}\def\UrlBreaks{\do\/\do-}
+%\usepackage{hyperref}
+\usepackage{breakurl}
+\usepackage[breaklinks]{hyperref}
 
 \pagestyle{fancyplain}
 \marginsize{3.5cm}{2.5cm}{2.5cm}{2.5cm}
@@ -162,7 +164,12 @@
 
 
 \chapter*{Acknowledgement}
-...
+I would like to thank all of my supervisors for the help given during the course
+of the thesis development. I also thank my Ericsson supervisor Daniel Gehberger for
+the help and tutoring given during the internship. A special thank to my family and
+girlfriend for the moral support and the motivation to complete this document. Last but
+not least I'd like to thank the Ericsson Calvin research team for the hints to build
+better code.
 
 \tableofcontents
 
@@ -178,8 +185,6 @@
 \include{chap4}
 \include{chap5}
 \include{chap6}
-
-This is an example for citation \cite{abramowitz+stegun}
 
 
 \bibliography{bibexample} % just insert the bib file name, without .bib, it has to be in the same folder as the .tex file,

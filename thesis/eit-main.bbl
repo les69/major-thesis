@@ -1,10 +1,108 @@
-\begin{thebibliography}{AS64}
+\begin{thebibliography}{vdM15}
 
-\bibitem[AS64]{abramowitz+stegun}
-Milton {Abramowitz} and Irene~A. {Stegun}.
-\newblock {\em Handbook of Mathematical Functions with Formulas, Graphs, and
-  Mathematical Tables}.
-\newblock Dover, New York, ninth dover printing, tenth gpo printing edition,
-  1964.
+\bibitem[Ang15]{calvin2}
+Ola Angelsmark.
+\newblock {A closer look at Calvin}.
+\newblock
+  \url{https://www.ericsson.com/research-blog/cloud/closer-look-calvin/}, 2015.
+
+\bibitem[Appa]{gcd}
+Apple.
+\newblock {Grand Central Dispatch}.
+\newblock
+  \url{https://developer.apple.com/library/ios/documentation/Performance/Reference/GCD_libdispatch_Ref/}.
+
+\bibitem[Appb]{homekit}
+Apple.
+\newblock {HomeKit}.
+\newblock \url{https://developer.apple.com/homekit/}.
+
+\bibitem[Box04]{msdn}
+Don Box.
+\newblock {Service Orientation and Its Role in Your Connected Systems
+  Strategy}.
+\newblock \url{https://msdn.microsoft.com/en-us/library/ms954826.aspx}, 2004.
+
+\bibitem[Fow14]{microarch}
+Martin Fowler.
+\newblock {Microservices: a definition of this new architectural term}.
+\newblock \url{http://martinfowler.com/articles/microservices.html}, 2014.
+
+\bibitem[Goo]{nest}
+Google.
+\newblock {Nest}.
+\newblock \url{https://nest.com}.
+
+\bibitem[Her15]{microactor}
+Rotem Hermon.
+\newblock {What is the relationship between the Actor Model and microservice
+  architecture?}
+\newblock
+  \url{https://www.quora.com/What-is-the-relationship-between-the-Actor-Model-and-microservice-architecture/},
+  2015.
+
+\bibitem[HH15]{speaker-recognition}
+John H.~L. Hansen and Taufiq Hasan.
+\newblock {\em Speaker Recognition by Machines and Humans: A tutorial review},
+  volume~32.
+\newblock IEEE, 11 2015.
+
+\bibitem[Lin15]{microiot}
+Ben Linders.
+\newblock {Using Microservices in the Internet of Things}.
+\newblock \url{https://www.infoq.com/news/2015/12/microservices-iot}, 2015.
+
+\bibitem[Mor14]{microarch1}
+Alan Morrison.
+\newblock {What is Microservices Architecture? Think Ant Colonies,Beehives, or
+  Termite Mounds}.
+\newblock
+  \url{http://usblogs.pwc.com/emerging-technology/what-is-microservices-architecture-think-ant-colonies-beehives-or-termite-mounds/},
+  2014.
+
+\bibitem[Nol83]{phonetic}
+F.~Nolan.
+\newblock {\em The phonetic bases of speaker recognition}.
+\newblock Cambridge University Press, 1983.
+
+\bibitem[Per15]{calvin1}
+Joakim Persson.
+\newblock {Open Source release of IoT app environment Calvin}.
+\newblock
+  \url{http://www.ericsson.com/research-blog/cloud/open-source-calvin/}, 2015.
+
+\bibitem[PP15]{calvin-article}
+Ola~Angelsmark Par~Persson.
+\newblock Calvin – merging cloud and iot.
+\newblock {\em Elsevier B.V.}, 52(2):210--217, 6 2015.
+
+\bibitem[Rhu15]{microsoa}
+Bob Rhubart.
+\newblock {Microservices and SOA}.
+\newblock
+  \url{http://www.oracle.com/technetwork/issue-archive/2015/15-mar/o25architect-2458702.html},
+  2015.
+
+\bibitem[Sam]{smart}
+Samsung.
+\newblock {SmartThings}.
+\newblock \url{https://www.smartthings.com}.
+
+\bibitem[Sil13]{fbrobbery}
+John Sileo.
+\newblock {Facebook Status Update Leads to Robbery}.
+\newblock \url{http://www.sileo.com/facebook-status-update-leads-to-robbery/},
+  2013.
+
+\bibitem[swi15]{gcdwebserver}
+swisspol.
+\newblock {GCDWebServer}.
+\newblock \url{https://github.com/swisspol/GCDWebServer}, 2015.
+
+\bibitem[vdM15]{gartner}
+Rob van~der Meulen.
+\newblock {Gartner Says 6.4 Billion Connected "Things" Will Be in Use in 2016,
+  Up 30 Percent From 2015}.
+\newblock \url{http://www.gartner.com/newsroom/id/3165317}, 2015.
 
 \end{thebibliography}
