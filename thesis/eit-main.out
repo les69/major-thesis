@@ -11,7 +11,7 @@
 \BOOKMARK [1][-]{section.2.1}{Biometric factors}{chapter.2}% 11
 \BOOKMARK [2][-]{subsection.2.1.1}{Speaker recognition}{section.2.1}% 12
 \BOOKMARK [2][-]{subsection.2.1.2}{Speaker Recognition algorithms}{section.2.1}% 13
-\BOOKMARK [1][-]{section.2.2}{Internet of Things}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.2}{Integration of Ecosystems}{chapter.2}% 14
 \BOOKMARK [2][-]{subsection.2.2.1}{Ecosystems}{section.2.2}% 15
 \BOOKMARK [1][-]{section.2.3}{The Microservice Architectural Style}{chapter.2}% 16
 \BOOKMARK [2][-]{subsection.2.3.1}{Internal integration}{section.2.3}% 17
@@ -54,6 +54,6 @@
 \BOOKMARK [1][-]{section.4.2}{Validation of the Microservice approach}{chapter.4}% 54
 \BOOKMARK [2][-]{subsection.4.2.1}{Microservices Oriented integration and Typical integration}{section.4.2}% 55
 \BOOKMARK [2][-]{subsection.4.2.2}{Architecture limits}{section.4.2}% 56
-\BOOKMARK [0][-]{chapter.5}{Related Work}{}% 57
-\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 58
-\BOOKMARK [1][-]{subsection.6.0.1}{Future work}{chapter.6}% 59
+\BOOKMARK [0][-]{chapter.5}{Conclusion}{}% 57
+\BOOKMARK [1][-]{subsection.5.0.1}{Future work}{chapter.5}% 58
+\BOOKMARK [0][-]{chapter.6}{Appendix - Figures}{}% 59

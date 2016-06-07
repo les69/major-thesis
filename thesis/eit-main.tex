@@ -42,6 +42,7 @@
 \usepackage{epstopdf}
 \usepackage{fancyhdr}
 \usepackage{etoolbox}
+\usepackage{listings}
 \usepackage {xcolor}
 \usepackage{float}
 \usepackage{wrapfig}
@@ -88,15 +89,16 @@
 
 
 \def\myauthor{Mirko Morandi} % Your Name
-\def\mytitle{Improving house security using an IoT infrastructure} % Title of thesis
+\def\mytitle{Improving house security using an Internet of Things infrastructure:} % Title of thesis
+\def\mysubtitle{A Microservice oriented approach to integration and user validation with speaker recognition}
 \def\myacdsup{Kitlei Róbert} % Your Academic Supervisor from elte
-\def\myacdsuptit{Prof.}% Title of your Academic Supervisor from ELTE
+\def\myacdsuptit{Professor}% Title of your Academic Supervisor from ELTE
 \def\myacdsupen{Marchese Maurizio} % Your Academic Supervisor from your Entry University
-\def\myacdsupentit{Prof.}% Title of your Academic Supervisor from your Entry University
-\def\myentryuni{Trento}% Your Entry University
+\def\myacdsupentit{Professor}% Title of your Academic Supervisor from your Entry University
+\def\myentryuni{University of Trento}% Your Entry University
 \def\myindsup{Szilágyi László}% Your Industrial Supervisor
 \def\myindsuptit{Customer Manager}% Your Industrial Supervisor's title at its company
-\def\myindcom{Ericsson}% Your Industrial Supervisor's company
+\def\myindcom{Ericsson Hungary}% Your Industrial Supervisor's company
 \def\currentyear{2016.}% The Current Year
 
 \begin{document}
@@ -130,7 +132,17 @@
 }
 \vspace{2cm}
 \begin{center}
-{\fontsize{20.74}{20}  \scshape  \mytitle}
+    {\fontsize{20}{20}  \scshape  Improving House Security using an}\\
+    \vspace{0.05cm}
+    {\fontsize{20}{20}  \scshape  Internet of Things infrastructure}\\
+    %%\vspace{0.1cm}
+    %%{\fontsize{20.74}{22}  \scshape  infrastructure}\\
+\vspace{0.5cm}
+%%\newline
+%%{\fontsize{15.55}{30}  \scshape  \mysubtitle}
+{\fontsize{15}{22}  \scshape  A Microservice oriented approach to integration}\\
+%%{\fontsize{15.5}{22}  \scshape  }\\
+{\fontsize{15}{22}  \scshape  and user validation with speaker recognition}\\
 \end{center}
 
 \vspace{4cm}
@@ -139,15 +151,14 @@
 
 {\fontsize{14}{10} \scshape \myacdsup} & {\fontsize{14}{10} \scshape \myauthor}\\
 
-{\fontsize{12}{20} \scshape  \myacdsuptit \ at ELTE}\quad & {\fontsize{12}{20} \scshape Computer Science}\\
-
+{\fontsize{10.5}{20} \scshape \myacdsuptit \ at Eötvös Loránd University }\quad & {\fontsize{10.5}{20} \scshape Computer Science}\\
 {\fontsize{14}{20} \scshape \myacdsupen}&\\
 
-{\fontsize{12}{20} \scshape \myacdsupentit \ at \myentryuni}&\\
+{\fontsize{10.5}{20} \scshape \myacdsupentit \ at \myentryuni}&\\
 
 {\fontsize{14}{20} \scshape \myindsup}&\\
 
-{\fontsize{12}{20} \scshape \myindsuptit \ at \myindcom}&\\
+{\fontsize{10.5}{20} \scshape \myindsuptit \ at \myindcom}&\\
 \end{tabular}
 
 \vspace{3cm}
@@ -172,7 +183,10 @@ not least I'd like to thank the Ericsson Calvin research team for the hints to b
 better code.
 
 \tableofcontents
-
+\listoffigures
+\listoftables
+\newpage
+\leavevmode\thispagestyle{empty}\newpage
 
 
 
@@ -183,8 +197,9 @@ better code.
 \include{chap2}
 \include{chap3}
 \include{chap4}
-\include{chap5}
+%\include{chap5}
 \include{chap6}
+\include{appb}
 
 
 \bibliography{bibexample} % just insert the bib file name, without .bib, it has to be in the same folder as the .tex file,

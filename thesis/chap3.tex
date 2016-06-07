@@ -1,5 +1,5 @@
 \chapter{Detection and Integration}
-
+\label{chap3}
 
 \section{Preface}
 The major problem faced during this work is related
@@ -20,7 +20,7 @@ which should identify a single person; biometrics with finger prints, retina sca
 and voice recognition.\\
 Usually such controls where available only with expensive solutions (and some still are, e.g. retina
 scanners), however with the introduction of \textit{IoT} their price dropped allowing
-them to be sold for a reasonable price. These controls are also called \textbf{behavioral biometrics},
+them to be sold for a reasonable price. These controls are also called \textit{behavioral biometrics},
 the set of behavioral traits which identifies an individual person. Usually these traits are
 used for authentication when accessing a restricted system, however we'll consider
 these to recognize unknown entities accessing our house. \\
@@ -35,7 +35,7 @@ when applied in a real life scenario, where usually the conditions are far from 
 situation. For example facial recognition works in very limited cases, like the systems
 used on smartphones to unlock the device, has been reported to not be reliable enough
 to be the main unlocking system. The situation is also similar for voice recognition or
-speech to text systems, which are improving during the time and mainly \textbf{during the usage}.
+speech to text systems, which are improving during the time and mainly \textit{during the usage}.
 \textit{Siri}, one of the most famous personal assistant had some minor troubles at the beginning
 being used to the different users voices, accents and languages. \textit{Siri} uses
 different voice recognition algorithms to categorize your voice by learning your
@@ -294,9 +294,9 @@ an \textit{Arduino} or a \textit{Raspberry Pi}, both supporting different system
 languages (the first is limited to a subset of \textit{C++} meanwhile the second one supports everything
 that can run under a normal linux distribution, but usually it's \textit{Python}).
 However in our scenario the devices we consider are on a different layer of abstraction,
-we do target ecosystems and not single independent devices. \textbf{Ecosystems} has to
-provide an access to developers through a point of access, \textbf{REST api} for   \textit{Nest}
-and the \textbf{HomeKit.framework} for accessing \textit{HomeKit} devices.
+we do target ecosystems and not single independent devices. \textit{Ecosystems} has to
+provide an access to developers through a point of access, \textit{REST api} for   \textit{Nest}
+and the \textit{HomeKit.framework} for accessing \textit{HomeKit} devices.
 The limitations are not always the same, when using \textit{Nest} it's easier to communicate
 with it using a wrapper for their own api, which exists in many libraries, including \textit{Python}.
 Nonetheless the situation with \textit{HomeKit} is much more strict, having their ecosystem
@@ -325,7 +325,7 @@ to read and write data. With the \textit{Nest} cloud each element is identified 
 and accessible through a unique address, called "data location".
 Furthermore, the cloud system also offers a \textit{RESTful} service to access these resources,
 but only allowing GET and PUT operations with a call limit to prevent overuse. There is also
-a \textbf{Streaming} feature for REST, which allows our application to receive updates
+a \textit{Streaming} feature for REST, which allows our application to receive updates
 in real-time or to stream from a device, namely camera, since web-sockets are not supported.
 However it applies the same rule as before, with some limits in the data usage to prevent abuse.
 
@@ -373,7 +373,6 @@ smoke in case of fire.
 \begin{itemize}
     \item View CO or smoke status
     \item View battery health state
-    \item View last manual test status and timestamp for last manual test
     \item View online status and last connection information
     \item Structure name and device location in the home
 \end{itemize}
@@ -387,14 +386,9 @@ other typical features offered by smart cameras.
     \item View camera online status or mic status
     \item View or change streaming status (turn video streaming on/off)
     \item View device name and where identifier
-    \item View last online status change (last online/offline change)
-    \item View subscription status (enrolled/not enrolled)
-    \item Learn more about Nest Aware with Video History subscriptions >
-    \item View deep links to the live camera feed in the Nest app (iOS, Android) or on the web at home.nest.com
     \item View content related to the last event that triggered a notification, including:
         \\Sound or motion event detected
         \\Event start/stop times
-    \item Deep links to image and gif files
     \item Structure name and device location in the home
 
 \end{itemize}
@@ -428,17 +422,21 @@ allowing a possible reuse of the actor. Here is the pseudocode for the high-leve
 However going deeper into the actor architecture we have to define some more constraints,
 like the events which trigger the execution and the tokens for which returning the results.
 All incoming port of an actor has to be linked, we can not have an unbounded port,
-both input or output. Here's a list of our actor ports:\\
+both input or output. Listing ~\ref{code2} shows an example of connection bounding for incoming
+and out-coming connections.
 
-\begin{verbatim}
+
+\begin{lstlisting}[language=C,frame=single,caption=Example resource response,label=code2]
     Inputs:
         device: the device identifier
-        operation: string representing the operation to do (get or set)
+        operation: string representing
+            the operation to do (get or set)
         property_name: the property to be get/set
-        value: the value to be used to set the property
+        value: the value to be used to
+            set the property
     Outputs:
         result: the property value
-\end{verbatim}
+\end{lstlisting}
 
 To simplify the work, we reduced the inbound port for the operation to only one, instead of having a token
 for a \textit{get} or \textit{set} operation. This task is completed using the \texttt{@condition} to declare
@@ -455,11 +453,12 @@ which acts as a conditional control: it will continue only if the condition is s
 An example guard condition can be written as:
 
 \begin{verbatim}
-    @guard(lambda self: self.nest._in_progress is None and self.operation == "set")
+    @guard(lambda self: self.nest._in_progress is
+        None and self.operation == "set")
 \end{verbatim}
 This guard condition is used to enter the function only when the \textit{nest} object is not
 working on an asynchronous task and the operation has to be the \textit{set} operation.\\
-One of the constraints that an actor has to follow is the \textbf{reactivity}, which implies
+One of the constraints that an actor has to follow is the \textit{reactivity}, which implies
 non-blocking calls in the body of its functions. However, as in our case, the actor will have to
 make some calls to the \textit{Nest} cloud, which is a blocking call. This is reached
 using a two step asynchronous system: first the value is acquired and the actor
@@ -481,7 +480,7 @@ flaws in the architecture. The solution works only under the following circumsta
 
 However these assumptions are too risky to be considered for an always running system, because the likeliness
 of one of the above problems to happen is very high.\\
-To face these problems we adopted a \textbf{microservice} architecture style to implement the integration with
+To face these problems we adopted a \textit{microservice} architecture style to implement the integration with
 other ecosystems. In the case of \textit{Nest} is not very significative but it will be much more for \textit{HomeKit}, as
 we'll see later.
 
@@ -504,7 +503,7 @@ routing service. This task will be deferred to the \textit{routing} service, whi
 as a proxy to the other micro-services.\\
 Each ecosystem has a microservice dedicated, this is due to the different internal structure of the
 different technologies. For example \textit{HomeKit} uses a hierarchical structure divided in the following,
-from above to the bottom: \textbf{HMHome}, \textbf{HMRoom}, \textbf{HMAccessory}, \textbf{HMService} and \textbf{HMCharacteristic}.
+from above to the bottom: \textit{HMHome}, \textit{HMRoom}, \textit{HMAccessory}, \textit{HMService} and \textit{HMCharacteristic}.
 Which differs from the simpler one of \textit{Nest}, where there are mostly Structures and Devices.\\
 Moreover structuring the integration with ecosystems introduces the capability to link more accounts, more devices,
 to the \textit{Calvin} runtime.
@@ -513,43 +512,28 @@ to the \textit{Calvin} runtime.
 
 The API to describe the connection between \textit{Nest} and the microservice
 resembles the former actor structure.
-Following the classic \textit{RESTful} style, to access a device will look like
-\pagebreak
-\begin{verbatim}
-    1.
-    Show details about device
+Following the classic \textit{RESTful} style, an example of resource call
+looks like in listing ~\ref{code1}
+%%\pagebreak
+
+\begin{lstlisting}[language=Python,frame=single,caption=Example resource response,label=code1]
+    This url allows the user to
+    access the device properties.
+
     GET /device/<deviceid>
 
     Example Response
     {"device":
         {
-        "name": "DFF9", "temperature": 37, "humidity": 50, "fan": false,
-        "mode": "heat", "online": false, "serial": "fake9396122EDFF9",
-        "where": "basement","structure": "HomeTest", "target": 25
+        "name": "DFF9", "temperature": 37,
+        "humidity": 50, "fan": false,
+        "mode": "heat", "online": false,
+        "serial": "fake9396122EDFF9",
+        "where": "basement",
+        "structure": "HomeTest", "target": 25
         }
     }
-
-    2.
-    Show property value of a given device
-    GET /device/<deviceid>/<property>
-
-    { "value": 37 }
-
-    3.
-    List all the devices
-    GET /devices
-
-    {
-       "devices": [
-            "4A32","12DE","DFF9",
-            "18B430AAFAA447E5","18B430AA542D0893",
-            "fakebb555fb772ce405b91729b3c4ac1962b"]}
-    4.
-    Set a value for a specified property of a device
-    PUT /device/<deviceid>/<property>/<value>
-
-    { "success": true }
-\end{verbatim}
+\end{lstlisting}
 
 
 
@@ -559,12 +543,12 @@ Following the classic \textit{RESTful} style, to access a device will look like
 
 \textit{HomeKit}, introduced in details in the previous chapter, is the other ecosystem
 for which we are extending \textit{Calvin} integration. First of all, HomeKit doesn't
-expose any cloud API, it's functionalities can be accessed only through their \textbf{HomeKit.framework},
+expose any cloud API, it's functionalities can be accessed only through their \textit{HomeKit.framework},
 a library available only for \textit{iOS}. As can be seen the limitations compared to Nest
 are much more strict, which implies no direct integration. The only possible solution for the
 moment is to have an \textit{HTTP} web server exposing HomeKit functionalities to the outside of
-the world. As previously mentioned, their library is not available on both \textbf{Mac OS X} nor
-the Apple TV \textbf{tvOS}, which means the only possible approach is a mobile application.
+the world. As previously mentioned, their library is not available on both \textit{Mac OS X} nor
+the Apple TV \textit{tvOS}, which means the only possible approach is a mobile application.
 However it is predicted to be supported by the former OS in the future, on which would be a more
 elegant and nicer solution.\\
 
@@ -576,8 +560,7 @@ issue we had to deal with:
 
 
 \begin{enumerate}
-    \item First of all Swift or Objective-C is not
-    meant for building web services, therefore there are no official libraries for
+    \item First of all Swift or Objective-C does not have official libraries for
     starting and handling HTTP requests.
     \item Second, the architecture for mobile applications
     doesn't fit well with the standard daemon running in the background.
@@ -595,7 +578,7 @@ HTTP server embedded in both \textit{iOS} and \textit{Mac OS X}.
 In order to fully understand how to run a web server on a mobile application we
 have to briefly introduce the \textit{Grand Central Dispatch} (GCD).
 The \textit{Grand Central Dispatch} is a set of tools and libraries made available from
-Apple for developers to handle concurrency in their applications\cite{gcd}. GCD allows
+Apple for developers to handle concurrency in their applications.\cite{gcd} GCD allows
 developers to create and dispatch objects, which will be deferred to a differed thread
 and queued for concurrent execution.\newline
 GCD provides three different queues on which tasks will be submitted in a form of block object;
@@ -609,7 +592,7 @@ queues are:%%\pagebreak
 \end{description}
 
 Dispatching different parts of our system can be very helpful when we need to handle
-a request from a client without locking the main view of the application. In \textbf{GCDWebServer}
+a request from a client without locking the main view of the application. In \textit{GCDWebServer}
 to each handler for the different url paths, there is a block of code assigned to it,
 which will be handled by the GCD.
 

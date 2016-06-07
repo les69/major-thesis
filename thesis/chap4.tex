@@ -1,13 +1,14 @@
 \chapter{Validation}
-
-In the following chapter we'll discuss the results of the formerly
+\label{chap4}
+In the following chapter we discuss the results of the formerly
 presented implementation, highlighting the benchmarks of the solutions proposed.
-In the first part of the chapter we'll investigate the performance of the machine learning
-library, in the various situation that may happen. In the following part we will
-test the advantages of our microservice oriented architecture with the classical approach
+In section ~\ref{speaker-validation} we investigate the performance of the machine learning
+library, in the various situation that may happen in a real world scenario. In the following,section ~\ref{micro-validation},
+we test the advantages of our microservice oriented architecture compared to the classical approach
 for integration.
 
 \section{Validating Speaker Recognition}
+\label{speaker-validation}
 
 This section is dedicated to the various tests to investigate
 the effectiveness in a home security scenario. For our
@@ -17,6 +18,7 @@ for speaker identification only. Furthermore we have used standard configuration
 for all the audio files: .wav format, with a frequency 48 kHz and using 16 bit for sampling.
 
 \subsection{Testing the basic model}
+\label{basic}
 
 Before starting with more complex test it is mandatory to see the effectiveness
 of the models in the optimal situation. For the optimal situation we'll take
@@ -34,14 +36,15 @@ quality, we will make more specific tests later in the document.
 
 \subsubsection{Results}
 
-In the following table we summarize the results from the test, where \textit{score} is the
+In the following table \ref{tab:basicres}, we summarize the results from the test where \textit{score} is the
 likelihood percentage: less than 40\% is unlikely or wrong and 100\% is completely sure.
 The remaining fields are the average execution time for the different tests and the mean duration
 of the test files.
 \begin{table}
-    \label{tab:basicres}
+
 \centering
 \caption{Basic test results}
+\label{tab:basicres}
 \begin{tabular}{|c|c|c|c|} \hline
 & \textbf{Score \%} & \textbf{Avg Execution (ms)} & \textbf{Avg Duration (s)}\\ \hline
 \textbf{Youtuber} & 92.7 & 3217 & 56 \\ \hline
@@ -50,7 +53,7 @@ of the test files.
 \end{tabular}
 \end{table}
 
-As can be seen in \ref{tab:basicres}, the \textit{recognito} library works as expected with
+As can be seen in table \ref{tab:basicres}, the \textit{recognito} library works as expected with
 different sources and different quality, proving its correctness for the basic functionalities.
 However, we can see a difference in the score of the results depending from the source of the
 audio recording. The less quality input, the microphone, has a lower score percentage which is very likely
@@ -58,9 +61,10 @@ due to the input quality. It is indeed interesting to notice the perfect score o
 taken from \textit{Voxforge}. Although their quality is lower than the Youtube video, their
 precision is remarkably high. It is also important to notice the discrepancy between the model
 audio durations, which doesn't seem to be affect the score too much. We'll try
-to see which is the best duration for a model in the next subsection.
+to find out which is the best duration for a model in the next subsection.
 
 \subsubsection{Finding the optimal length for a Model}
+\label{opt-model}
 
 The audio recordings used as model in the former chapter are all of different durations.
 However, in order to have a more refined comparison we need to know the best duration of a model
@@ -70,6 +74,7 @@ The test will be executed trimming the audio model file in different slots of ti
 from the previous test.
 \pgfplotsset{width=10cm,compat=1.9}
 
+\begin{figure}
 \begin{center}
 
 
@@ -87,6 +92,7 @@ from the previous test.
     ymajorgrids=true,
     grid style=dashed,
 ]
+
 
 \addplot[
     color=blue,
@@ -110,12 +116,15 @@ from the previous test.
     (1,98.5)(3,97.25)(5,99.5)(10,96.75)(15,97.5)
     };
     \legend{Myself,Yotuber,Voxforge}
-
 \end{axis}
-\end{tikzpicture}
-\end{center}
 
-Surprisingly, as can be seen in the chart above, we had the best results with the
+\end{tikzpicture}
+\caption{Score differences related to the model duration}
+\label{chart:score-model-dur}
+\end{center}
+\end{figure}
+
+Surprisingly, as can be seen in the figure \ref{chart:score-model-dur}, we had the best results with the
 1 second audio model duration. However it is not a good choice to consider this length,
 which in some test recordings led to a mismatch in the speaker match. This was more clear
 when considering different people from a low quality input (the laptop's microphone),
@@ -136,7 +145,7 @@ long audio recording in smaller segments. The question is now to find the optima
 for a segment. We will use as model each relative optimal from the previous test, and apply to them
 various test model of the following duration length: 1 second, 3 seconds, 5 seconds, 7 seconds,
 11 seconds and 13 seconds.
-
+\begin{figure}
 \begin{center}
 
 
@@ -180,9 +189,12 @@ various test model of the following duration length: 1 second, 3 seconds, 5 seco
 
 \end{axis}
 \end{tikzpicture}
+\caption{Results from different test durations}
+\label{chart:score-test-dur}
 \end{center}
+\end{figure}
 
-As can be seen from the chart, the matching increases linearly with the test duration
+As can be seen from figure \ref{chart:score-test-dur}, the matching increases linearly with the test duration
 length, approaching the best value at 13 seconds.\newline
 For short test models the system is unpredictable, though providing generally some
 good matches we have noticed some mismatches (marked as 0) for low level inputs. Moreover
@@ -193,6 +205,8 @@ audio duration is the optimal one for our scenario.\newline
 Up to now we have used models with different speakers but also from different types of sources. In the
 next section we will investigate how the system works when using models applied to the same
 speaker but from a different audio source.
+
+
 
 \subsection{Testing different inputs with the same speaker}
 
@@ -215,9 +229,10 @@ devices. In our test we have considered the following devices:
 \subsubsection{Results}
 
 \begin{table}
-    \label{tab:inputres}
+
 \centering
 \caption{Test with different speakers}
+\label{tab:inputres}
 \begin{tabular}{|c|c|} \hline
 \textbf{Device} & \textbf{Avg Score \%} \\ \hline
 \textbf{Laptop} & 83 \\ \hline
@@ -226,7 +241,7 @@ devices. In our test we have considered the following devices:
 \end{tabular}
 \end{table}
 
-As can be see in \ref{tab:inputres} there is a definitive difference in the matching score
+As can be see in table \ref{tab:inputres} there is a definitive difference in the matching score
 with different inputs. The test highlighted our assumption, though the error introduced is
 not too high. We consider \textgreater 80\% already a good result, though there is only a 10\%
 of difference between the lowest quality and the highest in the test. Therefore a halfway
@@ -254,12 +269,10 @@ the speaker was using different languages the system could recognize the person 
 any mismatch and with high likelihood scores. It is interesting to see that the language
 which had the lowest match values is English. The reason may be due to the high difference
 in the accent with the other languages, whereas Italian and Spanish have a high relative
-match score.
+match score. The matching scores can be seen in figure \ref{chart:score-lang}.
+\begin{figure}
 \begin{center}
-
-
 \begin{tikzpicture}
-
 \begin{axis}[
     title={Variability in likelihood for different languages},
     xlabel={Language spoken [name]},
@@ -304,8 +317,86 @@ match score.
 
 \end{axis}
 \end{tikzpicture}
+\caption{Results running tests with different languages}
+\label{chart:score-lang}
 \end{center}
+\end{figure}
 
+\subsubsection{Audio Tuning}
+
+When recording many different sources of noise are introduced polluting the final
+recording used for the model. Therefore we have decided to apply different audio tuning
+techniques to analyze which one may improve the matching likelihood score. For our test
+we analyzed separately the following filters/effects:
+\begin{itemize}
+    \item Silence truncation - removed silence from the track with precise settings. Removing
+    the whole silence from the track proved to be unsuccessful.
+    \item Noise reduction - remove noise from a determined frequency bandwidth.
+    \item Low Pass Filter - keep only low frequency audio.
+    \item High Pass Filter - same as above only for high frequency.
+\end{itemize}
+For this test we have used only the low quality model, since the others had already very good scores
+and less noise introduced by low quality input. Therefore the low quality model is the worst case in our scenario
+and where the effects can be highlighted more than with the other models.
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+
+\begin{axis}[
+    title={Likelihood benchmark with audio tuning},
+    xlabel={Test number [\#]},
+    ylabel={Likelihood score [percentage]},
+    ytick={60,70,80,90,100},
+    xtick={1,2,3,4,5},
+    legend pos=south east,
+    ymajorgrids=true,
+    grid style=dashed,
+]
+\addplot[
+    color=blue,
+    mark=square,
+    ]
+    coordinates {
+    (1,67) (2,82) (3,83) (4,87) (5,75)
+    };
+\addplot[
+    color=red,
+    mark=square,
+    ]
+    coordinates {
+    (1,77) (2,80) (3,86) (4,91) (5,80)
+    };
+\addplot[
+    color=green,
+    mark=square,
+    ]
+    coordinates {
+    (1,80) (2,89) (3,90) (4,92) (5,85)
+    };
+\addplot[
+    color=purple,
+    mark=square,
+    ]
+    coordinates {
+    (1,79) (2,92) (3,93) (4,94) (5,82)
+    };
+    \legend{Original,Trunked Silence, Noise Reduction, Low Pass Filter}
+
+\end{axis}
+\end{tikzpicture}
+\caption{Results from testing models with audio tunings}
+\label{chart:score-tuning}
+\end{center}
+\end{figure}
+
+The test highlighted a clear correlation between the effect and the likelihood score
+increase. All of the tests, except of the high pass filter, showed an increase in the
+matching scores with a top score for the low pass filter(see figure \ref{chart:score-tuning}). At first seen the very good results
+from the low pass results we decided to filter also all the other models with a low pass filter.
+Although results decreased of some small units (2-3 \%), the improvement introduced by the
+low pass filter was concrete. However all the test using the high pass filter failed with mismatches
+and none of the matched with their correct model. For this reason we have decided to exclude it from
+the diagram.
 
 
 \subsection{Animal Recognition}
@@ -348,7 +439,7 @@ the next test where we will try to verify a dog identity given its bark.
 \end{tabular}
 \end{table}
 
-As can be seen in the table above \ref{tab:animalres}, 6 out of 13 matched, with an accuracy of
+As can be seen in table \ref{tab:animalres}, 6 out of 13 matched, with an accuracy of
 ~46\%, not enough for a general dog recognition but enough to open new leads for different and more
 accurate tests.
 
@@ -440,6 +531,7 @@ It would require high quality and sophisticated audio input devices to perform a
 and though it wouldn't work as expected from the beginning.
 
 \section{Validation of the Microservice approach}
+\label{micro-validation}
 
 In this section we will test the differences between the micro-service
 oriented approach with the typical integration. The microservice oriented
@@ -486,12 +578,9 @@ execution time for the microservices with an average of 5.76 ms.
 Therefore the average delay introduced by the microservice chain is,
 on average, 4.64 ms, calculated on both of the operations. This is the price to pay for the different approach, a price that is worth the flexibility
 given in the structure. Moreover with the advent of faster networks this price given by the inter network communication will drop
-significantly, though even now it doesn't invalidate the overall performance.
+significantly, though even now it doesn't invalidate the overall performance. Some performance diagrams can be found in figure \ref{chart:score-operation}.
 
-\begin{center}
-
-
-\begin{tikzpicture}
+\begin{figure}\begin{center}\begin{tikzpicture}
 
 \begin{axis}[
     title={Execution time for GET},
@@ -554,7 +643,9 @@ significantly, though even now it doesn't invalidate the overall performance.
 \end{axis}
 
 \end{tikzpicture}
-\end{center}
+\caption{Running times for different operations}
+\label{chart:score-operation}
+\end{center}\end{figure}
 
 \subsection{Architecture limits}
 
@@ -575,7 +666,7 @@ the devices in a particular room or the property of a given device. The test wil
 begin running an actor profiling a normal situation, scaling then by 20 each time and analyzing
 the situation up to 100 actors running in parallel.\newline
 
-
+\begin{figure}
 \begin{center}
 
 \begin{tikzpicture}
@@ -643,9 +734,11 @@ the situation up to 100 actors running in parallel.\newline
 \end{axis}
 
 \end{tikzpicture}
-\end{center}
+\caption{Testing the robustness of the system}
+\label{chart:score-rob}
+\end{center}\end{figure}
 
-As can be seen from the diagram the situation remains almost unchanged until 40 processes,
+As can be seen from figure \ref{chart:score-rob}, the situation remains almost unchanged until 40 processes,
 whereas there is almost no difference between a single execution and 20 processes. However
 things starts exploding after the limit of 40, moving quickly from an average of 50ms per request
 to an average of 100-150ms. Even more impressive the increase of execution time at 100 processes, which is around
