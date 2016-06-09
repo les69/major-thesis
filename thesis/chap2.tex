@@ -31,7 +31,7 @@ factors also called behavioral patterns, which relates more to the behavior of a
 like typing, gait and voice.\\
 Due to its nature biometric factors depends on the technology used to gather them,
 introducing some noise or errors, for which exists some metrics to evaluate their
-reliability:
+reliability:\pagebreak
 
 \begin{itemize}
     \item \textbf{False match rate} related to the probability of the system to
@@ -657,6 +657,7 @@ in the runtime which require on average more then 1-2 seconds. This limitation c
 in the runtime towards an asynchronous approach for long time tasks. Typical tasks requiring asynchronous interaction
 can be reading data from a sensor, sending an HTTP request or authenticating into any service, the list is longer but
 can summarize in most of interaction with out of the system objects.\newline
+\pagebreak
 An actor anatomy can summarized in the following parts:
 \begin{itemize}
     \item Declaration of the connections
@@ -670,22 +671,23 @@ An actor anatomy can summarized in the following parts:
 
 All the connections of an actor has to be declared a priori, and hence be all used (or allocated)
 when the actor is used. The declaration is done simply adding under a comment the names of the many connections
-and their type: either input/output or both. Here is a simple example of an actor for HTTP GET requests:
+and their type: either input/output or both.
+Listing \ref{input1} summarizes the connection bounding for an actor processing HTTP GET requests.
 
-\begin{verbatim}
+\begin{lstlisting}[language=C,frame=single,caption=Example of connection bounding,label=input1]
     Input:
-      URL : URL to get
-      params : Optional parameters to request as a JSON dictionary
+      URL: URL to get
+      params: parameters to request as a JSON dictionary
       header: JSON dictionary with headers to include in request
     Output:
       status: 200/404/...
       header: JSON dictionary of incoming headers
-      data : body of request
-\end{verbatim}
+      data: body of request
+\end{lstlisting}
 
-In this example we can see the 3 input ports: URL, params and header, which will all be needed to be set
+In the example shown in figure \ref{input1} we can see the 3 input ports: URL, params and header, which will all be needed to be set
 in order to fire one of the actions, depending on the condition. These inputs can be used
-as a condition parameter using \texttt{action\_input['var\_name']} and \texttt{action\_output['var\_name']}
+as a condition parameter using \newline \texttt{action\_input['var\_name']} and \texttt{action\_output['var\_name']}
 for outputs.\\
 However it is very likely that we won't need all these inputs or outputs, specially if they are optional
 like \texttt{params}. For this reason there exists two special actors which will connect to these

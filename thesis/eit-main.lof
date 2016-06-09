@@ -2,16 +2,16 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Sources of variability in speaker recognition}}{8}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Sources of variability in speaker recognition}}{12}{figure.2.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Graphic illustration of microservices and SOA}}{16}{figure.2.3}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Sources of variability in speaker recognition}}{13}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Graphic illustration of microservices and SOA}}{17}{figure.2.3}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Proxies interaction}}{19}{figure.2.4}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Describe Phase}}{20}{figure.2.5}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces CalvinScript Example}}{20}{figure.2.6}
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Actors interaction}}{21}{figure.2.7}
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Calvin Architecture}}{23}{figure.2.8}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Spaker Recognition Architecture with Calvin}}{28}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Nest Cloud architecture}}{34}{figure.3.2}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Spaker Recognition Architecture with Calvin}}{29}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Nest Cloud architecture}}{35}{figure.3.2}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Microservice Integration architecture}}{39}{figure.3.3}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces HomeKit communication architecture}}{42}{figure.3.4}
 \addvspace {10\p@ }
@@ -19,9 +19,9 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Results from different test durations}}{47}{figure.4.2}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Results running tests with different languages}}{49}{figure.4.3}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Results from testing models with audio tunings}}{50}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Running times for different operations}}{55}{figure.4.5}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Testing the robustness of the system}}{56}{figure.4.6}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Running times for different operations}}{56}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Testing the robustness of the system}}{57}{figure.4.6}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Model audio specter}}{60}{figure.6.1}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Model audio wave}}{60}{figure.6.2}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Model audio wave}}{61}{figure.6.2}

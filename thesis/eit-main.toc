@@ -11,7 +11,7 @@
 \contentsline {chapter}{\numberline {2}State of the Art}{6}{chapter.2}
 \contentsline {section}{\numberline {2.1}Biometric factors}{6}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Speaker recognition}{7}{subsection.2.1.1}
-\contentsline {subsubsection}{Speaker based variability}{8}{section*.5}
+\contentsline {subsubsection}{Speaker based variability}{9}{section*.5}
 \contentsline {subsubsection}{Conversation based variability}{9}{section*.6}
 \contentsline {subsubsection}{Technology based variability}{9}{section*.7}
 \contentsline {subsubsection}{Feature Parameters}{10}{section*.8}
@@ -19,9 +19,9 @@
 \contentsline {subsubsection}{Gaussian Mixture Model Based}{10}{section*.9}
 \contentsline {subsubsection}{GMM-UBM Speaker Verification}{11}{section*.10}
 \contentsline {subsubsection}{GMM Supervector SVM}{11}{section*.11}
-\contentsline {subsubsection}{Joint JFA}{13}{section*.12}
+\contentsline {subsubsection}{Joint JFA}{12}{section*.12}
 \contentsline {subsubsection}{i-Vector Approach}{13}{section*.13}
-\contentsline {section}{\numberline {2.2}Integration of Ecosystems}{13}{section.2.2}
+\contentsline {section}{\numberline {2.2}Integration of Ecosystems}{14}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Ecosystems}{14}{subsection.2.2.1}
 \contentsline {subsubsection}{Google - Nest}{14}{section*.14}
 \contentsline {subsubsection}{Apple - HomeKit}{15}{section*.15}
@@ -34,42 +34,42 @@
 \contentsline {subsection}{\numberline {2.3.4}Microservice Oriented Internet of Things}{18}{subsection.2.3.4}
 \contentsline {section}{\numberline {2.4}Calvin}{18}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Describe}{19}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Connect}{19}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.2}Connect}{20}{subsection.2.4.2}
 \contentsline {subsection}{\numberline {2.4.3}Deploy}{21}{subsection.2.4.3}
-\contentsline {subsection}{\numberline {2.4.4}Manage}{21}{subsection.2.4.4}
+\contentsline {subsection}{\numberline {2.4.4}Manage}{22}{subsection.2.4.4}
 \contentsline {subsection}{\numberline {2.4.5}The relationship between the Actor Model and Microservices}{22}{subsection.2.4.5}
 \contentsline {subsection}{\numberline {2.4.6}Calvin's Three Tier architecture}{22}{subsection.2.4.6}
-\contentsline {subsection}{\numberline {2.4.7}Anatomy of an Actor}{22}{subsection.2.4.7}
-\contentsline {subsubsection}{Declaring the connections}{23}{section*.18}
+\contentsline {subsection}{\numberline {2.4.7}Anatomy of an Actor}{23}{subsection.2.4.7}
+\contentsline {subsubsection}{Declaring the connections}{24}{section*.18}
 \contentsline {subsubsection}{Initial phase}{24}{section*.19}
-\contentsline {subsubsection}{Migration}{24}{section*.20}
+\contentsline {subsubsection}{Migration}{25}{section*.20}
 \contentsline {subsubsection}{Actions, Guards and Conditions}{25}{section*.21}
-\contentsline {chapter}{\numberline {3}Detection and Integration}{26}{chapter.3}
-\contentsline {section}{\numberline {3.1}Preface}{26}{section.3.1}
-\contentsline {section}{\numberline {3.2}Fingerprinting a Human}{26}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Behavioral biometrics}{27}{subsection.3.2.1}
-\contentsline {section}{\numberline {3.3}In House Speaker Recognition}{27}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Speaker recognition and Calvin}{27}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Actor Structure and Interaction}{28}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Hardware Interacting Actors}{29}{subsection.3.3.3}
-\contentsline {subsubsection}{Sound Detection Actor}{29}{section*.22}
-\contentsline {subsubsection}{Recording Actor}{29}{section*.23}
-\contentsline {subsection}{\numberline {3.3.4}Speaker Recognition Actors}{31}{subsection.3.3.4}
-\contentsline {subsubsection}{Speaker Diarization}{31}{section*.24}
-\contentsline {subsubsection}{Speaker Verification and Identification}{32}{section*.25}
-\contentsline {section}{\numberline {3.4}Expanding the system}{33}{section.3.4}
-\contentsline {section}{\numberline {3.5}The Architecture}{33}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Accessing different systems}{33}{subsection.3.5.1}
-\contentsline {section}{\numberline {3.6}Accessing Nest}{34}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Nest API Model}{34}{subsection.3.6.1}
-\contentsline {subsubsection}{Nest Thermostat}{35}{section*.26}
-\contentsline {subsubsection}{Nest Protect}{35}{section*.27}
+\contentsline {chapter}{\numberline {3}Detection and Integration}{27}{chapter.3}
+\contentsline {section}{\numberline {3.1}Preface}{27}{section.3.1}
+\contentsline {section}{\numberline {3.2}Fingerprinting a Human}{27}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Behavioral biometrics}{28}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}In House Speaker Recognition}{28}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Speaker recognition and Calvin}{28}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Actor Structure and Interaction}{29}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Hardware Interacting Actors}{30}{subsection.3.3.3}
+\contentsline {subsubsection}{Sound Detection Actor}{30}{section*.22}
+\contentsline {subsubsection}{Recording Actor}{30}{section*.23}
+\contentsline {subsection}{\numberline {3.3.4}Speaker Recognition Actors}{32}{subsection.3.3.4}
+\contentsline {subsubsection}{Speaker Diarization}{32}{section*.24}
+\contentsline {subsubsection}{Speaker Verification and Identification}{33}{section*.25}
+\contentsline {section}{\numberline {3.4}Expanding the system}{34}{section.3.4}
+\contentsline {section}{\numberline {3.5}The Architecture}{34}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Accessing different systems}{34}{subsection.3.5.1}
+\contentsline {section}{\numberline {3.6}Accessing Nest}{35}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Nest API Model}{35}{subsection.3.6.1}
+\contentsline {subsubsection}{Nest Thermostat}{36}{section*.26}
+\contentsline {subsubsection}{Nest Protect}{36}{section*.27}
 \contentsline {subsubsection}{Nest Camera}{36}{section*.28}
-\contentsline {subsection}{\numberline {3.6.2}Nest with Calvin}{36}{subsection.3.6.2}
-\contentsline {subsubsection}{Device Abstraction}{36}{section*.29}
-\contentsline {subsection}{\numberline {3.6.3}A Microservice Oriented approach}{38}{subsection.3.6.3}
-\contentsline {subsubsection}{Microservice Architecture}{38}{section*.30}
-\contentsline {subsubsection}{The microservice API}{39}{section*.31}
+\contentsline {subsection}{\numberline {3.6.2}Nest with Calvin}{37}{subsection.3.6.2}
+\contentsline {subsubsection}{Device Abstraction}{37}{section*.29}
+\contentsline {subsection}{\numberline {3.6.3}A Microservice Oriented approach}{39}{subsection.3.6.3}
+\contentsline {subsubsection}{Microservice Architecture}{39}{section*.30}
+\contentsline {subsubsection}{The microservice API}{40}{section*.31}
 \contentsline {subsection}{\numberline {3.6.4}Accessing HomeKit}{41}{subsection.3.6.4}
 \contentsline {subsubsection}{The Application}{41}{section*.32}
 \contentsline {subsubsection}{Grand Central Dispatch}{41}{section*.33}
@@ -80,25 +80,25 @@
 \contentsline {subsection}{\numberline {4.1.1}Testing the basic model}{44}{subsection.4.1.1}
 \contentsline {subsubsection}{Results}{45}{section*.36}
 \contentsline {subsubsection}{Finding the optimal length for a Model}{45}{section*.37}
-\contentsline {subsubsection}{Finding the optimal length for an Audio Segment}{46}{section*.38}
-\contentsline {subsection}{\numberline {4.1.2}Testing different inputs with the same speaker}{47}{subsection.4.1.2}
+\contentsline {subsubsection}{Finding the optimal length for an Audio Segment}{47}{section*.38}
+\contentsline {subsection}{\numberline {4.1.2}Testing different inputs with the same speaker}{48}{subsection.4.1.2}
 \contentsline {subsubsection}{Results}{48}{section*.39}
 \contentsline {subsection}{\numberline {4.1.3}Testing same speaker talking different languages}{48}{subsection.4.1.3}
-\contentsline {subsubsection}{Results}{48}{section*.40}
+\contentsline {subsubsection}{Results}{49}{section*.40}
 \contentsline {subsubsection}{Audio Tuning}{49}{section*.41}
-\contentsline {subsection}{\numberline {4.1.4}Animal Recognition}{50}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.4}Animal Recognition}{51}{subsection.4.1.4}
 \contentsline {subsubsection}{Animal Identification}{51}{section*.42}
-\contentsline {subsubsection}{Animal Verification}{51}{section*.43}
+\contentsline {subsubsection}{Animal Verification}{52}{section*.43}
 \contentsline {subsubsection}{Results}{52}{section*.44}
 \contentsline {subsection}{\numberline {4.1.5}Cheating the Speaker Recognition}{52}{subsection.4.1.5}
-\contentsline {subsubsection}{Results}{52}{section*.45}
+\contentsline {subsubsection}{Results}{53}{section*.45}
 \contentsline {subsection}{\numberline {4.1.6}Step Recognition}{53}{subsection.4.1.6}
 \contentsline {subsubsection}{Results}{53}{section*.46}
-\contentsline {section}{\numberline {4.2}Validation of the Microservice approach}{53}{section.4.2}
+\contentsline {section}{\numberline {4.2}Validation of the Microservice approach}{54}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Microservices Oriented integration and Typical integration}{54}{subsection.4.2.1}
 \contentsline {subsubsection}{Results}{54}{section*.47}
-\contentsline {subsection}{\numberline {4.2.2}Architecture limits}{56}{subsection.4.2.2}
-\contentsline {subsubsection}{Testing the bottleneck}{56}{section*.48}
+\contentsline {subsection}{\numberline {4.2.2}Architecture limits}{55}{subsection.4.2.2}
+\contentsline {subsubsection}{Testing the bottleneck}{55}{section*.48}
 \contentsline {subsubsection}{Conclusion}{57}{section*.49}
 \contentsline {chapter}{\numberline {5}Conclusion}{58}{chapter.5}
 \contentsline {subsection}{\numberline {5.0.1}Future work}{59}{subsection.5.0.1}

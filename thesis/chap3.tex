@@ -113,21 +113,21 @@ accept only an input, the trigger for reading the sensor value. This allows us t
 decide at which rate reading the sensor without leaving the read rate to the internal
 scheduler. The actor generates only a token each time the value read by the
 sensor is equal to 1 (i.e. a sound is detected). Therefore the conditions
-of the Actor will be like:
+of the Actor can be seen in listing \ref{cond1}.
 
-\begin{verbatim}
+\begin{lstlisting}[language=Haskell,frame=single,caption=Sound Actor conditions,label=cond1]
     Condition for receiving the input
     @condition(action_input=['trigger'])
 
     Condition for returning the output
     @condition(action_output=['token'])
 
-\end{verbatim}
- These conditions will bound the input and outputs to the correct functions.
+\end{lstlisting}
+
+ The conditions shown in figure \ref{cond1} will bound the input and outputs to the correct functions.
  Furthermore, to clarify the internal state change of the actor here is shown
  how the control on the sensor reading using the \textit{Calvin} \texttt{@guard}
  statement:
-
  \begin{verbatim}
      @guard(lambda self: self['sensor'].read_state() == 1 and self.trigger)
  \end{verbatim}
@@ -145,37 +145,32 @@ of the Actor will be like:
  $n$ segments of the same duration. The Actor will therefore change its state
  in order to generate the needed amount of audio recordings to be sent to the
  speaker recognition Actor(s).\newline
- Here are the conditions applied to the actor in order to fire the many actions:
+ In figure \ref{cond2} can be seen the many conditions applied to the actor in order to fire the many actions.
 
- \begin{verbatim}
+ \begin{lstlisting}[language=Haskell,frame=single,caption=Sound Actor conditions,label=cond2]
  Initialize the actor with a number of samples and their duration
  @manage(['n_samples','duration'])
- This is a one time initialization, without bounding these parameters
- to any inbound port.
+ This is a one time initialization, without bounding
+ these parameters to any inbound port.
 
  The condition for setting the actor as active, coming from the
  sound detector
  @condition(action_input['token'])
 
- The outbound connection is a bas64 encoded audio recording loaded
- into a json object
+ The outbound connection is a bas64 encoded audio recording
+ loaded into a json object
  @condition(action_output['wav'])
- \end{verbatim}
+ \end{lstlisting}
 
  However the former skeleton doesn't explain enough about the internal structure of the Actor,
- for which the more specific guard conditions explains it in more detail.
-
- \begin{verbatim}
- This guard condition starts the recording process of an audio sample,
- with three conditions to match:
- token available, the number of recordings done and the microphone state
-
- @guard(lambda self: self.token and self.token_used > 0 and
-                                    not self['microphone'].recording())
- Here the actor checks if the there is any wav file to dispatch
- @guard(lambda self: self.wav)
- \end{verbatim}
-
+ for which the more specific guard conditions explains it in more detail.\newline
+ The guard condition in figure \ref{cond6} starts the recording process of an audio sample,
+ with three conditions to match:token available, the number of recordings done and the microphone state.
+ \begin{lstlisting}[language=Haskell,frame=single,caption=Sound Actor conditions,label=cond6]
+ @guard(lambda self: self.token and
+    self.token_used > 0 and not self['microphone'].recording())
+ \end{lstlisting}
+\pagebreak
  It is necessary to clarify the behavior of some internal variables:
 
  \begin{itemize}
@@ -215,9 +210,9 @@ Therefore the output connections will be:
     \item matches - the models for which there was a positive match in the database, unknown otherwise.
 \end{itemize}
 
-The following conditions apply in order to maintain a proper flow in the execution:
+The conditions in figure \ref{cond3} apply in order to maintain a proper flow in the execution.
 
-\begin{verbatim}
+\begin{lstlisting}[language=Haskell,frame=single,caption=Sound Actor conditions,label=cond3]
     These conditions only apply when receiving and returning
     values:
     @condition(action_input=['operation'])
@@ -225,34 +220,32 @@ The following conditions apply in order to maintain a proper flow in the executi
     @condition(action_input=['model_name'])
     @condition(action_output=['n_people','names'])
 
-\end{verbatim}
+\end{lstlisting}
 
 However these conditions doesn't express the real logic beneath the Actor, which
 is handled by the \texttt{@guard} conditions. Here follows the most
-important guard conditions.
+important guard conditions.\newline
 
-\begin{verbatim}
-    This guard allow us to set the operation only when it's unset,
-    restricting the set of possible choices for the operation.
+The guard shown in figure \ref{cond3} allow us to set the operation only when it's unset,
+restricting the set of possible choices for the operation.
+
+\begin{lstlisting}[language=Python,frame=single,caption=Sound Actor conditions,label=cond3]
     @guard(lambda self, operation: self.operation ==
-        None and (operation == 'extract' or operation == 'add_model')
+        None and (operation == 'extract' or
+        operation == 'add_model')
+\end{lstlisting}
 
-    The following guards conditions are used for the two steps
-    asynchronous recognition. The first phase start the process
-    and needs some parameters to be set properly:
-    the operation must be extract, the wav file has to be set
-    and extracted means we did not pass already this phase.
+The guards conditions illustrated in figure \ref{cond4} are used for the two steps
+asynchronous recognition. The first phase start the process
+and needs some parameters to be set properly:
+the operation must be extract, the wav file has to be set
+and extracted means we did not pass already this phase.
+
+\begin{lstlisting}[language=Python,frame=single,caption=Sound Actor conditions,label=cond4]
     @guard(lambda self: self.operation == 'extract' and self.wav
-        is not None and not self.extracted)
+        is not None and not self.extracted
+\end{lstlisting}
 
-    Here the same applies for the wav file, meanwhile
-    one of the conditions to enter the function is the end of
-    the previous process, indicated by the internal state
-    ._in_progress.
-    @guard(lambda self: self.wav is not None and
-        self.recognizer._in_progress == None and self.extracted)
-
-\end{verbatim}
 
 In conclusion, the Actor's purpose is to identify the different
 speakers and if they match with someone in the database return
@@ -423,7 +416,7 @@ However going deeper into the actor architecture we have to define some more con
 like the events which trigger the execution and the tokens for which returning the results.
 All incoming port of an actor has to be linked, we can not have an unbounded port,
 both input or output. Listing ~\ref{code2} shows an example of connection bounding for incoming
-and out-coming connections.
+and out-coming connections.\pagebreak
 
 
 \begin{lstlisting}[language=C,frame=single,caption=Example resource response,label=code2]

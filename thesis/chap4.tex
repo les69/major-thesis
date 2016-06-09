@@ -23,7 +23,7 @@ for all the audio files: .wav format, with a frequency 48 kHz and using 16 bit f
 Before starting with more complex test it is mandatory to see the effectiveness
 of the models in the optimal situation. For the optimal situation we'll take
 a unique recording dividing it in the typical machine learning split: 80\% learning
-and 20\% for testing the model.\newline
+and 20\% for testing the model.\newline \pagebreak
 The first test will focus on a batch of voices taken from different sources:
 
 \begin{itemize}
@@ -389,10 +389,11 @@ and where the effects can be highlighted more than with the other models.
 \end{center}
 \end{figure}
 
-The test highlighted a clear correlation between the effect and the likelihood score
+The results highlighted a clear correlation between the effect and the likelihood score
 increase. All of the tests, except of the high pass filter, showed an increase in the
-matching scores with a top score for the low pass filter(see figure \ref{chart:score-tuning}). At first seen the very good results
-from the low pass results we decided to filter also all the other models with a low pass filter.
+matching scores with a top score for the low pass filter(see figure \ref{chart:score-tuning}).
+%%At first seen the very good results
+%%from the low pass results we decided to filter also all the other models with a low pass filter.
 Although results decreased of some small units (2-3 \%), the improvement introduced by the
 low pass filter was concrete. However all the test using the high pass filter failed with mismatches
 and none of the matched with their correct model. For this reason we have decided to exclude it from
