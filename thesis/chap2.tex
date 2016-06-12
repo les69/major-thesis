@@ -8,13 +8,13 @@
 \label{chap2}
 
 Chapter 2 introduces the different technologies used through the document, with a brief
-introduction covering the main aspects needed for a full comprehension of the document.
+introduction covering the main aspects needed for a full comprehension of the content.
 The section ~\ref{biofact} covers biometric factors used for
 authentication, section ~\ref{speakeralg} introduces speaker recognition with its different state of
 the art algorithms. Subsequently section ~\ref{integration} focuses on integration between ecosystem,
 the various ecosystems (section ~\ref{ecosystems}), microservices and our
 integration oriented towards microservices (section ~\ref{ref:microappr}).Section ~\ref{calvin}
-focuses on describing \textit{Calvin} in depth.
+focuses on describing \textit{Calvin}'s system in depth.
 
 
 
@@ -24,7 +24,7 @@ focuses on describing \textit{Calvin} in depth.
 Biometrics is the set of characteristics which allows a person to be identified
 by one or more of its physiological traits. Biometric traits can be used for
 authentication or identification of a person with a relatively high precision, and
-usually are more secure than password or token based authentications. Some examples
+usually are more secure than password or token based authentication systems. Some examples
 of biometric factors typically used in authentication are: DNA, retina, iris, palm
 veins, fingerprints and face recognition. There is another subclass of biometric
 factors also called behavioral patterns, which relates more to the behavior of a person
@@ -35,7 +35,7 @@ reliability:\pagebreak
 
 \begin{itemize}
     \item \textbf{False match rate} related to the probability of the system to
-    match incorrectly pattern an input to a non-matching element in the database.
+    match incorrectly an input to a non-matching element in the database.
     \item \textbf{False non-match rate} is the probability that the system will reject
     a correct input.
     \item \textbf{Equal error rate}, the rate at which acceptance and rejection error is
@@ -48,10 +48,10 @@ reliability:\pagebreak
 \subsection{Speaker recognition}
 Identifying a person by his or her voice is an important trait taken for granted
 in human to human interaction.\cite{speaker-recognition} Everyday we use the voice as an identification pattern
-to distinguish people we are not seeing, to remember people
+to distinguish people that we are not seeing directly, to remember people
 we've met a long time ago whom face we are not recognizing.
 Moreover according to \cite{speaker-recognition} humans ability to identify a person by the voice grows linearly
-with the familiarity with the person they're talking with, arriving at the point
+with the familiarity with the person they're talking to, arriving at the point
 of recognizing someone just from their laugh. On the other hand it is
 also true that we as humans find sometimes hard to remember a one-time heard voice,
 or having a tough time recognizing someone from the phone.\\
@@ -59,18 +59,18 @@ Speaker recognition can be accomplished in three ways:
 \begin{description}
     \item[Naive speaker recognition] is the process of recognizing familiar
     voices without any conscious training. This process is used daily by most of the people
-    when interacting to each other.
+    when interacting with each other.
     \item[Forensic speaker recognition] is the process used by forensics to identify
     criminals from their vocal activity. Special listeners are trained to listen phone
-    conversations activity from suspects and compared with the criminal records, trying
+    conversations activity from suspects and compare those with criminal recordings, trying
     to find any match between them.
     \item[Automatic speaker recognition] is the process used by computers to learn
     about a human and then recognize known voices in audio files.
 \end{description}
 
 Speaker recognition is a large topic of research which includes two separated taks: speaker
-identification, speaker verification and speaker diarization. Although we will focus mainly on the identification,
-speaker verification happens when an unknown claims to be a known person and the task
+identification, speaker verification and speaker diarization.
+Speaker verification is used when an unknown claims to be a known person and the task
 of the system is to verify the correctness of the claim.
 In speaker identification the task is to identify an unknown speaker from a set of known speakers,
 using audio samples to find the closest speaker to him or her.
@@ -89,9 +89,9 @@ Moreover speaker recognition can be:
         \item[Text independent] when the content doesn't influence the recognition
         of a known speaker but only the voice traits are used to identify the person.
 \end{description}
-Human speech is a performance biometric, making it intrinsic different from the majority
+Human speech is a performance biometric, making it intrinsically different from the majority
 of the common biometrics (e.g. iris, fingerprints, footprint etc). This is due to the
-identification made on how something is said rather than what, with a larger
+identification made on \textit{how} something is said rather than \textit{what}, with a larger
 degree variability. As can be seen in figure \ref{fig:sourcesvar} The sources of variability in speaker recognition can be partitioned
 in three major classes: speaker based, conversation based and technology based.
 
@@ -112,7 +112,7 @@ include the following factors:
 \begin{description}
     \item[Situational task stress] when the speech is influenced by a task,
     typically stressful, made by the speaker. This usually happens when someone
-    is speaking meanwhile doing some task such as driving, calling for an emergency.
+    is speaking meanwhile doing some task such as driving or calling for an emergency.
     All these tasks includes cognitive or physical stress which introduces variability
     in how the speaker speaks.
     \item[Vocal effort/style] happens when the speaker alters his or her voice to react to
@@ -147,8 +147,8 @@ or with a machine.
 
 
 \subsubsection{Technology based variability}
-These sources are introduced by the technology used to acquire
-the speech, mostly depends on the quality of the input (microphones).
+These sources of variability are introduced by the technology used to acquire
+the speech, mostly depend on the quality of the input (microphones).
 Noise is typically introduced from the following channels:
 
 \begin{itemize}
@@ -167,11 +167,11 @@ from the articulation learnt during the time (i.e. dialects).
 These traits are also called \textit{feature parameters}, defined as a set
 of measurable and predefined aspects of a speech to be considered for a meaningful
 comparison between two different voices. Typically multiple features
-are used to identify a voice, and is more important if we consider the noise introduced by
+are used to identify a voice, and is more important as we consider the noise introduced by
 the previous sources, which makes having many features an important aspect to consider.
 Different voices may have similar or identical values for a specific feature but differ in all
 the others.
-As outlined from Nolan \cite{phonetic}, typical features has to have the following properties:
+As outlined from Nolan \cite{phonetic}, typical features need to have the following properties:
 \begin{itemize}
     \item High between-speaker variability and low within-speaker variability
     \item Resistance to disguise and mimicry
@@ -318,23 +318,23 @@ compensating methods that were unpractical before with large supervectors.
 \label{integration}
 
 \textit{Internet of Things}, better known as IoT, is the world of interconnected devices
-connected to the real world and to the Internet. These devices has a very
+connected to the real world and to the Internet. These devices have a very
 broad definition, from the smart sensors in a power plant to the smart fridge in
 a house. What connects these devices is their ability to be connected with the world,
 sharing, with the needed restrictions, their work. This opened the door to a new
 revolution in the IT sector, prompting new opportunities for developers, entrepreneurs
 and end users. Some of the most relevant endings of these technologies are \textit{Smart Houses},
-\textit{Smart Cities}, Cars etc. %[TODO] continue a little bit here
+\textit{Smart Cities}, Cars etc.
 
 \subsection{Ecosystems}
 \label{ecosystems}
 
 An ecosystems is by definition \textit{a system, or a group of interconnected elements,
-formed by the interaction of a community of organisms with their environment.},
+formed by the interaction of a community of organisms with their environment},
 in our case a set of smart devices connected between them. The IoT world is evolving
 from distinct single entities to more evolved clusters of devices which can communicate
 more easily between each other.These are usually are made by companies using specific protocols or standards
-to simplify the connection between their products, but at the same time closing it to the others.
+to simplify the connection between their products, but at the same time closing them from the others.
 The list of products related to the \textit{Internet of Things} is too broad for
 being even listed, due to the highly expanding sector related to smart devices.
 However we will consider the most common ecosystems which can be easily found in a common
@@ -368,7 +368,7 @@ mainly \textit{802.11} standards.
 
 \subsubsection{Apple - HomeKit}
 
-\textbf{HomeKit}\cite{homekit} is a very similar ecosystem to the one described before, producing or supporting
+\textbf{HomeKit}\cite{homekit} is a similar ecosystem to the one described before, producing or supporting
 home automation devices. \textit{HomeKit} relies on the large network of Apple devices,
 making it an environment to be considered even if it is relatively new on the market. The key
 point of \textit{HomeKit} is the easy integration with Apple devices, fitting almost perfectly wherever
@@ -381,7 +381,7 @@ make the system independent from specific technologies.
 
 \subsubsection{Samsung - SmartThings}
 
-\textbf{SmartThings}\cite{smart} is another ecosystem from \textit{Samsungs} with many similarities
+\textbf{SmartThings}\cite{smart} is another ecosystem from \textit{Samsung} with many similarities
 with the former producers.\textit{SmartThings} focuses on four main Smart devices categories:
 \textit{Security},\textit{Monitoring}, \textit{Lighting and Energy} and \textit{Convenience and Entertainment}.
 \textit{SmartThings} as the previous ecosystem does not allow a direct interaction with the smart devices,
@@ -392,7 +392,7 @@ a technology, making it harder for different technology stacks to access.
 \section{The Microservice Architectural Style}
 
 \subsubsection{SOA vs Microservices}
-In short, the \textit{microservice architectural style} is an approach to developing a single
+In short, the \textit{microservice architectural style} is an approach for developing a single
 application as a suite of small services, each running in its own process and communicating with
 lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities
 and independently deployable by fully automated deployment machinery. There is
@@ -414,12 +414,12 @@ However the functionalities are very frequently exposed using a \textit{RESTful}
 doesn't expose any contract nor schema. Furthermore microservices holds another subtle difference related to their
 scope, where a microservice serves as a service inside its application meanwhile typical SOA services
 serves a broader scope and \textit{can be} part of the same application.
-The difference between the two concepts is very subtle, and it wouldn't be impossible for them
+The difference between the two concepts is very thin, and it wouldn't be impossible for them
 to be the same in certain situations. \textit{Bob Ruhbart} from Oracle described shortly the difference:
 \textit{Microservices are the kind of SOA we have been talking about for the last decade. Microservices must be independently deployable,
 whereas SOA services are often implemented in deployment monoliths.
 Classic SOA is more platform driven, so microservices offer more choices
-in all dimensions}\cite{microsoa}.
+in all dimensions}.\cite{microsoa}
 
 \begin{figure}[h]
 \caption{Graphic illustration of microservices and SOA}
@@ -491,7 +491,7 @@ IoT with their advent brought up some, not yet resolved, challenges which fits
 very well with the Microservice architecture. \textit{Interoperability} is one of these
 challenges aimed to be solved. Microservices \textit{decentralized governance} feature,
 which allows the use of different technologies inside the same systems holds the key for
-solving the interoperability problem. Key IoT devices vendors realizes that if their products
+solving the interoperability problem. Important IoT devices vendors realized that if their products
 supports multiple interoperability standard they're likely to be adopted also by their
 competitors (e.g. Nest products are available on HomeKit). Microservices here can be
 used as isolated adapters for the many different technologies, facing the spreading
@@ -528,16 +528,16 @@ an environment where new technologies are frequently added or modified.
 
   \textit{Calvin} is built upon the well-established actor model, using a methodology often referred to as dataflow programming \cite{calvin1}, and
   its life cycle can be summarized in four, well-distinct, phases: \textit{Describe}, \textit{Connect}, \textit{Manage}
-  and \textit{Deploy}\cite{calvin-article}.
+  and \textit{Deploy}.\cite{calvin-article}
 
 \subsection{Describe}
   The smallest functional units in \textit{Calvin} is an Actor. Actors do not share
   nor state or behavior, encapsulating all the logic. The key point of Actors in Calvin
   is their reactivity: they react to external events or when receiving inputs. Actors
-  communicates only using data through ports, has to be defined before deploying the system.
+  communicate only using data through ports, which have to be defined before deploying the system.
   This way is possible to describe the possible interactions that the actor may have when
   connecting it to others.\\
-  Having a non-shared internal state allow the Actor to be serialized and moved to another
+  Having a non-shared internal state allows an Actor to be serialized and moved to another
   running machine or to be backed up if the machine crashes. However this is partly true because
   it may be tricky to serialize Actors with a very complex internal state.
 
@@ -562,18 +562,18 @@ an environment where new technologies are frequently added or modified.
     \end{figure}
 
   After describing the many functionalities provided by the various Actors in the system
-  we need to tie them to build applications. \textit{Calvin} offer a scripting language,
-  named \textit{CalvinScript}, to describe the various connections between actors
+  we need to tie them to build applications. \textit{Calvin} offers a scripting language,
+  named \textit{CalvinScript} to describe the various connections between actors
   and their input and output ports. In figure \ref{fig:calvinscript} there is an example
   of a script for detecting faces in an image. The first part is relative to the actors declaration
   and initialization, giving a clear description of which actors will be playing in the current
-  environment. The second part describes the links between each actors, structuring the flow
+  environment. The second part describes the links between each actor, structuring the flow
   of the process. In this case the actors in the system are 3: the \textit{Camera}, the \textit{Detector}
   and the \textit{Alert}. The flow of the process is relatively simple in this case, and it is structured
   as follows: the  \textit{Camera} takes a picture, which will be passed to the \textit{Detector}. Subsequently
-  the \textit{Detector} will send its result to the \textit{Alert} actor, which will possibly fire an "alarm" if he
+  the \textit{Detector} will send its result to the \textit{Alert} actor, which will possibly fire an "alarm" if it
   detects any human face inside the picture.\\
-  Figure \ref{fig:calvinactors} shows a more complex interaction between actors. %%[TODO] maybe add something here about the picture
+  Figure \ref{fig:calvinactors} shows a more complex interaction between actors.
 
   \begin{figure}[h]
   \caption{Actors interaction}
@@ -611,7 +611,7 @@ an environment where new technologies are frequently added or modified.
 
 \subsection{The relationship between the Actor Model and Microservices}
 Actors are isolated, single-threaded components that encapsulates both state and behavior.
-Typically actors communicates using lightweight direct messaging systems, for example
+Typically actors communicate using lightweight direct messaging systems, for example
 to receive or return inputs/parameters. Microservices are very similar to Actors in many
 of their key aspects, such as isolation, encapsulation and lightweight messaging, though
 usually microservices uses RESTful interfaces. There is some discussion
@@ -625,11 +625,11 @@ use different technologies}, at the moment.
 
 Calvin is structured with a three tier architecture: the actor layer, the system layer and the runtime layer.
 Each of them is isolated and can communicate with each other only passing values through the various
-layers. The architecture is summarized in figure \ref{fig:calvinlayers}
+layers. The architecture is summarized in figure \ref{fig:calvinlayers}.
 
 \begin{description}
     \item[Actor Layer] The actor layer is the upper layer which exposes all the actors and their functionalities.
-    Actors can used only the functionalities offered by the lower level calvinsys with no direct access to the runtime
+    Actors can use only the functionalities offered by the lower level calvinsys with no direct access to the runtime
     system.
     \item[Calvinsys Layer] Calvinsys is considered the middleware, where all the runtime logic is exposed through
     high level functions and objects. This layers wraps and uses the functionalities offered by the runtime layer,
@@ -655,7 +655,7 @@ In contemplation of \textit{reactivity} all the actions taken from an actor must
 this optimal situation is hardly achievable in real life, it's usually more common to have blocking calls to services
 in the runtime which require on average more then 1-2 seconds. This limitation can be solved simply moving the logic
 in the runtime towards an asynchronous approach for long time tasks. Typical tasks requiring asynchronous interaction
-can be reading data from a sensor, sending an HTTP request or authenticating into any service, the list is longer but
+can be: reading data from a sensor, sending an HTTP request or authenticating into any service, the list is longer but
 can summarize in most of interaction with out of the system objects.\newline
 \pagebreak
 An actor anatomy can summarized in the following parts:

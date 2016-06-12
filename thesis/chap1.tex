@@ -8,8 +8,8 @@
 \label{chap1}
 
 
-Internet of Things(IoT) based surveillance systems has been proved to be effective during the time,
-catching the burglar committing the crime and helping the authorities to
+Internet of Things(IoT) based surveillance systems have been proved to be effective during the time,
+catching burglars committing the crime and helping the authorities to
 catch him\cite{fbrobbery}. Nonetheless these systems are not yet perfect, and during
 this document we will investigate on some optimizations with respect to
 the \textit{integration} with other ecosystems and the \textit{reduction}
@@ -23,15 +23,14 @@ Chapter \ref{chap3} illustrates the main architecture proposed
 during the document and its implementation.
 
 Chapter \ref{chap4} shows the validation of the architecture proposed in the former
-chapter, showing the real benefits of the approach.
-Conclusions can be found in \ref{chap5}
+chapter, showing the real benefits of the approach.\\
+Conclusions can be found in Chapter \ref{chap5}
 
 
 \section{Motivation}
 
-In this document we try to illustrate the common problems that arises
-when introducing a new IoT system in an existing environment. Let's define it as
-an average person house, we'll define the scenario details later.
+In this document we illustrate the common problems that arise
+when introducing a new IoT system in an existing environment.
 The first motivating problem taken in consideration is the \textit{integration} of a new
 system in a house where there's already a different coexisting ecosystem.
 The idea behind our research in this field is to improve the existing solutions
@@ -61,22 +60,22 @@ calling the police or alerting some vigilance agent.
 
 In our document we will often refer to an imaginary scenario of a typical house
 of an average person. It is important to denote this detail since most of our
-solutions are designed for such a peculiar situation, and they may not be as
+solutions are designed for a peculiar situation, and they may not be as
 efficient or innovative in a different scenario.\\
 The main idea is to have a surveillance system in a typical \textit{American style}
 house, with different floors and rooms, each of them equipped with different
 and various smart devices. Having a clear idea of the scenario helps to focus more
 on the identification of issues while designing the systems rather than facing
 and solving problems at the last moment due to some unpredictable variables of a
-too varied scenario.
+too broad scenario.
 
 \section{Calvin}
 
 \textit{Calvin}\cite{calvin-article} is an open-source and cloud oriented framework
 for IoT applications. Calvin is built to scale well, offering the opportunity
 to run it on both small devices and more powerful machines in order to use the
-full power of cloud computing. It's distributed perspective follows the principle
-of \textit{run it where it's most needed},exploiting the high interoperability with
+full power of cloud computing. Its distributed perspective follows the principle
+of \textit{run it where it's most needed}, exploiting the high interoperability with
 hardware of small devices combined to the more powerful execution of server machines.
 Calvin aims to be easy to develop, using an actor model architecture where actors are
 simple but reactive entities interacting with each other.
@@ -94,13 +93,12 @@ architecture pattern, offering a better reliability, resiliency, portability, ex
 flexibility and easier and faster environment for development and testing.
 With the advent of the need of interoperability, \textit{microservices}
 seems to hold the key for this problem.
-Vendors have published their protocols, and have exposed API’s to their various hubs.
 A MicroService can serve as an adapter between various protocols. It can be lightweight and disposable,
 both desirable traits in a rapidly evolving environment.\cite{microiot}
 
 \subsection{M2M: Machine to Machine}
 
-Most of common smart sensors, in order to be \textit{smart} they need
+Most of common smart sensors, in order to be \textit{smart}, they need
 to provide a form of connectivity: let it be BLE (Bluetooth Low Energy),
 Wi-Fi or RFID. \textit{M2M} is trending with the raising of IoT,
 requiring a higher number of devices to be interconnected without
@@ -119,7 +117,7 @@ a \textit{RESTful} architecture, for a higher simplicity of use.
 The communication between different devices is a common and dated
 problem in \textit{Computer Science}. Many approaches has been introduced
 during time, all of them with their relative pro and cons:
-
+\pagebreak
 \begin{itemize}
   \item \textbf{Remote Procedure Calls} used to execute procedures on a remote machine,
   with the advent of \textit{CORBA} it was also possible to do that on machine
@@ -150,14 +148,14 @@ is armed are false positives. In most of the cases it can be just a pet
 triggering the alarm, some other times may be just yourself when you forget to
 deactivate the alarm.\\
 Although this problem may look relatively unimportant, it assumes importance if the
-alarmed is linked to a surveillance company which is supposed to look after our house.
+alarmed is linked to a surveillance company which is supposed to look after your house.
 That's why during this thesis we will take an effort to address this common issue with different
 approaches.\\
 The false positive detection is calculated as a probability of an event happening, influenced
 by many factors. Each factor is one of the approaches adopted below, which will have a positive or
 negative influence on this factor, determining if with a certain precision a detection can be classified
 as a \textit{false positive}.
-
+ \pagebreak
 \subsection{Approaches}
 Here's a list of the proposed approaches taken in consideration during this document
 

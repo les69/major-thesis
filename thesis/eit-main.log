@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.12)  9 JUN 2016 19:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.12)  12 JUN 2016 18:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1246,15 +1246,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--18
 [1
 
 
-] [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 124.
+] [2] [3]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 122.
 
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 124.
- [3]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 122.
+
 [4]) [5]
 \openout2 = `chap2.aux'.
 
@@ -1270,8 +1270,12 @@ File: sourcesvariability.png Graphic file (type png)
 <use sourcesvariability.png>
 Package pdftex.def Info: sourcesvariability.png used on input line 102.
 (pdftex.def)             Requested size: 414.9429pt x 240.09274pt.
- [8 <./sourcesvariability.png>] [9] [10] [11]
-<gmmsvm.png, id=498, 1694.33pt x 1277.77374pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[8] [9 <./sourcesvariability.png>] [10] [11]
+<gmmsvm.png, id=497, 1694.33pt x 1277.77374pt>
 File: gmmsvm.png Graphic file (type png)
  <use gmmsvm.png>
 Package pdftex.def Info: gmmsvm.png used on input line 275.
@@ -1280,8 +1284,14 @@ Package pdftex.def Info: gmmsvm.png used on input line 275.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[12] [13 <./gmmsvm.png>] [14] [15]
-<soavsmicro.png, id=538, 457.71pt x 344.28625pt>
+[12] [13 <./gmmsvm.png>] [14]
+Overfull \hbox (34.36707pt too wide) in paragraph at lines 384--390
+\T1/cmr/m/n/10.95 for-mer pro-duc-ers.\T1/cmr/m/it/10.95 SmartThings \T1/cmr/m/
+n/10.95 fo-cuses on four main Smart de-vices cat-e-gories: \T1/cmr/m/it/10.95 S
+e-cu-rity\T1/cmr/m/n/10.95 ,\T1/cmr/m/it/10.95 Monitoring\T1/cmr/m/n/10.95 ,
+ []
+
+[15] <soavsmicro.png, id=538, 457.71pt x 344.28625pt>
 File: soavsmicro.png Graphic file (type png)
  <use soavsmicro.png>
 Package pdftex.def Info: soavsmicro.png used on input line 427.
@@ -1407,12 +1417,12 @@ Chapter 4.
 
 
 ] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54]
-Underfull \hbox (badness 10000) in paragraph at lines 663--669
+Underfull \hbox (badness 10000) in paragraph at lines 662--668
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 742--749
+Underfull \hbox (badness 10000) in paragraph at lines 741--748
 
  []
 
@@ -1525,7 +1535,7 @@ mf-dist/fonts/type1/public/cm-super/sfcc2074.pfb></usr/local/texlive/2015/texmf
 -dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2015/texmf-d
 ist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2015/texmf-dis
 t/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on eit-main.pdf (71 pages, 2697376 bytes).
+Output written on eit-main.pdf (71 pages, 2699758 bytes).
 PDF statistics:
  1092 PDF objects out of 1200 (max. 8388607)
  965 compressed objects within 10 object streams

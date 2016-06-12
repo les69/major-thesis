@@ -12,9 +12,8 @@ for integration.
 
 This section is dedicated to the various tests to investigate
 the effectiveness in a home security scenario. For our
-tests we used two different libraries, comparing their results:
-\textit{voiceid} for speaker diarization and identification, \textit{recognito}
-for speaker identification only. Furthermore we have used standard configurations
+tests we have used the \textit{recognito} library
+for speaker identification and verification. Furthermore we have used standard configurations
 for all the audio files: .wav format, with a frequency 48 kHz and using 16 bit for sampling.
 
 \subsection{Testing the basic model}
@@ -199,7 +198,7 @@ length, approaching the best value at 13 seconds.\newline
 For short test models the system is unpredictable, though providing generally some
 good matches we have noticed some mismatches (marked as 0) for low level inputs. Moreover
 these short tests (1 or 3 seconds) seems to be heavily influenced by external noise.\newline
-It is also interesting to notice that the running time for the identification process is very slightly
+It is also interesting to notice that the running time for the identification process is slightly
 influenced by the length of the duration. This led us to the conclusion that the \textit{13 seconds}
 audio duration is the optimal one for our scenario.\newline
 Up to now we have used models with different speakers but also from different types of sources. In the

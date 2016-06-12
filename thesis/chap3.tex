@@ -39,7 +39,7 @@ speech to text systems, which are improving during the time and mainly \textit{d
 \textit{Siri}, one of the most famous personal assistant had some minor troubles at the beginning
 being used to the different users voices, accents and languages. \textit{Siri} uses
 different voice recognition algorithms to categorize your voice by learning your
-dictation and your accent, with good results over time.
+dictation and your accent, with better results over time.
 
 
 \section{In House Speaker Recognition}
@@ -102,7 +102,7 @@ its algorithm on it.
 
 \subsection{Hardware Interacting Actors}
 
-In this section we'll go in the details of the low level actors handling the resources
+In this section we'll go into the details of the low level actors handling the resources
 such as sound detection and microphone, describing their internal logic and actions.
 
 \subsubsection{Sound Detection Actor}
@@ -222,11 +222,11 @@ The conditions in figure \ref{cond3} apply in order to maintain a proper flow in
 
 \end{lstlisting}
 
-However these conditions doesn't express the real logic beneath the Actor, which
+However these conditions don't express the real logic beneath the Actor, which
 is handled by the \texttt{@guard} conditions. Here follows the most
 important guard conditions.\newline
 
-The guard shown in figure \ref{cond3} allow us to set the operation only when it's unset,
+The guard shown in figure \ref{cond3} allows us to set the operation only when it's unset,
 restricting the set of possible choices for the operation.
 
 \begin{lstlisting}[language=Python,frame=single,caption=Sound Actor conditions,label=cond3]
@@ -253,8 +253,8 @@ their names.
 
 \subsubsection{Speaker Verification and Identification}
 
-Due to its very subtle difference, we have decided to encapsulate verification
-and identification in a single actor. Speaker Identification is applied when no
+Due to the subtle difference between identification and verification, we have decided to encapsulate them
+ in a single actor. Speaker Identification is applied when no
 model to identify is given, meanwhile verification is executed when a model to match
 is available. The structure of the Actor is very similar to the one proposed in the
 previous: the actor accepts as input a wav file (base64 encoded) and a model name
@@ -471,7 +471,7 @@ flaws in the architecture. The solution works only under the following circumsta
     \item The integration library won't require any change or modification in the future.
 \end{enumerate}
 
-However these assumptions are too risky to be considered for an always running system, because the likeliness
+However these assumptions are too risky to be considered for an always running system, because the likelihood
 of one of the above problems to happen is very high.\\
 To face these problems we adopted a \textit{microservice} architecture style to implement the integration with
 other ecosystems. In the case of \textit{Nest} is not very significative but it will be much more for \textit{HomeKit}, as
